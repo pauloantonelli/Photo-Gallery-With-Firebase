@@ -23,7 +23,6 @@
 		7B01A513290B0ED7002E502A /* RegisterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01A512290B0ED7002E502A /* RegisterDataSource.swift */; };
 		7B9529742908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529732908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc */; };
 		7B95297A2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B95296F2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework */; };
-		7B95297F2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95297E2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDKTests.swift */; };
 		7B9529802908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B9529722908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B95298E2908BC92006F203F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95298D2908BC92006F203F /* Login.swift */; };
 		7B9529902908BC9D006F203F /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95298F2908BC9D006F203F /* Register.swift */; };
@@ -46,6 +45,7 @@
 		7B9529C12909D066006F203F /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529C02909D066006F203F /* Credential.swift */; };
 		7B9529C32909D24F006F203F /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529C22909D24F006F203F /* Password.swift */; };
 		7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */; };
+		7BC1CA4E290C788400A178DA /* DependencyInjectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1CA4D290C788400A178DA /* DependencyInjectionTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +77,6 @@
 		7B9529722908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo_Gallery_With_Firebase_SDK.h; sourceTree = "<group>"; };
 		7B9529732908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Photo_Gallery_With_Firebase_SDK.docc; sourceTree = "<group>"; };
 		7B9529792908BB7B006F203F /* Photo Gallery With Firebase SDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo Gallery With Firebase SDKTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B95297E2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_Gallery_With_Firebase_SDKTests.swift; sourceTree = "<group>"; };
 		7B95298D2908BC92006F203F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7B95298F2908BC9D006F203F /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		7B9529912908BCC5006F203F /* OpenCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCamera.swift; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		7B9529C02909D066006F203F /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		7B9529C22909D24F006F203F /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
+		7BC1CA4D290C788400A178DA /* DependencyInjectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,7 +228,7 @@
 		7B95297D2908BB7B006F203F /* Photo Gallery With Firebase SDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				7B95297E2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDKTests.swift */,
+				7BC1CA4B290C785800A178DA /* Common */,
 			);
 			path = "Photo Gallery With Firebase SDKTests";
 			sourceTree = "<group>";
@@ -393,6 +393,22 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
+		7BC1CA4B290C785800A178DA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1CA4C290C786000A178DA /* DependencyInjection */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7BC1CA4C290C786000A178DA /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1CA4D290C788400A178DA /* DependencyInjectionTest.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -550,7 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B95297F2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDKTests.swift in Sources */,
+				7BC1CA4E290C788400A178DA /* DependencyInjectionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

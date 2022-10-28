@@ -1,15 +1,19 @@
 //
-//  Photo_Gallery_With_Firebase_SDKTests.swift
+//  DependencyInjectionTest.swift
 //  Photo Gallery With Firebase SDKTests
 //
-//  Created by Paulo Antonelli on 25/10/22.
+//  Created by Paulo Antonelli on 28/10/22.
 //
 
 import XCTest
 @testable import Photo_Gallery_With_Firebase_SDK
 
-class Photo_Gallery_With_Firebase_SDKTests: XCTestCase {
+struct InjectStructExample1 {   }
+struct InjectStructExample2 {   }
 
+class DependencyInjectionTest: XCTestCase {
+    var dependencyInjection: IDependencyInjection = DependencyInjection.shared
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -19,11 +23,9 @@ class Photo_Gallery_With_Firebase_SDKTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        self.dependencyInjection.register(type: InjectStructExample1.self, component: InjectStructExample1())
+        let result = self.dependencyInjection.resolve(InjectStructExample1.self)
+        XCTAssertEqual(result, InjectStructExample1.self)
     }
 
     func testPerformanceExample() throws {
