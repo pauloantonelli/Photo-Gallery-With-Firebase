@@ -8,5 +8,5 @@
 import Foundation
 
 protocol IRegisterRepository {
-    func execute(withCredential credential: Credential) async -> Result<User, RegisterError>
+    func execute(withCredential credential: Credential) async -> Result<User, RegisterErrorUseCase>
 }

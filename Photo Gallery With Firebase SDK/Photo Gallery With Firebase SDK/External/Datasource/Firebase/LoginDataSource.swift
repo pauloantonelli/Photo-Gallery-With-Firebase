@@ -8,9 +8,9 @@
 import Foundation
 
 struct LoginDataSource: ILoginDataSource {
-    let firebase: FirebaseService
+    let firebase: IFirebaseService
     
-    init(firebase: FirebaseService) {
+    init(firebase: IFirebaseService) {
         self.firebase = firebase
     }
     

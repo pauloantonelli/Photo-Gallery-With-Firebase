@@ -10,7 +10,7 @@ import Foundation
 struct LoginRepository: ILoginRepository {
     let datasource: LoginDataSource
     
-    init(datasource: LoginDataSource = LoginDataSource()) {
+    init(datasource: LoginDataSource = LoginDataSource(firebase: DependencyInjection.shared.resolve(IFirebaseService.self)!)) {
         self.datasource = datasource
     }
     

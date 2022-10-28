@@ -45,6 +45,7 @@
 		7B9529BF2909D054006F203F /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529BE2909D054006F203F /* Email.swift */; };
 		7B9529C12909D066006F203F /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529C02909D066006F203F /* Credential.swift */; };
 		7B9529C32909D24F006F203F /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529C22909D24F006F203F /* Password.swift */; };
+		7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		7B9529BE2909D054006F203F /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		7B9529C02909D066006F203F /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		7B9529C22909D24F006F203F /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 		7B9529A12908BE41006F203F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7BC1CA40290C6A7F00A178DA /* DependencyInjection */,
 				7B9529A42908BEAA006F203F /* Firebase */,
 			);
 			path = Common;
@@ -380,6 +383,14 @@
 				7B9529AF2909CB5C006F203F /* GoogleService-Info.plist */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		7BC1CA40290C6A7F00A178DA /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */,
+			);
+			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,6 +515,7 @@
 			files = (
 				7B95299F2908BE14006F203F /* Network.swift in Sources */,
 				7B01A4FA290B0ACF002E502A /* RegisterError.swift in Sources */,
+				7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */,
 				7B9529902908BC9D006F203F /* Register.swift in Sources */,
 				7B9529742908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc in Sources */,
 				7B01A511290B0EB3002E502A /* LoginDataSource.swift in Sources */,

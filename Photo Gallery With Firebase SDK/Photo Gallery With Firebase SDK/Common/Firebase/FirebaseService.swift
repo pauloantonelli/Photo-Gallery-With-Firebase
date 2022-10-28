@@ -9,7 +9,12 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
 
-class FirebaseService {
+protocol IFirebaseService {
+    func login(email: String, password: String) async throws -> User
+    func register(email: String, password: String) async throws -> User
+}
+
+class FirebaseService: IFirebaseService {
     var user: User = User(id: "")
     var shared: FirebaseService {
         let result = FirebaseService()
