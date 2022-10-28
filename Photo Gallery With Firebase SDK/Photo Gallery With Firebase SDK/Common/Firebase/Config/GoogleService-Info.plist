@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>659220254364-7mddr7v1r4bg3leelcbudgtd7plt9n4q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.659220254364-7mddr7v1r4bg3leelcbudgtd7plt9n4q</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCU3XLq7m9fdYyBIqYyJUYB0g4fgDileYQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>659220254364</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>dev.zoominitcode.photo.gallery.with.firebase.sdk</string>
+	<key>PROJECT_ID</key>
+	<string>photo-gallery-swift</string>
+	<key>STORAGE_BUCKET</key>
+	<string>photo-gallery-swift.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:659220254364:ios:3afb90cc57f9f5a0e2e759</string>
+</dict>
+</plist>
