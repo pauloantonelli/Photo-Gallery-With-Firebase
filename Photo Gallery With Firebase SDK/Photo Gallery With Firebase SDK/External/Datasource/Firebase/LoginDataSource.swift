@@ -15,6 +15,11 @@ struct LoginDataSource: ILoginDataSource {
     }
     
     func execute(withCredential credential: Credential) async throws -> User {
-        self.firebase.login(email: credential.email.value, password: credential.password.value)
+        do {
+            let result = try await self.firebase.login(email: credential.email.value, password: credential.password.value)
+            return result
+        } catch {
+            throw LoginErrorDataSource(message: "Error on login \(error.localizedDescription)")
+        }
     }
 }

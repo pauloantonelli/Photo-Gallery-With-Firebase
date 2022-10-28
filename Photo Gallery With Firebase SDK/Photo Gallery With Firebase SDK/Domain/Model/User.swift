@@ -13,7 +13,7 @@ struct User {
     let photoUrl: URL
     let credential: Credential
     
-    init(id: String, username: String, photoUrl: URL, credential: Credential = Credential()) {
+    init(id: String, username: String = "", photoUrl: URL = URL(string: "")!, credential: Credential = Credential()) {
         self.id = id
         self.username = username
         self.photoUrl = photoUrl

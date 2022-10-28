@@ -17,6 +17,9 @@ struct Password {
             return true
         }
     }
+    var isInvalid: Bool {
+        return !self.isValid
+    }
     
     init(password: String = "") {
         self.value = password

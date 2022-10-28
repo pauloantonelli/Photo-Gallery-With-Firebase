@@ -14,7 +14,13 @@ struct RegisterUseCase: IRegisterUseCase {
         self.repository = repository
     }
     
-    func execute(withCredential credential: Credential) async -> Result<User, RegisterError> {
+    func execute(withCredential credential: Credential) async -> Result<User, RegisterErrorUseCase> {
+        if credential.email.isInvalid {
+            return .failure(RegisterErrorUseCase(message: "Email is invalid"))
+        }
+        if credential.password.isInvalid {
+            return .failure(RegisterErrorUseCase(message: "Password is invalid"))
+        }
         let result = await self.repository.execute(withCredential: credential)
         return result
     }

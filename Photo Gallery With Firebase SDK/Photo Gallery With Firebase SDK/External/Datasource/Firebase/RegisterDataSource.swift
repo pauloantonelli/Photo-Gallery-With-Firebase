@@ -8,7 +8,18 @@
 import Foundation
 
 struct RegisterDataSource: IRegisterDataSource {
+    let firebase: FirebaseService
+    
+    init(firebase: FirebaseService) {
+        self.firebase = firebase
+    }
+    
     func execute(withCredential credential: Credential) async throws -> User {
-        <#code#>
+        do {
+            let result = try await self.firebase.register(email: credential.email.value, password: credential.password.value)
+            return result
+        } catch {
+            throw RegisterErrorDataSource(message: "Error on Register \(error.localizedDescription)")
+        }
     }
 }

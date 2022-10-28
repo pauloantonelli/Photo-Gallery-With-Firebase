@@ -14,14 +14,14 @@ struct LoginRepository: ILoginRepository {
         self.datasource = datasource
     }
     
-    func execute(withCredential credential: Credential) async -> Result<User, LoginError> {
+    func execute(withCredential credential: Credential) async -> Result<User, LoginErrorUseCase> {
         do {
             let result = try await self.datasource.execute(withCredential: credential)
             return .success(result)
-        } catch let error as LoginError {
-           return .failure(error)
+        } catch let error as LoginErrorDataSource {
+            return .failure(error)
         } catch {
-            return .failure(.repository)
+            return .failure(LoginErrorRepository(message: "Error on LoginErrorRepository"))
          }
     }
 }

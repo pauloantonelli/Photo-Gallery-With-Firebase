@@ -17,6 +17,9 @@ struct Email {
             return true
         }
     }
+    var isInvalid: Bool {
+        return !self.isValid
+    }
     
     init(email: String = "") {
         self.value = email

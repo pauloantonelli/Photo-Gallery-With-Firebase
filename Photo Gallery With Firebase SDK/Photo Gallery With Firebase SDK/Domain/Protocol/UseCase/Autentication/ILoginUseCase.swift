@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ILoginUseCase {
-    func execute(withCredential credential: Credential) async -> Result<User, LoginError>
+    func execute(withCredential credential: Credential) async -> Result<User, LoginErrorUseCase>
 }

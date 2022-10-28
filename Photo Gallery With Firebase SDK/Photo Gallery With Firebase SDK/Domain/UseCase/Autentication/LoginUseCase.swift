@@ -14,8 +14,14 @@ struct LoginUseCase: ILoginUseCase {
         self.repository = repository
     }
     
-    func execute(withCredential credential: Credential) async -> Result<User, LoginError> {
+    func execute(withCredential credential: Credential) async -> Result<User, LoginErrorUseCase> {
+        if credential.email.isInvalid {
+            return .failure(LoginErrorUseCase(message: "Email is invalid"))
+        }
+        if credential.password.isInvalid {
+            return .failure(LoginErrorUseCase(message: "Password is invalid"))
+        }
         let result = await self.repository.execute(withCredential: credential)
-        return result
+       return result
     }
 }

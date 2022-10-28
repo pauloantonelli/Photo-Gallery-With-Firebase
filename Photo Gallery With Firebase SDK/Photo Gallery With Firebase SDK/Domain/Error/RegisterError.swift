@@ -7,8 +7,25 @@
 
 import Foundation
 
-enum RegisterError: Error {
-    case usecase
-    case repository
-    case datasource
+protocol RegisterError: Error {
+    var message: String { get }
+}
+
+class RegisterErrorUseCase: RegisterError {
+    let message: String
+    init(message: String) {
+        self.message = message
+    }
+}
+
+class RegisterErrorRepository: RegisterErrorUseCase {
+    override init(message: String) {
+        super.init(message: message)
+    }
+}
+
+class RegisterErrorDataSource: RegisterErrorRepository {
+    override init(message: String) {
+        super.init(message: message)
+    }
 }

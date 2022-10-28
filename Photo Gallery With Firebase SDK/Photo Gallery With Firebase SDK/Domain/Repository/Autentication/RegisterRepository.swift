@@ -14,14 +14,14 @@ struct RegisterRepository: IRegisterRepository {
         self.datasource = datasource
     }
     
-    func execute(withCredential credential: Credential) async -> Result<User, RegisterError> {
+    func execute(withCredential credential: Credential) async -> Result<User, RegisterErrorUseCase> {
         do {
             let result = try await self.datasource.execute(withCredential: credential)
             return .success(result)
-        } catch let error as RegisterError {
+        } catch let error as RegisterErrorDataSource {
             return .failure(error)
         } catch {
-            return .failure(.datasource)
+            return .failure(RegisterErrorRepository(message: "Error on RegisterErrorRepository"))
         }
     }
 }
