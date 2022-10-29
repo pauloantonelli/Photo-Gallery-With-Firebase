@@ -22,7 +22,6 @@
 		7B01A511290B0EB3002E502A /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01A510290B0EB3002E502A /* LoginDataSource.swift */; };
 		7B01A513290B0ED7002E502A /* RegisterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01A512290B0ED7002E502A /* RegisterDataSource.swift */; };
 		7B64E5F4290D5A7B003F8457 /* LoginUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64E5F3290D5A7B003F8457 /* LoginUseCaseTest.swift */; };
-		7B64E5F8290D6A0A003F8457 /* Mockingbird in Frameworks */ = {isa = PBXBuildFile; productRef = 7B64E5F7290D6A0A003F8457 /* Mockingbird */; };
 		7B9529742908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529732908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc */; };
 		7B95297A2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B95296F2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework */; };
 		7B9529802908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B9529722908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -106,7 +105,6 @@
 			files = (
 				7B9529B72909CC5F006F203F /* FirebaseDatabase in Frameworks */,
 				7B9529B92909CC5F006F203F /* FirebaseFirestore in Frameworks */,
-				7B64E5F8290D6A0A003F8457 /* Mockingbird in Frameworks */,
 				7B9529B32909CC5F006F203F /* FirebaseAnalytics in Frameworks */,
 				7B9529BB2909CC5F006F203F /* FirebaseStorage in Frameworks */,
 				7B9529B52909CC5F006F203F /* FirebaseAuth in Frameworks */,
@@ -472,7 +470,6 @@
 				7B9529B62909CC5F006F203F /* FirebaseDatabase */,
 				7B9529B82909CC5F006F203F /* FirebaseFirestore */,
 				7B9529BA2909CC5F006F203F /* FirebaseStorage */,
-				7B64E5F7290D6A0A003F8457 /* Mockingbird */,
 			);
 			productName = "Photo Gallery With Firebase SDK";
 			productReference = 7B95296F2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework */;
@@ -525,7 +522,6 @@
 			mainGroup = 7B9529652908BB7B006F203F;
 			packageReferences = (
 				7B9529B12909CC5F006F203F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				7B64E5F6290D6A0A003F8457 /* XCRemoteSwiftPackageReference "mockingbird" */,
 			);
 			productRefGroup = 7B9529702908BB7B006F203F /* Products */;
 			projectDirPath = "";
@@ -858,14 +854,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7B64E5F6290D6A0A003F8457 /* XCRemoteSwiftPackageReference "mockingbird" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/birdrides/mockingbird";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.20.0;
-			};
-		};
 		7B9529B12909CC5F006F203F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -877,11 +865,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7B64E5F7290D6A0A003F8457 /* Mockingbird */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7B64E5F6290D6A0A003F8457 /* XCRemoteSwiftPackageReference "mockingbird" */;
-			productName = Mockingbird;
-		};
 		7B9529B22909CC5F006F203F /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7B9529B12909CC5F006F203F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
