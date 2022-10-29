@@ -12,27 +12,38 @@ struct InjectStructExample1 {   }
 struct InjectStructExample2 {   }
 
 class DependencyInjectionTest: XCTestCase {
-    var dependencyInjection: IDependencyInjection = DependencyInjection.shared
     
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testGetExistentInstance() throws {
+        DependencyInjection.register(type: InjectStructExample1.self, instance: InjectStructExample1())
+        let result = DependencyInjection.get(InjectStructExample1.self)
+        XCTAssertEqual((result != nil), true)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testGetExactExistentInstanceSignature() throws {
+        DependencyInjection.register(type: InjectStructExample1.self, instance: InjectStructExample1())
+        let result = DependencyInjection.get(InjectStructExample1.self)
+        XCTAssertTrue(result! is InjectStructExample1)
     }
-
-    func testExample() throws {
-        self.dependencyInjection.register(type: InjectStructExample1.self, component: InjectStructExample1())
-        let result = self.dependencyInjection.resolve(InjectStructExample1.self)
-        XCTAssertEqual(result, InjectStructExample1.self)
+    
+    func testGetNotExistentInstance() throws {
+        DependencyInjection.register(type: InjectStructExample1.self, instance: InjectStructExample1())
+        let result = DependencyInjection.get(InjectStructExample2.self)
+        XCTAssertEqual((result == nil), true)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testDisposeInstance() throws {
+        DependencyInjection.register(type: InjectStructExample1.self, instance: InjectStructExample1())
+        let getResult = DependencyInjection.get(InjectStructExample1.self)
+        XCTAssertTrue(getResult! is InjectStructExample1)
+        let result = DependencyInjection.dispose(InjectStructExample1.self)
+        XCTAssertTrue(result! is InjectStructExample1)
     }
-
+    
+    func testDisposeInstanceWithInexistentInstance() throws {
+        DependencyInjection.register(type: InjectStructExample1.self, instance: InjectStructExample1())
+        let getResult = DependencyInjection.get(InjectStructExample1.self)
+        XCTAssertTrue(getResult! is InjectStructExample1)
+        let result = DependencyInjection.dispose(InjectStructExample2.self)
+        XCTAssertTrue(result == nil)
+    }
 }

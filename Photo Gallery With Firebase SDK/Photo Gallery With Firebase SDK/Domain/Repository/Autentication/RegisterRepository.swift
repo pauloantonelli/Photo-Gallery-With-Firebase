@@ -10,7 +10,7 @@ import Foundation
 struct RegisterRepository: IRegisterRepository {
     let datasource: RegisterDataSource
     
-    init(datasource: RegisterDataSource = RegisterDataSource(firebase: DependencyInjection.shared.resolve(IFirebaseService.self)!)) {
+    init(datasource: RegisterDataSource = RegisterDataSource(firebase: DependencyInjection.get(IFirebaseService.self)!)) {
         self.datasource = datasource
     }
     
