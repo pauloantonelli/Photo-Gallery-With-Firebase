@@ -22,6 +22,24 @@
 		7B01A511290B0EB3002E502A /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01A510290B0EB3002E502A /* LoginDataSource.swift */; };
 		7B01A513290B0ED7002E502A /* RegisterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01A512290B0ED7002E502A /* RegisterDataSource.swift */; };
 		7B64E5F4290D5A7B003F8457 /* LoginUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64E5F3290D5A7B003F8457 /* LoginUseCaseTest.swift */; };
+		7B70938529105B5B004C1156 /* RegisterUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70938429105B5B004C1156 /* RegisterUseCaseTest.swift */; };
+		7B70938929105CF1004C1156 /* LoginDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70938829105CF1004C1156 /* LoginDataSourceTest.swift */; };
+		7B70938B29106272004C1156 /* RegisterDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70938A29106272004C1156 /* RegisterDataSourceTest.swift */; };
+		7B70939029106AAC004C1156 /* CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70938F29106AAC004C1156 /* CameraPermission.swift */; };
+		7B70939429106B00004C1156 /* ICameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70939329106B00004C1156 /* ICameraPermission.swift */; };
+		7B70939629106B50004C1156 /* CameraPermissionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70939529106B50004C1156 /* CameraPermissionError.swift */; };
+		7B70939829106DE9004C1156 /* GalleryPermissionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70939729106DE9004C1156 /* GalleryPermissionError.swift */; };
+		7B70939A29118798004C1156 /* IGalleryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70939929118798004C1156 /* IGalleryPermission.swift */; };
+		7B70939E29118847004C1156 /* ICameraPermissionDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70939D29118847004C1156 /* ICameraPermissionDrive.swift */; };
+		7B7093A12911889E004C1156 /* IGalleryPermissionDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093A02911889E004C1156 /* IGalleryPermissionDrive.swift */; };
+		7B7093A329118926004C1156 /* GalleryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093A229118926004C1156 /* GalleryPermission.swift */; };
+		7B7093A8291189F5004C1156 /* GalleryPermissionDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093A7291189F5004C1156 /* GalleryPermissionDrive.swift */; };
+		7B7093AA29118A27004C1156 /* CameraPermissionDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093A929118A27004C1156 /* CameraPermissionDrive.swift */; };
+		7B7093B329118BA1004C1156 /* IGalleryPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093B229118BA1004C1156 /* IGalleryPermissionService.swift */; };
+		7B7093B529118BF3004C1156 /* ICameraPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093B429118BF3004C1156 /* ICameraPermissionService.swift */; };
+		7B7093B729118CD6004C1156 /* GalleryPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093B629118CD6004C1156 /* GalleryPermissionService.swift */; };
+		7B7093B929118CFB004C1156 /* CameraPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093B829118CFB004C1156 /* CameraPermissionService.swift */; };
+		7B7093BD2911A39F004C1156 /* CameraPermissionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093BC2911A39F004C1156 /* CameraPermissionTest.swift */; };
 		7B9529742908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529732908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc */; };
 		7B95297A2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B95296F2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework */; };
 		7B9529802908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B9529722908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,6 +93,24 @@
 		7B01A510290B0EB3002E502A /* LoginDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSource.swift; sourceTree = "<group>"; };
 		7B01A512290B0ED7002E502A /* RegisterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataSource.swift; sourceTree = "<group>"; };
 		7B64E5F3290D5A7B003F8457 /* LoginUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTest.swift; sourceTree = "<group>"; };
+		7B70938429105B5B004C1156 /* RegisterUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUseCaseTest.swift; sourceTree = "<group>"; };
+		7B70938829105CF1004C1156 /* LoginDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSourceTest.swift; sourceTree = "<group>"; };
+		7B70938A29106272004C1156 /* RegisterDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataSourceTest.swift; sourceTree = "<group>"; };
+		7B70938F29106AAC004C1156 /* CameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermission.swift; sourceTree = "<group>"; };
+		7B70939329106B00004C1156 /* ICameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICameraPermission.swift; sourceTree = "<group>"; };
+		7B70939529106B50004C1156 /* CameraPermissionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionError.swift; sourceTree = "<group>"; };
+		7B70939729106DE9004C1156 /* GalleryPermissionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionError.swift; sourceTree = "<group>"; };
+		7B70939929118798004C1156 /* IGalleryPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGalleryPermission.swift; sourceTree = "<group>"; };
+		7B70939D29118847004C1156 /* ICameraPermissionDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICameraPermissionDrive.swift; sourceTree = "<group>"; };
+		7B7093A02911889E004C1156 /* IGalleryPermissionDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGalleryPermissionDrive.swift; sourceTree = "<group>"; };
+		7B7093A229118926004C1156 /* GalleryPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermission.swift; sourceTree = "<group>"; };
+		7B7093A7291189F5004C1156 /* GalleryPermissionDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionDrive.swift; sourceTree = "<group>"; };
+		7B7093A929118A27004C1156 /* CameraPermissionDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionDrive.swift; sourceTree = "<group>"; };
+		7B7093B229118BA1004C1156 /* IGalleryPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGalleryPermissionService.swift; sourceTree = "<group>"; };
+		7B7093B429118BF3004C1156 /* ICameraPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICameraPermissionService.swift; sourceTree = "<group>"; };
+		7B7093B629118CD6004C1156 /* GalleryPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionService.swift; sourceTree = "<group>"; };
+		7B7093B829118CFB004C1156 /* CameraPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionService.swift; sourceTree = "<group>"; };
+		7B7093BC2911A39F004C1156 /* CameraPermissionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionTest.swift; sourceTree = "<group>"; };
 		7B95296F2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photo_Gallery_With_Firebase_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9529722908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo_Gallery_With_Firebase_SDK.h; sourceTree = "<group>"; };
 		7B9529732908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Photo_Gallery_With_Firebase_SDK.docc; sourceTree = "<group>"; };
@@ -127,6 +163,8 @@
 			children = (
 				7B01A4F5290B0834002E502A /* LoginError.swift */,
 				7B01A4F9290B0ACF002E502A /* RegisterError.swift */,
+				7B70939529106B50004C1156 /* CameraPermissionError.swift */,
+				7B70939729106DE9004C1156 /* GalleryPermissionError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -134,6 +172,8 @@
 		7B01A4FD290B0B5B002E502A /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				7B70939229106AEB004C1156 /* Gallery */,
+				7B70939129106AE5004C1156 /* Camera */,
 				7B01A500290B0B99002E502A /* Autentication */,
 			);
 			path = UseCase;
@@ -203,6 +243,8 @@
 		7B64E5F1290D5A4D003F8457 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				7B7093BB2911A369004C1156 /* Gallery */,
+				7B7093BA2911A35D004C1156 /* Camera */,
 				7B64E5F2290D5A5B003F8457 /* Autentication */,
 			);
 			path = UseCase;
@@ -212,8 +254,181 @@
 			isa = PBXGroup;
 			children = (
 				7B64E5F3290D5A7B003F8457 /* LoginUseCaseTest.swift */,
+				7B70938429105B5B004C1156 /* RegisterUseCaseTest.swift */,
 			);
 			path = Autentication;
+			sourceTree = "<group>";
+		};
+		7B70938629105CD2004C1156 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				7B70938729105CD9004C1156 /* Datasource */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		7B70938729105CD9004C1156 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				7B70938829105CF1004C1156 /* LoginDataSourceTest.swift */,
+				7B70938A29106272004C1156 /* RegisterDataSourceTest.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		7B70938D2910695C004C1156 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				7B70938F29106AAC004C1156 /* CameraPermission.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		7B70938E29106964004C1156 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093A229118926004C1156 /* GalleryPermission.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		7B70939129106AE5004C1156 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				7B70939329106B00004C1156 /* ICameraPermission.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		7B70939229106AEB004C1156 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7B70939929118798004C1156 /* IGalleryPermission.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		7B70939B2911881E004C1156 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				7B70939D29118847004C1156 /* ICameraPermissionDrive.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		7B70939C29118824004C1156 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093A02911889E004C1156 /* IGalleryPermissionDrive.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		7B70939F29118851004C1156 /* Drive */ = {
+			isa = PBXGroup;
+			children = (
+				7B70939C29118824004C1156 /* Gallery */,
+				7B70939B2911881E004C1156 /* Camera */,
+			);
+			path = Drive;
+			sourceTree = "<group>";
+		};
+		7B7093A4291189A7004C1156 /* Drive */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093A5291189D4004C1156 /* Gallery */,
+				7B7093A6291189DC004C1156 /* Camera */,
+			);
+			path = Drive;
+			sourceTree = "<group>";
+		};
+		7B7093A5291189D4004C1156 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093A7291189F5004C1156 /* GalleryPermissionDrive.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		7B7093A6291189DC004C1156 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093A929118A27004C1156 /* CameraPermissionDrive.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		7B7093AB29118AAB004C1156 /* Drive */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093AD29118ABF004C1156 /* Gallery */,
+				7B7093AC29118AB8004C1156 /* Camera */,
+			);
+			path = Drive;
+			sourceTree = "<group>";
+		};
+		7B7093AC29118AB8004C1156 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093B829118CFB004C1156 /* CameraPermissionService.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		7B7093AD29118ABF004C1156 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093B629118CD6004C1156 /* GalleryPermissionService.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		7B7093AE29118AF0004C1156 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				7B01A50B290B0D8E002E502A /* Autentication */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		7B7093AF29118B01004C1156 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093B129118B15004C1156 /* Gallery */,
+				7B7093B029118B10004C1156 /* Camera */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7B7093B029118B10004C1156 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093B429118BF3004C1156 /* ICameraPermissionService.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		7B7093B129118B15004C1156 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093B229118BA1004C1156 /* IGalleryPermissionService.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		7B7093BA2911A35D004C1156 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				7B7093BC2911A39F004C1156 /* CameraPermissionTest.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		7B7093BB2911A369004C1156 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gallery;
 			sourceTree = "<group>";
 		};
 		7B9529652908BB7B006F203F = {
@@ -237,8 +452,8 @@
 		7B9529712908BB7B006F203F /* Photo Gallery With Firebase SDK */ = {
 			isa = PBXGroup;
 			children = (
-				7B9529A929099E6A006F203F /* External */,
 				7B9529A529099E15006F203F /* Domain */,
+				7B9529A929099E6A006F203F /* External */,
 				7B9529A12908BE41006F203F /* Common */,
 				7B9529972908BD5F006F203F /* Permission */,
 				7B95298C2908BBF7006F203F /* Network */,
@@ -254,6 +469,7 @@
 		7B95297D2908BB7B006F203F /* Photo Gallery With Firebase SDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				7B70938629105CD2004C1156 /* External */,
 				7B64E5F0290D5A45003F8457 /* Domain */,
 				7BC1CA4B290C785800A178DA /* Common */,
 			);
@@ -307,6 +523,8 @@
 		7B9529A02908BE38006F203F /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				7B70938E29106964004C1156 /* Gallery */,
+				7B70938D2910695C004C1156 /* Camera */,
 				7B01A505290B0C33002E502A /* Autentication */,
 			);
 			path = UseCase;
@@ -338,6 +556,7 @@
 				7B9529A629099E2C006F203F /* Model */,
 				7B9529A02908BE38006F203F /* UseCase */,
 				7B9529A829099E40006F203F /* Repository */,
+				7B7093A4291189A7004C1156 /* Drive */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -356,6 +575,7 @@
 		7B9529A729099E32006F203F /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				7B70939F29118851004C1156 /* Drive */,
 				7B01A4FD290B0B5B002E502A /* UseCase */,
 				7B01A4FE290B0B67002E502A /* Repository */,
 			);
@@ -374,6 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9529AA29099E7A006F203F /* Protocol */,
+				7B7093AB29118AAB004C1156 /* Drive */,
 				7B9529AB29099E80006F203F /* Datasource */,
 			);
 			path = External;
@@ -382,7 +603,8 @@
 		7B9529AA29099E7A006F203F /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				7B01A50B290B0D8E002E502A /* Autentication */,
+				7B7093AF29118B01004C1156 /* Service */,
+				7B7093AE29118AF0004C1156 /* Datasource */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -557,7 +779,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B95299F2908BE14006F203F /* Network.swift in Sources */,
+				7B7093B529118BF3004C1156 /* ICameraPermissionService.swift in Sources */,
 				7B01A4FA290B0ACF002E502A /* RegisterError.swift in Sources */,
+				7B7093B729118CD6004C1156 /* GalleryPermissionService.swift in Sources */,
 				7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */,
 				7B9529902908BC9D006F203F /* Register.swift in Sources */,
 				7B9529742908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc in Sources */,
@@ -566,26 +790,38 @@
 				7B95299D2908BDEB006F203F /* NetworkPermission.swift in Sources */,
 				7B01A50D290B0DAB002E502A /* ILoginDataSource.swift in Sources */,
 				7B01A502290B0BBA002E502A /* IRegisterRepository.swift in Sources */,
+				7B7093AA29118A27004C1156 /* CameraPermissionDrive.swift in Sources */,
 				7B9529922908BCC5006F203F /* OpenCamera.swift in Sources */,
 				7B95299B2908BDC7006F203F /* GalleryPermission.swift in Sources */,
 				7B9529962908BD3D006F203F /* CheckNetwork.swift in Sources */,
+				7B70939429106B00004C1156 /* ICameraPermission.swift in Sources */,
 				7B01A4FC290B0B09002E502A /* RegisterUseCase.swift in Sources */,
 				7B01A4F6290B0834002E502A /* LoginError.swift in Sources */,
+				7B70939829106DE9004C1156 /* GalleryPermissionError.swift in Sources */,
 				7B01A513290B0ED7002E502A /* RegisterDataSource.swift in Sources */,
 				7B01A50A290B0CB9002E502A /* RegisterRepository.swift in Sources */,
+				7B70939029106AAC004C1156 /* CameraPermission.swift in Sources */,
+				7B70939E29118847004C1156 /* ICameraPermissionDrive.swift in Sources */,
 				7B01A4F1290AF56B002E502A /* IRegisterUseCase.swift in Sources */,
 				7B01A4F8290B09AA002E502A /* LoginUseCase.swift in Sources */,
 				7B9529A32908BE9E006F203F /* FirebaseService.swift in Sources */,
 				7B01A504290B0BF2002E502A /* ILoginRepository.swift in Sources */,
 				7B9529C12909D066006F203F /* Credential.swift in Sources */,
 				7B01A508290B0C5B002E502A /* LoginRepository.swift in Sources */,
+				7B70939629106B50004C1156 /* CameraPermissionError.swift in Sources */,
 				7B9529BD2909D042006F203F /* User.swift in Sources */,
 				7B9529942908BCF4006F203F /* OpenGallery.swift in Sources */,
 				7B9529BF2909D054006F203F /* Email.swift in Sources */,
+				7B7093A12911889E004C1156 /* IGalleryPermissionDrive.swift in Sources */,
+				7B70939A29118798004C1156 /* IGalleryPermission.swift in Sources */,
+				7B7093A329118926004C1156 /* GalleryPermission.swift in Sources */,
 				7B01A50F290B0E5E002E502A /* IRegisterDataSource.swift in Sources */,
 				7B01A4F3290AF58F002E502A /* ILoginUseCase.swift in Sources */,
+				7B7093B329118BA1004C1156 /* IGalleryPermissionService.swift in Sources */,
+				7B7093A8291189F5004C1156 /* GalleryPermissionDrive.swift in Sources */,
 				7B9529992908BDB0006F203F /* CameraPermission.swift in Sources */,
 				7B95298E2908BC92006F203F /* Login.swift in Sources */,
+				7B7093B929118CFB004C1156 /* CameraPermissionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,7 +829,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B70938929105CF1004C1156 /* LoginDataSourceTest.swift in Sources */,
+				7B70938529105B5B004C1156 /* RegisterUseCaseTest.swift in Sources */,
 				7BC1CA4E290C788400A178DA /* DependencyInjectionTest.swift in Sources */,
+				7B7093BD2911A39F004C1156 /* CameraPermissionTest.swift in Sources */,
+				7B70938B29106272004C1156 /* RegisterDataSourceTest.swift in Sources */,
 				7B64E5F4290D5A7B003F8457 /* LoginUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

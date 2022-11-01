@@ -1,14 +1,14 @@
 //
-//  LoginUseCaseTest.swift
+//  RegisterUseCaseTest.swift
 //  Photo Gallery With Firebase SDKTests
 //
-//  Created by Paulo Antonelli on 29/10/22.
+//  Created by Paulo Antonelli on 31/10/22.
 //
 
 import XCTest
 @testable import Photo_Gallery_With_Firebase_SDK
 
-struct LoginFirebaseMock: IFirebaseService {
+struct RegisterFirebaseMock: IFirebaseService {
     let user: User = User(id: "user123", username: "Paulo Antonelli", photoUrl: URL(string: "https://minhafoto.com/pauloantonelli")!)
     
     func login(email: String, password: String) async throws -> User {
@@ -19,45 +19,45 @@ struct LoginFirebaseMock: IFirebaseService {
         return self.user
     }
 }
-class LoginUseCaseTest: XCTestCase {
+class RegisterUseCaseTest: XCTestCase {
     var firebaseService: IFirebaseService!
-    var datasource: LoginDataSource!
-    var repository: LoginRepository!
-    var usecase: LoginUseCase!
+    var datasource: RegisterDataSource!
+    var repository: RegisterRepository!
+    var usecase: RegisterUseCase!
     let email: Email = Email(email: "pauloantonelli@zoominitcode.dev")
     let password: Password = Password(password: "abc123")
     
-    func initDependency(withMock mock: IFirebaseService) -> Void {
+    func initializeDependency(withMock mock: IFirebaseService) -> Void {
         self.firebaseService = mock
-        self.datasource = LoginDataSource(firebase: self.firebaseService)
-        self.repository = LoginRepository(datasource: datasource)
-        self.usecase = LoginUseCase(repository: repository)
+        self.datasource = RegisterDataSource(firebase: self.firebaseService)
+        self.repository = RegisterRepository(datasource: datasource)
+        self.usecase = RegisterUseCase(repository: repository)
     }
     
-    func testLoginWithoutErrors() async throws {
+    func testRegisterWithoutErrors() async throws {
         let credential: Credential = Credential(email: self.email, password: self.password)
-        self.initDependency(withMock: LoginFirebaseMock())
+        self.initializeDependency(withMock: RegisterFirebaseMock())
         let result = try await self.usecase.execute(withCredential: credential).get()
         XCTAssert(result is User)
     }
     
-    func testLoginWithEmailError() async throws {
+    func testRegisterWithEmailError() async throws {
         let credential: Credential = Credential(email: Email(), password: self.password)
-        self.initDependency(withMock: LoginFirebaseMock())
+        self.initializeDependency(withMock: RegisterFirebaseMock())
         do {
         let _ = try await self.usecase.execute(withCredential: credential).get()
         } catch {
-            XCTAssert(error is LoginErrorUseCase)
+            XCTAssert(error is RegisterErrorUseCase)
         }
     }
     
-    func testLoginWithPasswordError() async throws {
+    func testRegisterWithPasswordError() async throws {
         let credential: Credential = Credential(email: self.email, password: Password())
-        self.initDependency(withMock: LoginFirebaseMock())
+        self.initializeDependency(withMock: RegisterFirebaseMock())
         do {
         let _ = try await self.usecase.execute(withCredential: credential).get()
         } catch {
-            XCTAssert(error is LoginErrorUseCase)
+            XCTAssert(error is RegisterErrorUseCase)
         }
     }
 }
