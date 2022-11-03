@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import UIKit
+
+struct GalleryGetMediaUseCase: IGalleryGetMediaUseCase {
+    let drive: GalleryGetMediaDrive
+    
+    init(drive: GalleryGetMediaDrive) {
+        self.drive = drive
+    }
+    
+    func execute() async -> Result<UIImage, GalleryGetMediaErrorUseCase> {
+        let result = await self.drive.execute()
+        return result
+    }
+}

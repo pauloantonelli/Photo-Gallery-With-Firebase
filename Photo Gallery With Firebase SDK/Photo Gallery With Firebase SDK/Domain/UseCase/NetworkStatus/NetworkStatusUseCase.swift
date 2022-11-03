@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct NetworkStatusUseCase: INetworkStatusUseCase {
+    let drive: INetworkStatusDrive
+    
+    init(drive: INetworkStatusDrive) {
+        self.drive = drive
+    }
+    
+    func execute() async -> Result<Bool, NetworkStatusGetMediaErrorUseCase> {
+        let result = await self.drive.execute()
+        return result
+    }
+}

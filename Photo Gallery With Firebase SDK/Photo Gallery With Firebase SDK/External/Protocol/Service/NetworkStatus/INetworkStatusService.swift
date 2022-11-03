@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol INetworkStatusService {
+    func execute() async throw -> Bool
+}

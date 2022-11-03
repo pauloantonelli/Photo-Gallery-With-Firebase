@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol INetworkStatusDrive {
+    func execute() async -> Result<Bool, NetworkStatusGetMediaErrorUseCase>
+}

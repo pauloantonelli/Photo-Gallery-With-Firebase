@@ -18,4 +18,13 @@ class CameraPermissionUseCaseTest: XCTestCase {
         self.drive = CameraPermissionDrive()
         self.usecase = CameraPermissionUseCase()
     }
+    
+    func testCameraPermissionWithoutErrors() async throws {
+        self.initDependency()
+        do {
+            let result = try await self.usecase.execute().get()
+            XCTAssert(result == true)
+        } catch {
+        }
+    }
 }

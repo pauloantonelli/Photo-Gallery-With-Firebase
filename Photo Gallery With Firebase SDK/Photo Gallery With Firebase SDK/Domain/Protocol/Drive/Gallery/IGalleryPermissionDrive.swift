@@ -8,5 +8,5 @@
 import Foundation
 
 protocol IGalleryPermissionDrive {
-    func execute() -> Result<Bool, GalleryPermissionErrorUseCase>
+    func execute() async -> Result<Bool, GalleryPermissionErrorUseCase>
 }

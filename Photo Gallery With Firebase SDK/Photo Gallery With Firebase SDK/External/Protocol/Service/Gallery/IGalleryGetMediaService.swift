@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
+protocol IGalleryGetMediaService {
+    func execute() async throws -> UIImage
+}

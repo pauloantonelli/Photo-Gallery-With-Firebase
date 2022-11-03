@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
+protocol IGalleryGetMediaDrive {
+    func execute() async -> Result<UIImage, GalleryGetMediaErrorUseCase>
+}

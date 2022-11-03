@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
+protocol ICameraGetMediaDrive {
+    func execute() async -> Result<UIImage, CameraGetMediaErrorUseCase>
+}

@@ -14,9 +14,9 @@ struct GalleryPermissionDrive: IGalleryPermissionDrive {
         self.service = service
     }
     
-    func execute() -> Result<Bool, GalleryPermissionErrorUseCase> {
+    func execute() async -> Result<Bool, GalleryPermissionErrorUseCase> {
         do {
-            let result = try self.service.execute().get()
+            let result = try await self.service.execute().get()
             return .success(result)
         } catch let error as GalleryPermissionErrorService {
             return .failure(error)

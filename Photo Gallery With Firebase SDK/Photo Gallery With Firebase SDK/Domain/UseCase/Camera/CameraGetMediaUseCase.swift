@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import UIKit
+
+struct CameraGetMediaUseCase: ICameraGetMediaUseCase {
+    let drive: CameraGetMediaDrive
+    
+    init(drive: CameraGetMediaDrive) {
+        self.drive = drive
+    }
+    
+    func execute() async -> Result<UIImage, CameraGetMediaErrorUseCase> {
+        let result = await self.drive.execute()
+        return result
+    }
+}
