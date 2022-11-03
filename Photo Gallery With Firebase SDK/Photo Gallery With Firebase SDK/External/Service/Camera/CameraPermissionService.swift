@@ -8,9 +8,15 @@
 import Foundation
 import AVFoundation
 
-struct CameraPermissionService: ICameraPermissionService {    
+struct CameraPermissionService: ICameraPermissionService {
+    var authorizationStatus: AVAuthorizationStatus
+    
+    init(authorizationStatus: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)) {
+        self.authorizationStatus = authorizationStatus
+    }
+    
     func execute() async -> Result<Bool, CameraPermissionErrorService> {
-        let result = AVCaptureDevice.authorizationStatus(for: .video)
+        let result = self.authorizationStatus
         if result == .denied {
             return .success(false)
         }

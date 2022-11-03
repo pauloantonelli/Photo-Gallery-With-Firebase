@@ -9,8 +9,14 @@ import Foundation
 import PhotosUI
 
 struct GalleryPermissionService: IGalleryPermissionService {
+    var authorizationStatus: PHAuthorizationStatus
+    
+    init(authorizationStatus: PHAuthorizationStatus =  PHPhotoLibrary.authorizationStatus(for: .readWrite)) {
+        self.authorizationStatus = authorizationStatus
+    }
+    
     func execute() async -> Result<Bool, GalleryPermissionErrorService> {
-        let result = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        let result = self.authorizationStatus
         if result == .notDetermined {
             let permission = await PHPhotoLibrary.requestAuthorization(for: .readWrite)
             let result = await self.notDeterminedHandler(status: permission)
@@ -19,6 +25,7 @@ struct GalleryPermissionService: IGalleryPermissionService {
         return self.statusHandler(status: result)
     }
 }
+
 extension GalleryPermissionService {
     func notDeterminedHandler(status: PHAuthorizationStatus) async -> Result<Bool, GalleryPermissionErrorService> {
         let permission = await PHPhotoLibrary.requestAuthorization(for: .readWrite)
