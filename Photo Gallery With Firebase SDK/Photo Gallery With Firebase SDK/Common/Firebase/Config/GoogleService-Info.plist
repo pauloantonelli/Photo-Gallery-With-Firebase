@@ -19,15 +19,17 @@
 	<key>STORAGE_BUCKET</key>
 	<string>photo-gallery-swift.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
+	<key>storageBucket</key>
+	<string>gs://photo-gallery-swift.appspot.com</string>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:659220254364:ios:3afb90cc57f9f5a0e2e759</string>
 </dict>
