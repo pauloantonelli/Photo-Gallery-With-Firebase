@@ -9,46 +9,38 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class CameraGetMediaService: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    var imagePickerController: UIImagePickerController = UIImagePickerController()
-    fileprivate let allowsEditing: Bool
-    var delegate: CameraGetMediaServiceDelegate?
+class CameraMediaService: NSObject, ICameraMediaService, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    internal var imagePickerController: UIImagePickerController = UIImagePickerController()
+    internal let allowsEditing: Bool
+    var delegate: ICameraMediaServiceDelegate?
     
-    init(allowsEditing: Bool = false, isCameraPhoto: Bool = true) {
+    init(allowsEditing: Bool = false) {
         self.allowsEditing = allowsEditing
         super.init()
-        self.configureImagePickerController(isCameraPhoto: isCameraPhoto)
+        self.configureImagePickerController()
     }
     
-    func configureImagePickerController(isCameraPhoto: Bool) -> Void {
+    internal func configureImagePickerController() -> Void {
         imagePickerController.allowsEditing = self.allowsEditing
         imagePickerController.delegate = self
-        if isCameraPhoto == true {
-            imagePickerController.sourceType = .camera
-        }
+        imagePickerController.sourceType = .camera
     }
     
     func execute() -> UIImagePickerController {
         return self.imagePickerController
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
-        var newImage: UIImage!
         if let image = info[.editedImage] as? UIImage {
-            newImage = image
-            print("photo editedImage")
+            self.delegate?.updateImage(withImage: image)
         }
         if let image = info[.originalImage] as? UIImage {
-            newImage = image
-            print("photo originalImage")
+            self.delegate?.updateImage(withImage: image)
         }
-        print("photo ok")
-        self.delegate?.updateImage(withImage: newImage)
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("Cancel photo")
+    internal func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
 }

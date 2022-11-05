@@ -15,7 +15,7 @@ struct CameraPermissionService: ICameraPermissionService {
         self.authorizationStatus = authorizationStatus
     }
     
-    func execute() async -> Result<Bool, CameraPermissionErrorService> {
+    func execute() -> Result<Bool, CameraPermissionErrorService> {
         let result = self.authorizationStatus
         if result == .denied {
             return .success(false)
@@ -24,9 +24,10 @@ struct CameraPermissionService: ICameraPermissionService {
             return .success(false)
         }
         if result == .notDetermined {
-            let permission = await AVCaptureDevice.requestAccess(for: .video)
-            return .success(permission)
-        }
+            AVCaptureDevice.requestAccess(for: .video) { _ in
+                self.execute()
+            }
+        }  
         if result == .authorized {
             return .success(true)
         }

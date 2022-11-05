@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol CheckNetworkDelegate {
+    func updateNetworkStatus(status: Bool) -> Void
+}

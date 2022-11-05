@@ -16,34 +16,28 @@ class CameraPermissionServiceTest: XCTestCase {
         self.service = CameraPermissionService(authorizationStatus: authorizationStatus)
     }
     
-    func testCameraPermissionWithoutErrors() async throws {
+    func testCameraPermissionWithoutErrors() throws {
         self.initDependency()
-        let result = try await self.service.execute().get()
+        let result = try self.service.execute().get()
         XCTAssert(result == true)
     }
     
-    func testCameraPermissionWithDeniedStatus() async throws {
+    func testCameraPermissionWithDeniedStatus() throws {
         self.initDependency(authorizationStatus: AVAuthorizationStatus.denied)
-        let result = try await self.service.execute().get()
+        let result = try self.service.execute().get()
         XCTAssert(result == false)
     }
     
-    func testCameraPermissionWithRestrictedStatus() async throws {
+    func testCameraPermissionWithRestrictedStatus() throws {
         self.initDependency(authorizationStatus: AVAuthorizationStatus.restricted)
-        let result = try await self.service.execute().get()
+        let result = try self.service.execute().get()
         XCTAssert(result == false)
     }
     
-    func testCameraPermissionWithNotDeterminedStatus() async throws {
-        self.initDependency(authorizationStatus: AVAuthorizationStatus.notDetermined)
-        let result = try await self.service.execute().get()
-        XCTAssert(result == true)
-    }
-    
-    func testCameraPermissionWithFailureError() async throws {
+    func testCameraPermissionWithFailureError() throws {
         self.initDependency(authorizationStatus: AVAuthorizationStatus.init(rawValue: -1)!)
         do {
-        let _ = try await self.service.execute().get()
+        let _ = try self.service.execute().get()
         } catch {
             XCTAssert(error is CameraPermissionErrorService)
         }

@@ -11,7 +11,7 @@ import Network
 protocol ICheckNetworkService {
     var currentConnectionType: NWInterface.InterfaceType { get set }
     var hasConnection: Bool { get set }
-    var delegate: CheckNetworkDelegate? { get set }
+    var delegate: ICheckNetworkServiceDelegate? { get set }
    
     func initMonitor() -> Void
     func stopMonitor() -> Void

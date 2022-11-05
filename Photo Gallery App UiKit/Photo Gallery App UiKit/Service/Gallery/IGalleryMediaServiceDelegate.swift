@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
+protocol IGalleryMediaServiceDelegate {
+    func updateImage(withImage image: UIImage) -> Void
+}

@@ -1,5 +1,5 @@
 //
-//  OpenCamera.swift
+//  OpenCameraService.swift
 //  Photo Gallery With Firebase SDK
 //
 //  Created by Paulo Antonelli on 25/10/22.
@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class OpenCameraService: NSObject, ICameraMediaService, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class OpenCameraService: NSObject, IOpenCameraService, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     internal var imagePickerController: UIImagePickerController = UIImagePickerController()
     internal let allowsEditing: Bool
-    var delegate: ICameraMediaServiceDelegate?
+    var delegate: IOpenCameraServiceDelegate?
     
     init(allowsEditing: Bool = false) {
         self.allowsEditing = allowsEditing

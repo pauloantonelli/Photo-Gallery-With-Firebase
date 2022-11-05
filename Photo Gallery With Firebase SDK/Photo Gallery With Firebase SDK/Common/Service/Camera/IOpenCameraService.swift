@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import UIKit
+import AVFoundation
+
+protocol IOpenCameraService {
+    var imagePickerController: UIImagePickerController { get }
+    var allowsEditing: Bool { get }
+    var delegate: IOpenCameraServiceDelegate? { get set }
+    
+    func configureImagePickerController() -> Void
+    func execute() -> UIImagePickerController
+}
