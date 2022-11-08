@@ -6,7 +6,6 @@
 //
 
 import FirebaseCore
-import FirebaseFirestore
 import FirebaseAuth
 
 protocol IFirebaseService {
