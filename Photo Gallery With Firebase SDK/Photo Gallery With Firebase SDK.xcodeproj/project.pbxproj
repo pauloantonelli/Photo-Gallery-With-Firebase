@@ -21,10 +21,7 @@
 		7B01A50F290B0E5E002E502A /* IRegisterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01A50E290B0E5E002E502A /* IRegisterDataSource.swift */; };
 		7B01A511290B0EB3002E502A /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01A510290B0EB3002E502A /* LoginDataSource.swift */; };
 		7B01A513290B0ED7002E502A /* RegisterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01A512290B0ED7002E502A /* RegisterDataSource.swift */; };
-		7B4636252912A5C8002B23C6 /* CameraGetMediaServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4636242912A5C8002B23C6 /* CameraGetMediaServiceTest.swift */; };
-		7B4636272912A5D7002B23C6 /* GalleryGetMediaServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4636262912A5D7002B23C6 /* GalleryGetMediaServiceTest.swift */; };
 		7B46362D2912AD4C002B23C6 /* NetworkStatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B46362C2912AD4C002B23C6 /* NetworkStatusError.swift */; };
-		7B4636392912AF25002B23C6 /* INetworkStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4636382912AF25002B23C6 /* INetworkStatusService.swift */; };
 		7B46363F29143443002B23C6 /* ICheckNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B46363E29143443002B23C6 /* ICheckNetworkService.swift */; };
 		7B46364429145320002B23C6 /* INetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B46364329145320002B23C6 /* INetwork.swift */; };
 		7B46364729154D65002B23C6 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B46364629154D65002B23C6 /* NetworkTest.swift */; };
@@ -80,20 +77,6 @@
 		7BF8812F2911B33400E30301 /* GalleryPermissionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8812E2911B33400E30301 /* GalleryPermissionTest.swift */; };
 		7BF881342911B5CD00E30301 /* CameraPermissionServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF881332911B5CD00E30301 /* CameraPermissionServiceTest.swift */; };
 		7BF8813629126BBB00E30301 /* GalleryPermissionServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8813529126BBB00E30301 /* GalleryPermissionServiceTest.swift */; };
-		7BF88138291271E400E30301 /* CameraGetMediaUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF88137291271E400E30301 /* CameraGetMediaUseCase.swift */; };
-		7BF8813A2912721300E30301 /* ICameraGetMediaUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF881392912721300E30301 /* ICameraGetMediaUseCase.swift */; };
-		7BF8813C2912724400E30301 /* CameraGetMediaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8813B2912724400E30301 /* CameraGetMediaError.swift */; };
-		7BF8813E2912727600E30301 /* GalleryGetMediaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8813D2912727600E30301 /* GalleryGetMediaError.swift */; };
-		7BF88140291274F300E30301 /* IGalleryGetMediaUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8813F291274F300E30301 /* IGalleryGetMediaUseCase.swift */; };
-		7BF881422912757300E30301 /* GalleryGetMediaUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF881412912757300E30301 /* GalleryGetMediaUseCase.swift */; };
-		7BF881442912760000E30301 /* CameraGetMediaDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF881432912760000E30301 /* CameraGetMediaDrive.swift */; };
-		7BF881462912767900E30301 /* ICameraGetMediaDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF881452912767900E30301 /* ICameraGetMediaDrive.swift */; };
-		7BF88148291276CB00E30301 /* IGalleryGetMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF88147291276CB00E30301 /* IGalleryGetMedia.swift */; };
-		7BF8814A2912770400E30301 /* GalleryGetMediaDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF881492912770400E30301 /* GalleryGetMediaDrive.swift */; };
-		7BF8814C291277D900E30301 /* CameraGetMediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8814B291277D900E30301 /* CameraGetMediaService.swift */; };
-		7BF8814E291277F700E30301 /* GalleryGetMediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8814D291277F700E30301 /* GalleryGetMediaService.swift */; };
-		7BF881502912781A00E30301 /* ICameraGetMediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8814F2912781A00E30301 /* ICameraGetMediaService.swift */; };
-		7BF881522912782600E30301 /* IGalleryGetMediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF881512912782600E30301 /* IGalleryGetMediaService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,10 +104,7 @@
 		7B01A50E290B0E5E002E502A /* IRegisterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRegisterDataSource.swift; sourceTree = "<group>"; };
 		7B01A510290B0EB3002E502A /* LoginDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSource.swift; sourceTree = "<group>"; };
 		7B01A512290B0ED7002E502A /* RegisterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataSource.swift; sourceTree = "<group>"; };
-		7B4636242912A5C8002B23C6 /* CameraGetMediaServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGetMediaServiceTest.swift; sourceTree = "<group>"; };
-		7B4636262912A5D7002B23C6 /* GalleryGetMediaServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGetMediaServiceTest.swift; sourceTree = "<group>"; };
 		7B46362C2912AD4C002B23C6 /* NetworkStatusError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusError.swift; sourceTree = "<group>"; };
-		7B4636382912AF25002B23C6 /* INetworkStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetworkStatusService.swift; sourceTree = "<group>"; };
 		7B46363E29143443002B23C6 /* ICheckNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICheckNetworkService.swift; sourceTree = "<group>"; };
 		7B46364329145320002B23C6 /* INetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetwork.swift; sourceTree = "<group>"; };
 		7B46364629154D65002B23C6 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
@@ -176,20 +156,6 @@
 		7BF8812E2911B33400E30301 /* GalleryPermissionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionTest.swift; sourceTree = "<group>"; };
 		7BF881332911B5CD00E30301 /* CameraPermissionServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionServiceTest.swift; sourceTree = "<group>"; };
 		7BF8813529126BBB00E30301 /* GalleryPermissionServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionServiceTest.swift; sourceTree = "<group>"; };
-		7BF88137291271E400E30301 /* CameraGetMediaUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGetMediaUseCase.swift; sourceTree = "<group>"; };
-		7BF881392912721300E30301 /* ICameraGetMediaUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICameraGetMediaUseCase.swift; sourceTree = "<group>"; };
-		7BF8813B2912724400E30301 /* CameraGetMediaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGetMediaError.swift; sourceTree = "<group>"; };
-		7BF8813D2912727600E30301 /* GalleryGetMediaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGetMediaError.swift; sourceTree = "<group>"; };
-		7BF8813F291274F300E30301 /* IGalleryGetMediaUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGalleryGetMediaUseCase.swift; sourceTree = "<group>"; };
-		7BF881412912757300E30301 /* GalleryGetMediaUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGetMediaUseCase.swift; sourceTree = "<group>"; };
-		7BF881432912760000E30301 /* CameraGetMediaDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGetMediaDrive.swift; sourceTree = "<group>"; };
-		7BF881452912767900E30301 /* ICameraGetMediaDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICameraGetMediaDrive.swift; sourceTree = "<group>"; };
-		7BF88147291276CB00E30301 /* IGalleryGetMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGalleryGetMedia.swift; sourceTree = "<group>"; };
-		7BF881492912770400E30301 /* GalleryGetMediaDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGetMediaDrive.swift; sourceTree = "<group>"; };
-		7BF8814B291277D900E30301 /* CameraGetMediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGetMediaService.swift; sourceTree = "<group>"; };
-		7BF8814D291277F700E30301 /* GalleryGetMediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGetMediaService.swift; sourceTree = "<group>"; };
-		7BF8814F2912781A00E30301 /* ICameraGetMediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICameraGetMediaService.swift; sourceTree = "<group>"; };
-		7BF881512912782600E30301 /* IGalleryGetMediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGalleryGetMediaService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,8 +189,6 @@
 				7B01A4F9290B0ACF002E502A /* RegisterError.swift */,
 				7B70939529106B50004C1156 /* CameraPermissionError.swift */,
 				7B70939729106DE9004C1156 /* GalleryPermissionError.swift */,
-				7BF8813B2912724400E30301 /* CameraGetMediaError.swift */,
-				7BF8813D2912727600E30301 /* GalleryGetMediaError.swift */,
 				7B46362C2912AD4C002B23C6 /* NetworkStatusError.swift */,
 			);
 			path = Error;
@@ -291,14 +255,6 @@
 				7B01A50E290B0E5E002E502A /* IRegisterDataSource.swift */,
 			);
 			path = Autentication;
-			sourceTree = "<group>";
-		};
-		7B4636372912AF10002B23C6 /* NetworkStatus */ = {
-			isa = PBXGroup;
-			children = (
-				7B4636382912AF25002B23C6 /* INetworkStatusService.swift */,
-			);
-			path = NetworkStatus;
 			sourceTree = "<group>";
 		};
 		7B46363D29143435002B23C6 /* CheckNetwork */ = {
@@ -368,7 +324,6 @@
 			isa = PBXGroup;
 			children = (
 				7B70938F29106AAC004C1156 /* CameraPermissionUseCase.swift */,
-				7BF88137291271E400E30301 /* CameraGetMediaUseCase.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -377,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				7B7093A229118926004C1156 /* GalleryPermissionUseCase.swift */,
-				7BF881412912757300E30301 /* GalleryGetMediaUseCase.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -386,7 +340,6 @@
 			isa = PBXGroup;
 			children = (
 				7B70939329106B00004C1156 /* ICameraPermissionUseCase.swift */,
-				7BF881392912721300E30301 /* ICameraGetMediaUseCase.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -395,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				7B70939929118798004C1156 /* IGalleryPermissionUseCase.swift */,
-				7BF8813F291274F300E30301 /* IGalleryGetMediaUseCase.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -404,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				7B70939D29118847004C1156 /* ICameraPermissionDrive.swift */,
-				7BF881452912767900E30301 /* ICameraGetMediaDrive.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -413,7 +364,6 @@
 			isa = PBXGroup;
 			children = (
 				7B7093A02911889E004C1156 /* IGalleryPermissionDrive.swift */,
-				7BF88147291276CB00E30301 /* IGalleryGetMedia.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -440,7 +390,6 @@
 			isa = PBXGroup;
 			children = (
 				7B7093A7291189F5004C1156 /* GalleryPermissionDrive.swift */,
-				7BF881492912770400E30301 /* GalleryGetMediaDrive.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -449,7 +398,6 @@
 			isa = PBXGroup;
 			children = (
 				7B7093A929118A27004C1156 /* CameraPermissionDrive.swift */,
-				7BF881432912760000E30301 /* CameraGetMediaDrive.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -467,7 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				7B7093B829118CFB004C1156 /* CameraPermissionService.swift */,
-				7BF8814B291277D900E30301 /* CameraGetMediaService.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -476,7 +423,6 @@
 			isa = PBXGroup;
 			children = (
 				7B7093B629118CD6004C1156 /* GalleryPermissionService.swift */,
-				7BF8814D291277F700E30301 /* GalleryGetMediaService.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -492,7 +438,6 @@
 		7B7093AF29118B01004C1156 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				7B4636372912AF10002B23C6 /* NetworkStatus */,
 				7B7093B129118B15004C1156 /* Gallery */,
 				7B7093B029118B10004C1156 /* Camera */,
 			);
@@ -503,7 +448,6 @@
 			isa = PBXGroup;
 			children = (
 				7B7093B429118BF3004C1156 /* ICameraPermissionService.swift */,
-				7BF8814F2912781A00E30301 /* ICameraGetMediaService.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -512,7 +456,6 @@
 			isa = PBXGroup;
 			children = (
 				7B7093B229118BA1004C1156 /* IGalleryPermissionService.swift */,
-				7BF881512912782600E30301 /* IGalleryGetMediaService.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -606,8 +549,8 @@
 		7B95298C2908BBF7006F203F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7B46364329145320002B23C6 /* INetwork.swift */,
 				7B95299E2908BE14006F203F /* Network.swift */,
+				7B46364329145320002B23C6 /* INetwork.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -787,7 +730,6 @@
 			isa = PBXGroup;
 			children = (
 				7BF881332911B5CD00E30301 /* CameraPermissionServiceTest.swift */,
-				7B4636242912A5C8002B23C6 /* CameraGetMediaServiceTest.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -796,7 +738,6 @@
 			isa = PBXGroup;
 			children = (
 				7BF8813529126BBB00E30301 /* GalleryPermissionServiceTest.swift */,
-				7B4636262912A5D7002B23C6 /* GalleryGetMediaServiceTest.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -921,13 +862,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BF8813C2912724400E30301 /* CameraGetMediaError.swift in Sources */,
 				7B95299F2908BE14006F203F /* Network.swift in Sources */,
 				7B7093B529118BF3004C1156 /* ICameraPermissionService.swift in Sources */,
 				7B01A4FA290B0ACF002E502A /* RegisterError.swift in Sources */,
 				7B7093B729118CD6004C1156 /* GalleryPermissionService.swift in Sources */,
-				7BF881442912760000E30301 /* CameraGetMediaDrive.swift in Sources */,
-				7BF881522912782600E30301 /* IGalleryGetMediaService.swift in Sources */,
 				7BAE04DE2917227F004AA68A /* IMediaPermissionService.swift in Sources */,
 				7B46362D2912AD4C002B23C6 /* NetworkStatusError.swift in Sources */,
 				7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */,
@@ -939,7 +877,6 @@
 				7B01A502290B0BBA002E502A /* IRegisterRepository.swift in Sources */,
 				7B7093AA29118A27004C1156 /* CameraPermissionDrive.swift in Sources */,
 				7B9529922908BCC5006F203F /* OpenCameraService.swift in Sources */,
-				7BF8813E2912727600E30301 /* GalleryGetMediaError.swift in Sources */,
 				7B9529962908BD3D006F203F /* CheckNetworkService.swift in Sources */,
 				7B46364429145320002B23C6 /* INetwork.swift in Sources */,
 				7B70939429106B00004C1156 /* ICameraPermissionUseCase.swift in Sources */,
@@ -948,9 +885,6 @@
 				7BAE04D829171FEB004AA68A /* IOpenGalleryServiceDelegate.swift in Sources */,
 				7B01A4F6290B0834002E502A /* LoginError.swift in Sources */,
 				7B70939829106DE9004C1156 /* GalleryPermissionError.swift in Sources */,
-				7BF88140291274F300E30301 /* IGalleryGetMediaUseCase.swift in Sources */,
-				7BF881502912781A00E30301 /* ICameraGetMediaService.swift in Sources */,
-				7BF8813A2912721300E30301 /* ICameraGetMediaUseCase.swift in Sources */,
 				7B01A513290B0ED7002E502A /* RegisterDataSource.swift in Sources */,
 				7B01A50A290B0CB9002E502A /* RegisterRepository.swift in Sources */,
 				7B70939029106AAC004C1156 /* CameraPermissionUseCase.swift in Sources */,
@@ -960,12 +894,8 @@
 				7B01A4F8290B09AA002E502A /* LoginUseCase.swift in Sources */,
 				7B9529A32908BE9E006F203F /* FirebaseService.swift in Sources */,
 				7B01A504290B0BF2002E502A /* ILoginRepository.swift in Sources */,
-				7BF881462912767900E30301 /* ICameraGetMediaDrive.swift in Sources */,
 				7B9529C12909D066006F203F /* Credential.swift in Sources */,
-				7BF8814C291277D900E30301 /* CameraGetMediaService.swift in Sources */,
 				7B01A508290B0C5B002E502A /* LoginRepository.swift in Sources */,
-				7BF881422912757300E30301 /* GalleryGetMediaUseCase.swift in Sources */,
-				7BF88138291271E400E30301 /* CameraGetMediaUseCase.swift in Sources */,
 				7B46363F29143443002B23C6 /* ICheckNetworkService.swift in Sources */,
 				7B70939629106B50004C1156 /* CameraPermissionError.swift in Sources */,
 				7B9529BD2909D042006F203F /* User.swift in Sources */,
@@ -975,18 +905,14 @@
 				7B9529BF2909D054006F203F /* Email.swift in Sources */,
 				7B7093A12911889E004C1156 /* IGalleryPermissionDrive.swift in Sources */,
 				7B70939A29118798004C1156 /* IGalleryPermissionUseCase.swift in Sources */,
-				7BF88148291276CB00E30301 /* IGalleryGetMedia.swift in Sources */,
 				7B7093A329118926004C1156 /* GalleryPermissionUseCase.swift in Sources */,
 				7B01A50F290B0E5E002E502A /* IRegisterDataSource.swift in Sources */,
-				7BF8814E291277F700E30301 /* GalleryGetMediaService.swift in Sources */,
 				7B01A4F3290AF58F002E502A /* ILoginUseCase.swift in Sources */,
 				7B7093B329118BA1004C1156 /* IGalleryPermissionService.swift in Sources */,
 				7B7093A8291189F5004C1156 /* GalleryPermissionDrive.swift in Sources */,
 				7B9529992908BDB0006F203F /* MediaPermissionService.swift in Sources */,
 				7B95298E2908BC92006F203F /* Login.swift in Sources */,
 				7B7093B929118CFB004C1156 /* CameraPermissionService.swift in Sources */,
-				7B4636392912AF25002B23C6 /* INetworkStatusService.swift in Sources */,
-				7BF8814A2912770400E30301 /* GalleryGetMediaDrive.swift in Sources */,
 				7BAE04E0291723BE004AA68A /* IMediaPermissionServiceDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -999,11 +925,9 @@
 				7B70938529105B5B004C1156 /* RegisterUseCaseTest.swift in Sources */,
 				7BC1CA4E290C788400A178DA /* DependencyInjectionTest.swift in Sources */,
 				7B7093BD2911A39F004C1156 /* CameraPermissionUseCaseTest.swift in Sources */,
-				7B4636252912A5C8002B23C6 /* CameraGetMediaServiceTest.swift in Sources */,
 				7B70938B29106272004C1156 /* RegisterDataSourceTest.swift in Sources */,
 				7BF881342911B5CD00E30301 /* CameraPermissionServiceTest.swift in Sources */,
 				7B64E5F4290D5A7B003F8457 /* LoginUseCaseTest.swift in Sources */,
-				7B4636272912A5D7002B23C6 /* GalleryGetMediaServiceTest.swift in Sources */,
 				7BF8813629126BBB00E30301 /* GalleryPermissionServiceTest.swift in Sources */,
 				7B46364729154D65002B23C6 /* NetworkTest.swift in Sources */,
 				7BF8812F2911B33400E30301 /* GalleryPermissionTest.swift in Sources */,

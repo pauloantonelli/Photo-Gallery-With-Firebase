@@ -16,7 +16,7 @@ struct CameraPermissionDrive: ICameraPermissionDrive {
     
     func execute() async -> Result<Bool, CameraPermissionErrorUseCase> {
         do {
-            let result = try await self.service.execute().get()
+            let result = try self.service.execute().get()
             return .success(result)
         } catch let error as CameraPermissionErrorService {
             return .failure(error)

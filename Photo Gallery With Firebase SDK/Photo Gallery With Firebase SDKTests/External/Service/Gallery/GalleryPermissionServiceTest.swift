@@ -17,7 +17,8 @@ class GalleryPermissionServiceTest: XCTestCase {
     }
     
     func testGalleryPermissionWithoutErrors() throws {
-        self.initDependency()
+        let mediaPermissionService = MediaPermissionService(authorizationStatus: AVAuthorizationStatus.authorized)
+        self.initDependency(mediaPermissionService: mediaPermissionService)
         let result = try self.service.execute().get()
         XCTAssert(result == true)
     }
