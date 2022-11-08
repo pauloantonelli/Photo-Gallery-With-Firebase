@@ -9,7 +9,7 @@ import XCTest
 @testable import Photo_Gallery_With_Firebase_SDK
 
 struct GalleryPermissionServiceMock: IGalleryPermissionService {
-    func execute() async -> Result<Bool, GalleryPermissionErrorService> {
+    func execute() throws -> Result<Bool, GalleryPermissionErrorService> {
         return .success(true)
     }
 }

@@ -9,28 +9,17 @@ import Foundation
 import AVFoundation
 
 struct CameraPermissionService: ICameraPermissionService {
-    var authorizationStatus: AVAuthorizationStatus
+    var mediaPermissionService: MediaPermissionService
     
-    init(authorizationStatus: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)) {
-        self.authorizationStatus = authorizationStatus
+    init(mediaPermissionService: MediaPermissionService = MediaPermissionService()) {
+        self.mediaPermissionService = mediaPermissionService
     }
     
-    func execute() -> Result<Bool, CameraPermissionErrorService> {
-        let result = self.authorizationStatus
-        if result == .denied {
-            return .success(false)
+    func execute() throws -> Result<Bool, CameraPermissionErrorService> {
+        let result = self.mediaPermissionService.execute()
+        if result == nil {
+            throw CameraPermissionErrorService(message: "Error on Camera Permission Request: Permission Denied")
         }
-        if result == .restricted {
-            return .success(false)
-        }
-        if result == .notDetermined {
-            AVCaptureDevice.requestAccess(for: .video) { _ in
-                self.execute()
-            }
-        }  
-        if result == .authorized {
-            return .success(true)
-        }
-        return .failure(CameraPermissionErrorService(message: "Error on Camera Permission Request"))
+        return .success(result!)
     }
 }

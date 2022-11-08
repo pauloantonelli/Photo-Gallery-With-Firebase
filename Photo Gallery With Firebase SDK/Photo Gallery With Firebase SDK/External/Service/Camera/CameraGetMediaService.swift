@@ -9,25 +9,18 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class CameraGetMediaService: NSObject, ICameraGetMediaService {
-    let captureSession: AVCaptureSession
-    let capturePhotoOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
+struct CameraGetMediaService: ICameraGetMediaService, IOpenCameraServiceDelegate {
     var image: UIImage?
+    var delegate: IOpenCameraServiceDelegate?
+    let openCameraService: OpenCameraService
     
-    init(captureSession: AVCaptureSession = AVCaptureSession()) {
-        self.captureSession = captureSession
-        super.init()
-        self.configHandler()
+    init(openCameraService: OpenCameraService = OpenCameraService()) {
+        self.openCameraService = openCameraService
+        self.delegate = self
     }
     
-    func execute() async throws -> UIImage {
-        let isAvaliableCamera = await UIImagePickerController.isSourceTypeAvailable(.camera)
+    func execute() throws -> UIImage {
         do {
-            if isAvaliableCamera == false {
-                throw CameraGetMediaErrorService(message: "Error on CameraGetMediaService: isAvaliableCamera \(isAvaliableCamera)")
-            }
-            self.captureSession.startRunning()
-            self.photoHandler()
             guard let image = self.image else {
                 throw CameraGetMediaErrorService(message: "Error on CameraGetMediaService: image not found")
             }
@@ -36,38 +29,18 @@ class CameraGetMediaService: NSObject, ICameraGetMediaService {
             throw CameraGetMediaErrorService(message: "Error on CameraGetMediaService \(error.localizedDescription)")
         }
     }
+    
+    func openCamera() {
+        let result = self.openCameraService.execute()
+    }
 }
-
-extension CameraGetMediaService: AVCapturePhotoCaptureDelegate {
-    func configHandler() -> Void {
-        if let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) {
-            do {
-                let input = try AVCaptureDeviceInput(device: captureDevice)
-                if self.captureSession.canAddInput(input) {
-                    self.captureSession.addInput(input)
-                }
-            } catch {
-                print("Error to set input device: \(error.localizedDescription)")
-            }
-            if self.captureSession.canAddOutput(self.capturePhotoOutput) {
-                self.captureSession.addOutput(self.capturePhotoOutput)
-            }
-        } else {
-            print("Error to find capture device")
-        }
+extension CameraGetMediaService {
+    func openCamera() -> UIImagePickerController {
+        <#code#>
     }
     
-    func photoHandler() -> Void {
-        let photoSettings = AVCapturePhotoSettings()
-        if let photoPreviewType = photoSettings.availablePreviewPhotoPixelFormatTypes.first {
-            photoSettings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String : photoPreviewType]
-            self.capturePhotoOutput.capturePhoto(with: photoSettings, delegate: self)
-        }
-    }
-    
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        guard let imageData = photo.fileDataRepresentation() else { return }
-        let imagePreview = UIImage(data: imageData)
-        self.image = imagePreview
+    mutating func updateImage(withImage image: UIImage) {
+        self.image = image
+        self.execute()
     }
 }

@@ -12,5 +12,5 @@ protocol IMediaPermissionService {
     var authorizationStatus: AVAuthorizationStatus { get }
     var delegate: IMediaPermissionServiceDelegate? { get }
     
-    func execute() -> Bool
+    func execute() -> Bool?
 }

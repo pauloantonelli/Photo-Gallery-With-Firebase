@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol ICameraGetMediaService {
-    func execute() async throws -> UIImage
+    func execute() throws -> UIImage
 }

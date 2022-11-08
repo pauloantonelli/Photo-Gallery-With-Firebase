@@ -16,11 +16,11 @@ struct MediaPermissionService: IMediaPermissionService  {
         self.authorizationStatus = authorizationStatus
     }
     
-    func execute() -> Bool {
+    func execute() -> Bool? {
         let result = self.authorizationStatus
         if result == .denied {
             self.delegate?.updatePermitionStatus(status: false)
-            return false
+            return nil
         }
         if result == .restricted {
             self.delegate?.updatePermitionStatus(status: false)
@@ -36,6 +36,6 @@ struct MediaPermissionService: IMediaPermissionService  {
             return true
         }
         self.delegate?.updatePermitionStatus(status: false)
-        return false
+        return nil
     }
 }

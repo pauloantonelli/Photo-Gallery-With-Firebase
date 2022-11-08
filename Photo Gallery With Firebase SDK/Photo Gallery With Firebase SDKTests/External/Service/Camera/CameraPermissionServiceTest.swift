@@ -12,8 +12,8 @@ import AVFoundation
 class CameraPermissionServiceTest: XCTestCase {
     var service: CameraPermissionService!
    
-    func initDependency(authorizationStatus: AVAuthorizationStatus = AVAuthorizationStatus.authorized) -> Void {
-        self.service = CameraPermissionService(authorizationStatus: authorizationStatus)
+    func initDependency(mediaPermissionService: MediaPermissionService = MediaPermissionService()) -> Void {
+        self.service = CameraPermissionService(mediaPermissionService: mediaPermissionService)
     }
     
     func testCameraPermissionWithoutErrors() throws {
@@ -23,19 +23,28 @@ class CameraPermissionServiceTest: XCTestCase {
     }
     
     func testCameraPermissionWithDeniedStatus() throws {
-        self.initDependency(authorizationStatus: AVAuthorizationStatus.denied)
-        let result = try self.service.execute().get()
-        XCTAssert(result == false)
+        let mediaPermissionService = MediaPermissionService(authorizationStatus: AVAuthorizationStatus.denied)
+        self.initDependency(mediaPermissionService: mediaPermissionService)
+        do {
+            let _ = try self.service.execute().get()
+        } catch {
+            XCTAssert(error is CameraPermissionErrorService)
+        }
     }
     
     func testCameraPermissionWithRestrictedStatus() throws {
-        self.initDependency(authorizationStatus: AVAuthorizationStatus.restricted)
-        let result = try self.service.execute().get()
-        XCTAssert(result == false)
+        let mediaPermissionService = MediaPermissionService(authorizationStatus: AVAuthorizationStatus.restricted)
+        self.initDependency(mediaPermissionService: mediaPermissionService)
+        do {
+            let _ = try self.service.execute().get()
+        } catch {
+            XCTAssert(error is CameraPermissionErrorService)
+        }
     }
     
     func testCameraPermissionWithFailureError() throws {
-        self.initDependency(authorizationStatus: AVAuthorizationStatus.init(rawValue: -1)!)
+        let mediaPermissionService = MediaPermissionService(authorizationStatus: AVAuthorizationStatus.init(rawValue: -1)!)
+        self.initDependency(mediaPermissionService: mediaPermissionService)
         do {
         let _ = try self.service.execute().get()
         } catch {
