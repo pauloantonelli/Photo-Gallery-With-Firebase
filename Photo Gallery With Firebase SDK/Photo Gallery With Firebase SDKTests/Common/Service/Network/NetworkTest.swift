@@ -9,10 +9,10 @@ import XCTest
 @testable import Photo_Gallery_With_Firebase_SDK
 
 class NetworkTest: XCTestCase {
-    var network: INetwork!
+    var network: INetworkService!
     
     func initDependency() -> Void {
-        self.network = Network(baseUrl: "https://jsonplaceholder.typicode.com")
+        self.network = NetworkService(baseUrl: "https://jsonplaceholder.typicode.com")
     }
     
     func testGetMethod() async throws {
