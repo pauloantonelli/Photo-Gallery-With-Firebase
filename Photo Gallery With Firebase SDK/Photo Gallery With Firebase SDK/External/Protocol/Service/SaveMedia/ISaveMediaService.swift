@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
+protocol ISaveMediaService {
+    func execute(fileName: String, image: UIImage) async throws -> Bool
+}

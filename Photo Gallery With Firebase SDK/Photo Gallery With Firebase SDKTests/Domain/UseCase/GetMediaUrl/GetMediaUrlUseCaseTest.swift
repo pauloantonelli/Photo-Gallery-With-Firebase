@@ -14,7 +14,7 @@ struct GetMediaUrlDriveMock: IGetMediaUrlDrive {
     }
 }
 
-class GetMediaUrlTest: XCTestCase {
+class GetMediaUrlUseCaseTest: XCTestCase {
     var usecase: IGetMediaUrlUseCase!
     
     func initDependency() -> Void {

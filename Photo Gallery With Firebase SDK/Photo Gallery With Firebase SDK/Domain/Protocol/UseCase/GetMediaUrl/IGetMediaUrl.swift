@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol IGetMediaUrlUseCase {
+    func execute(imageName: String, imageExtension: String) async -> Result<URL, GetMediaUrlErrorUseCase>
+}

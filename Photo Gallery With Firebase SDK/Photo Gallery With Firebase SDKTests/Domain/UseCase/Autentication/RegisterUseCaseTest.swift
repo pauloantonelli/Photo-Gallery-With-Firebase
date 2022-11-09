@@ -45,7 +45,7 @@ class RegisterUseCaseTest: XCTestCase {
         let credential: Credential = Credential(email: Email(), password: self.password)
         self.initializeDependency(withMock: RegisterFirebaseMock())
         do {
-        let _ = try await self.usecase.execute(withCredential: credential).get()
+            let _ = try await self.usecase.execute(withCredential: credential).get()
         } catch {
             XCTAssert(error is RegisterErrorUseCase)
         }
@@ -55,7 +55,7 @@ class RegisterUseCaseTest: XCTestCase {
         let credential: Credential = Credential(email: self.email, password: Password())
         self.initializeDependency(withMock: RegisterFirebaseMock())
         do {
-        let _ = try await self.usecase.execute(withCredential: credential).get()
+            let _ = try await self.usecase.execute(withCredential: credential).get()
         } catch {
             XCTAssert(error is RegisterErrorUseCase)
         }

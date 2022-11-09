@@ -6,30 +6,134 @@
 //
 
 import XCTest
+import FirebaseStorage
+@testable import Photo_Gallery_With_Firebase_SDK
+
+struct SaveMediaFirebaseStorageServiceMock: IFirebaseStorageService {
+    func add(imagePath: String, imageName: String, imageExtension: String) async -> Bool? {
+        return true
+    }
+    
+    func get(imageName: String, imageExtension: String) async -> URL? {
+        return nil
+    }
+    
+    func delete(imageName: String, imageExtension: String) async -> Bool {
+        return true
+    }
+    
+    func download(fromURL: String, completion: @escaping (UIImage?) -> Void) {
+        completion(nil)
+    }
+    
+    func listMedia(completion: @escaping (Array<UIImage>) -> Void) async {
+        completion([])
+    }
+    
+    func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {
+        return StorageMetadata()
+    }
+}
+struct SaveMediaFirebaseStorageServiceErrorMock: IFirebaseStorageService {
+    func add(imagePath: String, imageName: String, imageExtension: String) async -> Bool? {
+        return nil
+    }
+    
+    func get(imageName: String, imageExtension: String) async -> URL? {
+        return nil
+    }
+    
+    func delete(imageName: String, imageExtension: String) async -> Bool {
+        return true
+    }
+    
+    func download(fromURL: String, completion: @escaping (UIImage?) -> Void) {
+        completion(nil)
+    }
+    
+    func listMedia(completion: @escaping (Array<UIImage>) -> Void) async {
+        completion([])
+    }
+    
+    func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {
+        return StorageMetadata()
+    }
+}
+struct SaveMediaMediaFileServiceMock: IMediaFileService {
+    var documentsUrl: URL
+    
+    func save(fileName: String, image: UIImage) -> String? {
+        return fileName
+    }
+    
+    func load(fileName: String) -> UIImage? {
+        return nil
+    }
+    
+    func filePath(fileName: String) -> URL {
+        return URL(fileURLWithPath: fileName)
+    }
+}
+struct SaveMediaMediaFileServiceErrorMock: IMediaFileService {
+    var documentsUrl: URL
+    
+    func save(fileName: String, image: UIImage) -> String? {
+        return nil
+    }
+    
+    func load(fileName: String) -> UIImage? {
+        return nil
+    }
+    
+    func filePath(fileName: String) -> URL {
+        return URL(fileURLWithPath: fileName)
+    }
+}
 
 class SaveMediaServiceTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var mediaFileService: IMediaFileService!
+    var firebaseStorageService: IFirebaseStorageService!
+    var service: ISaveMediaService!
+    
+    func initDependecy(
+        mediaFileService: IMediaFileService = SaveMediaMediaFileServiceMock(documentsUrl: URL(fileURLWithPath: "//")),
+        firebaseStorageService: IFirebaseStorageService = SaveMediaFirebaseStorageServiceMock()
+    ) -> Void {
+        self.service = SaveMediaService(
+            mediaFileService: mediaFileService,
+            firebaseStorageService: firebaseStorageService
+        )
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testServiceWithoutError() async throws {
+        self.initDependecy()
+        let filePath: String = "test-file"
+        let image: UIImage = UIImage(systemName: "pencil")!
+        let result = try await self.service.execute(fileName: filePath, image: image)
+        XCTAssert(result == true)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testServiceWithFilePathError() async throws {
+        self.initDependecy(
+            mediaFileService: SaveMediaMediaFileServiceErrorMock(documentsUrl: URL(fileURLWithPath: "//")))
+        let filePath: String = "test-file"
+        let image: UIImage = UIImage(systemName: "pencil")!
+        do {
+            let _ = try await self.service.execute(fileName: filePath, image: image)
+        } catch {
+            XCTAssert(error is SaveMediaErrorDrive)
         }
     }
-
+    
+    func testServiceWithAddError() async throws {
+        self.initDependecy(
+            firebaseStorageService: SaveMediaFirebaseStorageServiceErrorMock())
+        let filePath: String = "test-file"
+        let image: UIImage = UIImage(systemName: "pencil")!
+        do {
+            let _ = try await self.service.execute(fileName: filePath, image: image)
+        } catch {
+            XCTAssert(error is SaveMediaErrorDrive)
+        }
+    }
 }

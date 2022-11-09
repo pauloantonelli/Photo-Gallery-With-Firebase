@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+
+protocol GetMediaUrlError: Error {
+    var message: String { get }
+}
+
+class GetMediaUrlErrorUseCase: GetMediaUrlError {
+    let message: String
+    init(message: String) {
+        self.message = message
+    }
+}
+
+class GetMediaUrlErrorDrive: GetMediaUrlErrorUseCase {
+    override init(message: String) {
+        super.init(message: message)
+    }
+}
+
+class GetMediaUrlErrorService: GetMediaUrlErrorDrive {
+    override init(message: String) {
+        super.init(message: message)
+    }
+}

@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import UIKit
+
+protocol IMediaFileService {
+    var documentsUrl: URL { get }
+    
+    func save(fileName: String, image: UIImage) -> String?
+    func load(fileName: String) -> UIImage?
+    func filePath(fileName: String) -> URL
+}

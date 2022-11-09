@@ -6,30 +6,79 @@
 //
 
 import XCTest
+import FirebaseStorage
+@testable import Photo_Gallery_With_Firebase_SDK
+
+struct GetMediaUrlFirebaseStorageServiceMock: IFirebaseStorageService {
+    func add(imagePath: String, imageName: String, imageExtension: String) async -> Bool? {
+        return true
+    }
+    
+    func get(imageName: String, imageExtension: String) async -> URL? {
+        return URL(fileURLWithPath: "//")
+    }
+    
+    func delete(imageName: String, imageExtension: String) async -> Bool {
+        return true
+    }
+    
+    func download(fromURL: String, completion: @escaping (UIImage?) -> Void) {
+        completion(UIImage(systemName: "pencil"))
+    }
+    
+    func listMedia(completion: @escaping (Array<UIImage>) -> Void) async {
+        completion([UIImage(systemName: "pencil")!])
+    }
+    
+    func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {
+        return StorageMetadata()
+    }
+}
+struct GetMediaUrlFirebaseStorageServiceErrorMock: IFirebaseStorageService {
+    func add(imagePath: String, imageName: String, imageExtension: String) async -> Bool? {
+        return nil
+    }
+    
+    func get(imageName: String, imageExtension: String) async -> URL? {
+        return nil
+    }
+    
+    func delete(imageName: String, imageExtension: String) async -> Bool {
+        return false
+    }
+    
+    func download(fromURL: String, completion: @escaping (UIImage?) -> Void) {
+        completion(nil)
+    }
+    
+    func listMedia(completion: @escaping (Array<UIImage>) -> Void) async {
+        completion([])
+    }
+    
+    func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {
+        return StorageMetadata()
+    }
+}
 
 class GetMediaUrlServiceTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var service: IGetMediaUrlService!
+    
+    func initDependency(firebaseStorageService: IFirebaseStorageService = GetMediaUrlFirebaseStorageServiceMock()) -> Void {
+        self.service = GetMediaUrlService(firebaseStorageService: firebaseStorageService)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testGetMediaUrlServiceWithoutErrors() async throws {
+        self.initDependency()
+        let result = try await self.service.execute(imageName: "test-file", imageExtension: "jpeg")
+        XCTAssert(result is URL)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testGetMediaUrlServiceWithUrlError() async throws {
+        self.initDependency(firebaseStorageService: GetMediaUrlFirebaseStorageServiceErrorMock())
+        do {
+            let _ = try await self.service.execute(imageName: "test-file", imageExtension: "jpeg")
+        } catch {
+            XCTAssert(error is GetMediaUrlErrorService)
         }
     }
-
 }
