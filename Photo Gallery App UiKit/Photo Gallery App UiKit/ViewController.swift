@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Photo_Gallery_With_Firebase_SDK
 
 class ViewController: UIViewController, CheckNetworkDelegate, ICameraMediaServiceDelegate, IGalleryMediaServiceDelegate {
-    var cameraPermissionService: CameraPermissionService = CameraPermissionService()
+    var cameraPermissionService: MediaPermissionService = MediaPermissionService()
     var cameraMediaService: ICameraMediaService = CameraMediaService(allowsEditing: true)
     var galleryMediaService: IGalleryMediaService = GalleryMediaService(allowsEditing: true)
     var checkNetwork: CheckNetwork = CheckNetwork()

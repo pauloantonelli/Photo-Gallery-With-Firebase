@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Photo Gallery With Firebase SDK/Photo Gallery With Firebase SDK.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Photo Gallery App UiKit/Photo Gallery App UiKit.xcodeproj">
+   </FileRef>
+</Workspace>
