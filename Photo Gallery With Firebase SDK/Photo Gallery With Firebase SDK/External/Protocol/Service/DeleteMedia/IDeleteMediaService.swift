@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol IDeleteMediaService {
+    func execute(imageName: String, imageExtension: String) async throws -> Bool
+}

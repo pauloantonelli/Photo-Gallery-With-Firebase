@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetMediaListService: IGetMediaListUrlService {
+struct GetMediaListUrlService: IGetMediaListUrlService {
     let firebaseStorageService: IFirebaseStorageService
     
     init(firebaseStorageService: IFirebaseStorageService = FirebaseStorageService()) {

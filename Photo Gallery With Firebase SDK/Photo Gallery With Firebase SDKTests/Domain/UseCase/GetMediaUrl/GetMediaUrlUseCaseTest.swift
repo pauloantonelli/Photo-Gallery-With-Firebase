@@ -18,7 +18,7 @@ class GetMediaUrlUseCaseTest: XCTestCase {
     var usecase: IGetMediaUrlUseCase!
     
     func initDependency() -> Void {
-        let drive: IGetMediaUrlDrive! = GetMediaUrlDriveMock()
+        let drive: IGetMediaUrlDrive = GetMediaUrlDriveMock()
         self.usecase = GetMediaUrlUseCase(drive: drive)
     }
     

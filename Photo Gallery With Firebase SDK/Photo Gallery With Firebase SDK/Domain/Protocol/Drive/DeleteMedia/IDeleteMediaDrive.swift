@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol IDeleteMediaDrive {
+    func execute(imageName: String, imageExtension: String) async -> Result<Bool, DeleteMediaErrorUseCase>
+}

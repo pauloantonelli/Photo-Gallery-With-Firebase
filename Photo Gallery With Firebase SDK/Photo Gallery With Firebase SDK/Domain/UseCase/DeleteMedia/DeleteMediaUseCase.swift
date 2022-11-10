@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+struct DeleteMediaUseCase: IDeleteMediaUseCase {
+    let drive: IDeleteMediaDrive
+    
+    init(drive: IDeleteMediaDrive = DeleteMediaDrive()) {
+        self.drive = drive
+    }
+    
+    func execute(imageName: String, imageExtension: String) async -> Result<Bool, DeleteMediaErrorUseCase> {
+        if imageName.isEmpty {
+            return .failure(DeleteMediaErrorUseCase(message: "Error on DeleteMediaErrorUseCase: imageName is empty"))
+        }
+        if imageExtension.isEmpty {
+            return .failure(DeleteMediaErrorUseCase(message: "Error on DeleteMediaErrorUseCase: imageExtension is empty"))
+        }
+        let result = await self.drive.execute(imageName: imageName, imageExtension: imageExtension)
+        return result
+    }
+}

@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol IGetMediaListUrlService {
+    func execute() async throws -> Array<URL>
+}

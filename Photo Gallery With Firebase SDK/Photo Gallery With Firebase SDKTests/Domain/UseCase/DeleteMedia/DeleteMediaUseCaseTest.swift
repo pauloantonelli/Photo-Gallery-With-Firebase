@@ -6,30 +6,42 @@
 //
 
 import XCTest
+@testable import Photo_Gallery_With_Firebase_SDK
+
+struct DeleteMediaDriveMock: IDeleteMediaDrive {
+    func execute(imageName: String, imageExtension: String) async -> Result<Bool, DeleteMediaErrorUseCase> {
+        return .success(true)
+    }
+}
 
 class DeleteMediaUseCaseTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var usecase: IDeleteMediaUseCase!
+    
+    func initDependency(drive: IDeleteMediaDrive = DeleteMediaDriveMock()) -> Void {
+        self.usecase = DeleteMediaUseCase(drive: drive)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testDeleteMediaUseCaseWithoutErrors() async throws {
+        self.initDependency()
+        let result = try await self.usecase.execute(imageName: "test-file", imageExtension: "jpeg").get()
+        XCTAssert(result == true)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testDeleteMediaUseCaseWithImageNameError() async throws {
+        self.initDependency()
+        do {
+            let _ = try await self.usecase.execute(imageName: "", imageExtension: "jpeg").get()
+        } catch {
+            XCTAssert(error is DeleteMediaErrorUseCase)
         }
     }
-
+    
+    func testDeleteMediaUseCaseWithImageExtensionError() async throws {
+        self.initDependency()
+        do {
+            let _ = try await self.usecase.execute(imageName: "test-file", imageExtension: "").get()
+        } catch {
+            XCTAssert(error is DeleteMediaErrorUseCase)
+        }
+    }
 }

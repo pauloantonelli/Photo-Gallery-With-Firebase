@@ -23,7 +23,7 @@ struct SaveMediaService: ISaveMediaService {
             if filePath == nil {
                 throw SaveMediaErrorDrive(message: "Error on SaveMediaService: file path is nil")
             }
-            let result = await self.firebaseStorageService.add(imagePath: filePath!, imageName: fileName, imageExtension: "jpeg")
+            let result = try await self.firebaseStorageService.add(imagePath: filePath!, imageName: fileName, imageExtension: "jpeg")
             if result == nil {
                 throw SaveMediaErrorDrive(message: "Error on SaveMediaService: firebase add is nil")
             }

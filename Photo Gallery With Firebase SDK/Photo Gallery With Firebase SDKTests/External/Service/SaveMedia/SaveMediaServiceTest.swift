@@ -10,15 +10,15 @@ import FirebaseStorage
 @testable import Photo_Gallery_With_Firebase_SDK
 
 struct SaveMediaFirebaseStorageServiceMock: IFirebaseStorageService {
-    func add(imagePath: String, imageName: String, imageExtension: String) async -> Bool? {
+    func add(imagePath: String, imageName: String, imageExtension: String) async throws -> Bool? {
         return true
     }
     
-    func get(imageName: String, imageExtension: String) async -> URL? {
+    func get(imageName: String, imageExtension: String) async throws -> URL? {
         return nil
     }
     
-    func delete(imageName: String, imageExtension: String) async -> Bool {
+    func delete(imageName: String, imageExtension: String) async throws -> Bool {
         return true
     }
     
@@ -26,8 +26,8 @@ struct SaveMediaFirebaseStorageServiceMock: IFirebaseStorageService {
         completion(nil)
     }
     
-    func listMedia(completion: @escaping (Array<UIImage>) -> Void) async {
-        completion([])
+    func getList() async throws -> Array<URL> {
+        return []
     }
     
     func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {
@@ -51,8 +51,8 @@ struct SaveMediaFirebaseStorageServiceErrorMock: IFirebaseStorageService {
         completion(nil)
     }
     
-    func listMedia(completion: @escaping (Array<UIImage>) -> Void) async {
-        completion([])
+    func getList() async throws -> Array<URL> {
+        return []
     }
     
     func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {

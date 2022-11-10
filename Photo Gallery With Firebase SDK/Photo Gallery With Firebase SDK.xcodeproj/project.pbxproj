@@ -44,6 +44,9 @@
 		7B46363F29143443002B23C6 /* ICheckNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B46363E29143443002B23C6 /* ICheckNetworkService.swift */; };
 		7B46364729154D65002B23C6 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B46364629154D65002B23C6 /* NetworkTest.swift */; };
 		7B64E5F4290D5A7B003F8457 /* LoginUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64E5F3290D5A7B003F8457 /* LoginUseCaseTest.swift */; };
+		7B6D2097291D82A6000387BF /* GetMediaListUrlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6D2096291D82A6000387BF /* GetMediaListUrlTest.swift */; };
+		7B6D209A291D8374000387BF /* GetMediaListUrlUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6D2099291D8374000387BF /* GetMediaListUrlUseCase.swift */; };
+		7B6D209D291D85D2000387BF /* IGetMediaListUrlUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6D209C291D85D2000387BF /* IGetMediaListUrlUseCase.swift */; };
 		7B70938529105B5B004C1156 /* RegisterUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70938429105B5B004C1156 /* RegisterUseCaseTest.swift */; };
 		7B70938929105CF1004C1156 /* LoginDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70938829105CF1004C1156 /* LoginDataSourceTest.swift */; };
 		7B70938B29106272004C1156 /* RegisterDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70938A29106272004C1156 /* RegisterDataSourceTest.swift */; };
@@ -88,6 +91,21 @@
 		7BAE04DC29172216004AA68A /* IOpenCameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE04DB29172216004AA68A /* IOpenCameraService.swift */; };
 		7BAE04DE2917227F004AA68A /* IMediaPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE04DD2917227F004AA68A /* IMediaPermissionService.swift */; };
 		7BAE04E0291723BE004AA68A /* IMediaPermissionServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE04DF291723BE004AA68A /* IMediaPermissionServiceDelegate.swift */; };
+		7BB02DB8291D30B200DD0A59 /* IDeleteMediaUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DB7291D30B200DD0A59 /* IDeleteMediaUseCase.swift */; };
+		7BB02DBA291D315800DD0A59 /* DeleteMediaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DB9291D315800DD0A59 /* DeleteMediaError.swift */; };
+		7BB02DBD291D31C100DD0A59 /* DeleteMediaUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DBC291D31C100DD0A59 /* DeleteMediaUseCase.swift */; };
+		7BB02DC0291D321F00DD0A59 /* IDeleteMediaDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DBF291D321F00DD0A59 /* IDeleteMediaDrive.swift */; };
+		7BB02DC3291D345E00DD0A59 /* DeleteMediaDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DC2291D345E00DD0A59 /* DeleteMediaDrive.swift */; };
+		7BB02DC6291D349F00DD0A59 /* IDeleteMediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DC5291D349F00DD0A59 /* IDeleteMediaService.swift */; };
+		7BB02DC9291D35EE00DD0A59 /* DeleteMediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DC8291D35EE00DD0A59 /* DeleteMediaService.swift */; };
+		7BB02DCE291D421300DD0A59 /* DeleteMediaUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DCD291D421300DD0A59 /* DeleteMediaUseCaseTest.swift */; };
+		7BB02DD1291D443B00DD0A59 /* DeleteMediaServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DD0291D443B00DD0A59 /* DeleteMediaServiceTest.swift */; };
+		7BB02DD6291D49AE00DD0A59 /* GetMediaListUrlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DD5291D49AE00DD0A59 /* GetMediaListUrlError.swift */; };
+		7BB02DD9291D4AF600DD0A59 /* IGetMediaListUrlDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DD8291D4AF600DD0A59 /* IGetMediaListUrlDrive.swift */; };
+		7BB02DDC291D4B3700DD0A59 /* IGetMediaListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DDB291D4B3700DD0A59 /* IGetMediaListService.swift */; };
+		7BB02DE2291D4C7500DD0A59 /* GetMediaListUrlDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DE1291D4C7500DD0A59 /* GetMediaListUrlDrive.swift */; };
+		7BB02DE5291D4DA700DD0A59 /* GetMediaListUrlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DE4291D4DA700DD0A59 /* GetMediaListUrlService.swift */; };
+		7BB02DEB291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DEA291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift */; };
 		7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */; };
 		7BC1CA4E290C788400A178DA /* DependencyInjectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1CA4D290C788400A178DA /* DependencyInjectionTest.swift */; };
 		7BF8812F2911B33400E30301 /* GalleryPermissionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8812E2911B33400E30301 /* GalleryPermissionTest.swift */; };
@@ -148,6 +166,9 @@
 		7B46363E29143443002B23C6 /* ICheckNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICheckNetworkService.swift; sourceTree = "<group>"; };
 		7B46364629154D65002B23C6 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
 		7B64E5F3290D5A7B003F8457 /* LoginUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTest.swift; sourceTree = "<group>"; };
+		7B6D2096291D82A6000387BF /* GetMediaListUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlTest.swift; sourceTree = "<group>"; };
+		7B6D2099291D8374000387BF /* GetMediaListUrlUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlUseCase.swift; sourceTree = "<group>"; };
+		7B6D209C291D85D2000387BF /* IGetMediaListUrlUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGetMediaListUrlUseCase.swift; sourceTree = "<group>"; };
 		7B70938429105B5B004C1156 /* RegisterUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUseCaseTest.swift; sourceTree = "<group>"; };
 		7B70938829105CF1004C1156 /* LoginDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSourceTest.swift; sourceTree = "<group>"; };
 		7B70938A29106272004C1156 /* RegisterDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataSourceTest.swift; sourceTree = "<group>"; };
@@ -193,6 +214,21 @@
 		7BAE04DB29172216004AA68A /* IOpenCameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOpenCameraService.swift; sourceTree = "<group>"; };
 		7BAE04DD2917227F004AA68A /* IMediaPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMediaPermissionService.swift; sourceTree = "<group>"; };
 		7BAE04DF291723BE004AA68A /* IMediaPermissionServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMediaPermissionServiceDelegate.swift; sourceTree = "<group>"; };
+		7BB02DB7291D30B200DD0A59 /* IDeleteMediaUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDeleteMediaUseCase.swift; sourceTree = "<group>"; };
+		7BB02DB9291D315800DD0A59 /* DeleteMediaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaError.swift; sourceTree = "<group>"; };
+		7BB02DBC291D31C100DD0A59 /* DeleteMediaUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaUseCase.swift; sourceTree = "<group>"; };
+		7BB02DBF291D321F00DD0A59 /* IDeleteMediaDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDeleteMediaDrive.swift; sourceTree = "<group>"; };
+		7BB02DC2291D345E00DD0A59 /* DeleteMediaDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaDrive.swift; sourceTree = "<group>"; };
+		7BB02DC5291D349F00DD0A59 /* IDeleteMediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDeleteMediaService.swift; sourceTree = "<group>"; };
+		7BB02DC8291D35EE00DD0A59 /* DeleteMediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaService.swift; sourceTree = "<group>"; };
+		7BB02DCD291D421300DD0A59 /* DeleteMediaUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaUseCaseTest.swift; sourceTree = "<group>"; };
+		7BB02DD0291D443B00DD0A59 /* DeleteMediaServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMediaServiceTest.swift; sourceTree = "<group>"; };
+		7BB02DD5291D49AE00DD0A59 /* GetMediaListUrlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlError.swift; sourceTree = "<group>"; };
+		7BB02DD8291D4AF600DD0A59 /* IGetMediaListUrlDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGetMediaListUrlDrive.swift; sourceTree = "<group>"; };
+		7BB02DDB291D4B3700DD0A59 /* IGetMediaListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGetMediaListService.swift; sourceTree = "<group>"; };
+		7BB02DE1291D4C7500DD0A59 /* GetMediaListUrlDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlDrive.swift; sourceTree = "<group>"; };
+		7BB02DE4291D4DA700DD0A59 /* GetMediaListUrlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlService.swift; sourceTree = "<group>"; };
+		7BB02DEA291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlServiceTest.swift; sourceTree = "<group>"; };
 		7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		7BC1CA4D290C788400A178DA /* DependencyInjectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionTest.swift; sourceTree = "<group>"; };
 		7BF8812E2911B33400E30301 /* GalleryPermissionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionTest.swift; sourceTree = "<group>"; };
@@ -229,11 +265,13 @@
 			children = (
 				7B01A4F5290B0834002E502A /* LoginError.swift */,
 				7B01A4F9290B0ACF002E502A /* RegisterError.swift */,
-				7B70939529106B50004C1156 /* CameraPermissionError.swift */,
-				7B70939729106DE9004C1156 /* GalleryPermissionError.swift */,
 				7B46362C2912AD4C002B23C6 /* NetworkStatusError.swift */,
-				7B1FC352291B141A00FF02F3 /* SaveMediaError.swift */,
+				7BB02DD5291D49AE00DD0A59 /* GetMediaListUrlError.swift */,
 				7B1FC36D291C01ED00FF02F3 /* GetMediaUrlError.swift */,
+				7BB02DB9291D315800DD0A59 /* DeleteMediaError.swift */,
+				7B1FC352291B141A00FF02F3 /* SaveMediaError.swift */,
+				7B70939729106DE9004C1156 /* GalleryPermissionError.swift */,
+				7B70939529106B50004C1156 /* CameraPermissionError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -241,7 +279,9 @@
 		7B01A4FD290B0B5B002E502A /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				7B6D209B291D85BF000387BF /* GetMediaListUrl */,
 				7B1FC369291C017600FF02F3 /* GetMediaUrl */,
+				7BB02DB6291D309100DD0A59 /* DeleteMedia */,
 				7B1FC34F291B127400FF02F3 /* SaveMedia */,
 				7B70939229106AEB004C1156 /* Gallery */,
 				7B70939129106AE5004C1156 /* Camera */,
@@ -468,7 +508,9 @@
 		7B64E5F1290D5A4D003F8457 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				7BB02DE6291D570C00DD0A59 /* GetMediaListUrl */,
 				7B1FC37F291C08AA00FF02F3 /* GetMediaUrl */,
+				7BB02DCA291D41EC00DD0A59 /* DeleteMedia */,
 				7B1FC363291B1DD900FF02F3 /* SaveMedia */,
 				7B7093BB2911A369004C1156 /* Gallery */,
 				7B7093BA2911A35D004C1156 /* Camera */,
@@ -484,6 +526,22 @@
 				7B70938429105B5B004C1156 /* RegisterUseCaseTest.swift */,
 			);
 			path = Autentication;
+			sourceTree = "<group>";
+		};
+		7B6D2098291D830F000387BF /* GetMediaListUrl */ = {
+			isa = PBXGroup;
+			children = (
+				7B6D2099291D8374000387BF /* GetMediaListUrlUseCase.swift */,
+			);
+			path = GetMediaListUrl;
+			sourceTree = "<group>";
+		};
+		7B6D209B291D85BF000387BF /* GetMediaListUrl */ = {
+			isa = PBXGroup;
+			children = (
+				7B6D209C291D85D2000387BF /* IGetMediaListUrlUseCase.swift */,
+			);
+			path = GetMediaListUrl;
 			sourceTree = "<group>";
 		};
 		7B70938629105CD2004C1156 /* External */ = {
@@ -554,7 +612,9 @@
 		7B70939F29118851004C1156 /* Drive */ = {
 			isa = PBXGroup;
 			children = (
+				7BB02DD7291D4AB000DD0A59 /* GetMediaListUrl */,
 				7B1FC36F291C025100FF02F3 /* GetMediaUrl */,
+				7BB02DBE291D320B00DD0A59 /* DeleteMedia */,
 				7B1FC357291B14E500FF02F3 /* SaveMedia */,
 				7B70939C29118824004C1156 /* Gallery */,
 				7B70939B2911881E004C1156 /* Camera */,
@@ -565,7 +625,9 @@
 		7B7093A4291189A7004C1156 /* Drive */ = {
 			isa = PBXGroup;
 			children = (
+				7BB02DE0291D4C5F00DD0A59 /* GetMediaListUrl */,
 				7B1FC375291C040D00FF02F3 /* GetMediaUrl */,
+				7BB02DC1291D343D00DD0A59 /* DeleteMedia */,
 				7B1FC35A291B165E00FF02F3 /* SaveMedia */,
 				7B7093A5291189D4004C1156 /* Gallery */,
 				7B7093A6291189DC004C1156 /* Camera */,
@@ -592,7 +654,9 @@
 		7B7093AB29118AAB004C1156 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				7BB02DE3291D4D9200DD0A59 /* GetMediaListUrl */,
 				7B1FC37B291C056600FF02F3 /* GetMediaUrl */,
+				7BB02DC7291D35D600DD0A59 /* DeleteMedia */,
 				7B1FC35D291B17AB00FF02F3 /* SaveMedia */,
 				7B7093AD29118ABF004C1156 /* Gallery */,
 				7B7093AC29118AB8004C1156 /* Camera */,
@@ -627,6 +691,8 @@
 		7B7093AF29118B01004C1156 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				7BB02DDA291D4B1700DD0A59 /* GetMediaList */,
+				7BB02DC4291D349200DD0A59 /* DeleteMedia */,
 				7B1FC378291C044B00FF02F3 /* GetMediaUrl */,
 				7B1FC360291B17D900FF02F3 /* SaveMedia */,
 				7B7093B129118B15004C1156 /* Gallery */,
@@ -777,7 +843,9 @@
 		7B9529A02908BE38006F203F /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				7B6D2098291D830F000387BF /* GetMediaListUrl */,
 				7B1FC372291C029200FF02F3 /* GetMediaUrl */,
+				7BB02DBB291D31AC00DD0A59 /* DeleteMedia */,
 				7B1FC354291B149000FF02F3 /* SaveMedia */,
 				7B70938E29106964004C1156 /* Gallery */,
 				7B70938D2910695C004C1156 /* Camera */,
@@ -904,6 +972,118 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		7BB02DB6291D309100DD0A59 /* DeleteMedia */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DB7291D30B200DD0A59 /* IDeleteMediaUseCase.swift */,
+			);
+			path = DeleteMedia;
+			sourceTree = "<group>";
+		};
+		7BB02DBB291D31AC00DD0A59 /* DeleteMedia */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DBC291D31C100DD0A59 /* DeleteMediaUseCase.swift */,
+			);
+			path = DeleteMedia;
+			sourceTree = "<group>";
+		};
+		7BB02DBE291D320B00DD0A59 /* DeleteMedia */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DBF291D321F00DD0A59 /* IDeleteMediaDrive.swift */,
+			);
+			path = DeleteMedia;
+			sourceTree = "<group>";
+		};
+		7BB02DC1291D343D00DD0A59 /* DeleteMedia */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DC2291D345E00DD0A59 /* DeleteMediaDrive.swift */,
+			);
+			path = DeleteMedia;
+			sourceTree = "<group>";
+		};
+		7BB02DC4291D349200DD0A59 /* DeleteMedia */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DC5291D349F00DD0A59 /* IDeleteMediaService.swift */,
+			);
+			path = DeleteMedia;
+			sourceTree = "<group>";
+		};
+		7BB02DC7291D35D600DD0A59 /* DeleteMedia */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DC8291D35EE00DD0A59 /* DeleteMediaService.swift */,
+			);
+			path = DeleteMedia;
+			sourceTree = "<group>";
+		};
+		7BB02DCA291D41EC00DD0A59 /* DeleteMedia */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DCD291D421300DD0A59 /* DeleteMediaUseCaseTest.swift */,
+			);
+			path = DeleteMedia;
+			sourceTree = "<group>";
+		};
+		7BB02DCF291D442100DD0A59 /* DeleteMedia */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DD0291D443B00DD0A59 /* DeleteMediaServiceTest.swift */,
+			);
+			path = DeleteMedia;
+			sourceTree = "<group>";
+		};
+		7BB02DD7291D4AB000DD0A59 /* GetMediaListUrl */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DD8291D4AF600DD0A59 /* IGetMediaListUrlDrive.swift */,
+			);
+			path = GetMediaListUrl;
+			sourceTree = "<group>";
+		};
+		7BB02DDA291D4B1700DD0A59 /* GetMediaList */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DDB291D4B3700DD0A59 /* IGetMediaListService.swift */,
+			);
+			path = GetMediaList;
+			sourceTree = "<group>";
+		};
+		7BB02DE0291D4C5F00DD0A59 /* GetMediaListUrl */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DE1291D4C7500DD0A59 /* GetMediaListUrlDrive.swift */,
+			);
+			path = GetMediaListUrl;
+			sourceTree = "<group>";
+		};
+		7BB02DE3291D4D9200DD0A59 /* GetMediaListUrl */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DE4291D4DA700DD0A59 /* GetMediaListUrlService.swift */,
+			);
+			path = GetMediaListUrl;
+			sourceTree = "<group>";
+		};
+		7BB02DE6291D570C00DD0A59 /* GetMediaListUrl */ = {
+			isa = PBXGroup;
+			children = (
+				7B6D2096291D82A6000387BF /* GetMediaListUrlTest.swift */,
+			);
+			path = GetMediaListUrl;
+			sourceTree = "<group>";
+		};
+		7BB02DE9291D59FF00DD0A59 /* GetMediaListUrl */ = {
+			isa = PBXGroup;
+			children = (
+				7BB02DEA291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift */,
+			);
+			path = GetMediaListUrl;
+			sourceTree = "<group>";
+		};
 		7BC1CA40290C6A7F00A178DA /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
@@ -932,7 +1112,9 @@
 		7BF881302911B5A200E30301 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				7BB02DE9291D59FF00DD0A59 /* GetMediaListUrl */,
 				7B1FC382291C0C3200FF02F3 /* GetMediaUrl */,
+				7BB02DCF291D442100DD0A59 /* DeleteMedia */,
 				7B1FC366291B246300FF02F3 /* SaveMedia */,
 				7BF881322911B5B000E30301 /* Gallery */,
 				7BF881312911B5AB00E30301 /* Camera */,
@@ -1111,18 +1293,22 @@
 			files = (
 				7B7093B529118BF3004C1156 /* ICameraPermissionService.swift in Sources */,
 				7B01A4FA290B0ACF002E502A /* RegisterError.swift in Sources */,
+				7BB02DD9291D4AF600DD0A59 /* IGetMediaListUrlDrive.swift in Sources */,
 				7B7093B729118CD6004C1156 /* GalleryPermissionService.swift in Sources */,
 				7BFA886F291AA2FB0023D13D /* IFirebaseStorageService.swift in Sources */,
 				7BAE04DE2917227F004AA68A /* IMediaPermissionService.swift in Sources */,
 				7B46362D2912AD4C002B23C6 /* NetworkStatusError.swift in Sources */,
+				7BB02DBA291D315800DD0A59 /* DeleteMediaError.swift in Sources */,
 				7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */,
 				7B1FC353291B141A00FF02F3 /* SaveMediaError.swift in Sources */,
+				7BB02DC3291D345E00DD0A59 /* DeleteMediaDrive.swift in Sources */,
 				7B9529902908BC9D006F203F /* Register.swift in Sources */,
 				7B1FC351291B134A00FF02F3 /* ISaveMediaUseCase.swift in Sources */,
 				7B9529742908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc in Sources */,
 				7B01A511290B0EB3002E502A /* LoginDataSource.swift in Sources */,
 				7B1FC371291C026B00FF02F3 /* IGetMediaUrlDrive.swift in Sources */,
 				7B1FC35C291B167400FF02F3 /* SaveMediaDrive.swift in Sources */,
+				7B6D209D291D85D2000387BF /* IGetMediaListUrlUseCase.swift in Sources */,
 				7B9529C32909D24F006F203F /* Password.swift in Sources */,
 				7B01A50D290B0DAB002E502A /* ILoginDataSource.swift in Sources */,
 				7B01A502290B0BBA002E502A /* IRegisterRepository.swift in Sources */,
@@ -1133,6 +1319,7 @@
 				7B01A4FC290B0B09002E502A /* RegisterUseCase.swift in Sources */,
 				7BAE04DA291721D5004AA68A /* IOpenCameraServiceDelegate.swift in Sources */,
 				7BAE04D829171FEB004AA68A /* IOpenGalleryServiceDelegate.swift in Sources */,
+				7B6D209A291D8374000387BF /* GetMediaListUrlUseCase.swift in Sources */,
 				7B01A4F6290B0834002E502A /* LoginError.swift in Sources */,
 				7B70939829106DE9004C1156 /* GalleryPermissionError.swift in Sources */,
 				7B01A513290B0ED7002E502A /* RegisterDataSource.swift in Sources */,
@@ -1142,8 +1329,11 @@
 				7B01A4F1290AF56B002E502A /* IRegisterUseCase.swift in Sources */,
 				7BAE04DC29172216004AA68A /* IOpenCameraService.swift in Sources */,
 				7B88F661291AFB4100F5DD66 /* INetworkService.swift in Sources */,
+				7BB02DC9291D35EE00DD0A59 /* DeleteMediaService.swift in Sources */,
 				7B01A4F8290B09AA002E502A /* LoginUseCase.swift in Sources */,
+				7BB02DDC291D4B3700DD0A59 /* IGetMediaListService.swift in Sources */,
 				7B9529A32908BE9E006F203F /* FirebaseService.swift in Sources */,
+				7BB02DC6291D349F00DD0A59 /* IDeleteMediaService.swift in Sources */,
 				7B01A504290B0BF2002E502A /* ILoginRepository.swift in Sources */,
 				7B9529C12909D066006F203F /* Credential.swift in Sources */,
 				7B88F65F291AFB3800F5DD66 /* NetworkService.swift in Sources */,
@@ -1151,7 +1341,9 @@
 				7B1FC362291B17E500FF02F3 /* ISaveMediaService.swift in Sources */,
 				7B01A508290B0C5B002E502A /* LoginRepository.swift in Sources */,
 				7B46363F29143443002B23C6 /* ICheckNetworkService.swift in Sources */,
+				7BB02DE2291D4C7500DD0A59 /* GetMediaListUrlDrive.swift in Sources */,
 				7B1FC377291C041900FF02F3 /* GetMediaUrlDrive.swift in Sources */,
+				7BB02DC0291D321F00DD0A59 /* IDeleteMediaDrive.swift in Sources */,
 				7B1FC36B291C019700FF02F3 /* IGetMediaUrl.swift in Sources */,
 				7B70939629106B50004C1156 /* CameraPermissionError.swift in Sources */,
 				7B9529BD2909D042006F203F /* User.swift in Sources */,
@@ -1162,11 +1354,13 @@
 				7B9529BF2909D054006F203F /* Email.swift in Sources */,
 				7B88F65D291AF9B300F5DD66 /* MediaFileService.swift in Sources */,
 				7B88F65B291AF9A700F5DD66 /* IMediaFileService.swift in Sources */,
+				7BB02DBD291D31C100DD0A59 /* DeleteMediaUseCase.swift in Sources */,
 				7B1FC37A291C045C00FF02F3 /* IGetMediaUrlService.swift in Sources */,
 				7B7093A12911889E004C1156 /* IGalleryPermissionDrive.swift in Sources */,
 				7B70939A29118798004C1156 /* IGalleryPermissionUseCase.swift in Sources */,
 				7B7093A329118926004C1156 /* GalleryPermissionUseCase.swift in Sources */,
 				7B1FC37D291C057300FF02F3 /* GetMediaUrlService.swift in Sources */,
+				7BB02DE5291D4DA700DD0A59 /* GetMediaListUrlService.swift in Sources */,
 				7B01A50F290B0E5E002E502A /* IRegisterDataSource.swift in Sources */,
 				7B01A4F3290AF58F002E502A /* ILoginUseCase.swift in Sources */,
 				7B7093B329118BA1004C1156 /* IGalleryPermissionService.swift in Sources */,
@@ -1174,8 +1368,10 @@
 				7BFA885A291A962F0023D13D /* FirebaseStorageService.swift in Sources */,
 				7B9529992908BDB0006F203F /* MediaPermissionService.swift in Sources */,
 				7B1FC35F291B17C700FF02F3 /* SaveMediaService.swift in Sources */,
+				7BB02DD6291D49AE00DD0A59 /* GetMediaListUrlError.swift in Sources */,
 				7B95298E2908BC92006F203F /* Login.swift in Sources */,
 				7B1FC36E291C01ED00FF02F3 /* GetMediaUrlError.swift in Sources */,
+				7BB02DB8291D30B200DD0A59 /* IDeleteMediaUseCase.swift in Sources */,
 				7B7093B929118CFB004C1156 /* CameraPermissionService.swift in Sources */,
 				7B1FC359291B14F700FF02F3 /* ISaveMediaDrive.swift in Sources */,
 				7BAE04E0291723BE004AA68A /* IMediaPermissionServiceDelegate.swift in Sources */,
@@ -1189,9 +1385,13 @@
 				7B70938929105CF1004C1156 /* LoginDataSourceTest.swift in Sources */,
 				7B1FC365291B1DFE00FF02F3 /* SaveMediaUseCaseTest.swift in Sources */,
 				7B70938529105B5B004C1156 /* RegisterUseCaseTest.swift in Sources */,
+				7BB02DD1291D443B00DD0A59 /* DeleteMediaServiceTest.swift in Sources */,
+				7BB02DEB291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift in Sources */,
+				7BB02DCE291D421300DD0A59 /* DeleteMediaUseCaseTest.swift in Sources */,
 				7BC1CA4E290C788400A178DA /* DependencyInjectionTest.swift in Sources */,
 				7B7093BD2911A39F004C1156 /* CameraPermissionUseCaseTest.swift in Sources */,
 				7B1FC34E291B0F1E00FF02F3 /* MediaFileServiceTest.swift in Sources */,
+				7B6D2097291D82A6000387BF /* GetMediaListUrlTest.swift in Sources */,
 				7B70938B29106272004C1156 /* RegisterDataSourceTest.swift in Sources */,
 				7BF881342911B5CD00E30301 /* CameraPermissionServiceTest.swift in Sources */,
 				7B64E5F4290D5A7B003F8457 /* LoginUseCaseTest.swift in Sources */,

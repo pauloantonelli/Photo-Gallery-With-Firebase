@@ -11,32 +11,34 @@ import UIKit
 
 class MediaFileServiceTest: XCTestCase {
     var service: MediaFileService!
+    let fileName: String = "test-file"
+    let image: UIImage = UIImage(systemName: "pencil")!
+    
+    func verifyLocalFileExist() -> Void {
+        let _ = self.service.save(fileName: self.fileName, image: self.image)
+    }
     
     func initDependecy() -> Void {
         self.service = MediaFileService()
+        self.verifyLocalFileExist()
     }
     
     func testSaveFileWithoutErrors() throws {
         self.initDependecy()
-        let fileName: String = "test-file"
-        let image: UIImage = UIImage(systemName: "pencil")!
-        let result = self.service.save(fileName: fileName, image: image)
+        let result = self.service.save(fileName: self.fileName, image: self.image)
         XCTAssert(result != nil)
-        XCTAssert(result == fileName)
+        XCTAssert(result == self.fileName)
     }
     
     func testLoadFileWithoutErrors() throws {
         self.initDependecy()
-        let fileName: String = "test-file"
-        let result = self.service.load(fileName: fileName)
+        let result = try self.service.load(fileName: self.fileName)
         XCTAssert(result != nil)
-        XCTAssert(result is UIImage)
     }
     
     func testFilePathWithoutErrors() throws {
         self.initDependecy()
-        let fileName: String = "test-file"
-        let result = self.service.filePath(fileName: fileName)
+        let result = self.service.filePath(fileName: self.fileName)
         print("result \(result)")
         XCTAssert(result is URL)
     }

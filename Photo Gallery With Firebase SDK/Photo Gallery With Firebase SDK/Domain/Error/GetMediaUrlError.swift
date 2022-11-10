@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol GetMediaUrlError: Error {
     var message: String { get }
 }

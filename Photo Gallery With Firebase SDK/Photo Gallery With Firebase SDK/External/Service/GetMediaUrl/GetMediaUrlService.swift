@@ -15,10 +15,14 @@ struct GetMediaUrlService: IGetMediaUrlService {
     }
     
     func execute(imageName: String, imageExtension: String) async throws -> URL {
-        let result = await self.firebaseStorageService.get(imageName: imageName, imageExtension: imageExtension)
-        guard let url = result else {
-            throw GetMediaUrlErrorService(message: "Error on GetMediaUrlService: URL is nil")
+        do {
+            let result = try await self.firebaseStorageService.get(imageName: imageName, imageExtension: imageExtension)
+            guard let url = result else {
+                throw GetMediaUrlErrorService(message: "Error on GetMediaUrlService: URL is nil")
+            }
+            return url
+        } catch {
+            throw GetMediaUrlErrorService(message: "Error on GetMediaUrlErrorService: \(error.localizedDescription)")
         }
-        return url
     }
 }

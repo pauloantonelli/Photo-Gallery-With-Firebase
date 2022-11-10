@@ -7,21 +7,21 @@
 
 import Foundation
 
-struct GetMediaListDrive: IGetMediaListDrive {
-    let service: IGetMediaListService
+struct GetMediaListUrlDrive: IGetMediaListUrlDrive {
+    let service: IGetMediaListUrlService
     
-    init(service: IGetMediaListService = GetMediaListService()) {
+    init(service: IGetMediaListUrlService = GetMediaListUrlService()) {
         self.service = service
     }
     
-    func execute() async -> Result<Array<URL>, GetMediaListErrorUseCase> {
+    func execute() async -> Result<Array<URL>, GetMediaListUrlErrorUseCase> {
         do {
             let result = try await self.service.execute()
             return .success(result)
-        } catch let error as GetMediaListErrorService {
+        } catch let error as GetMediaListUrlErrorService {
             return .failure(error)
         } catch {
-            return .failure(GetMediaListErrorDrive(message: "Error on GetMediaListDrive: \(error.localizedDescription)"))
+            return .failure(GetMediaListUrlErrorDrive(message: "Error on GetMediaListDrive: \(error.localizedDescription)"))
         }
     }
 }

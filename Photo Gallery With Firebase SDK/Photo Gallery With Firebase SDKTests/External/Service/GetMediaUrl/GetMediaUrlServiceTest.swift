@@ -25,9 +25,9 @@ struct GetMediaUrlFirebaseStorageServiceMock: IFirebaseStorageService {
     func download(fromURL: String, completion: @escaping (UIImage?) -> Void) {
         completion(UIImage(systemName: "pencil"))
     }
-    
-    func listMedia(completion: @escaping (Array<UIImage>) -> Void) async {
-        completion([UIImage(systemName: "pencil")!])
+
+    func getList() async throws -> Array<URL> {
+        return []
     }
     
     func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {
@@ -51,8 +51,8 @@ struct GetMediaUrlFirebaseStorageServiceErrorMock: IFirebaseStorageService {
         completion(nil)
     }
     
-    func listMedia(completion: @escaping (Array<UIImage>) -> Void) async {
-        completion([])
+    func getList() async throws -> Array<URL> {
+        return []
     }
     
     func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {

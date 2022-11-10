@@ -19,7 +19,7 @@ struct FirebaseStorageService: IFirebaseStorageService {
         self.storageReference = storage.reference()
     }
     
-    func add(imagePath: String, imageName: String, imageExtension: String) async -> Bool? {
+    func add(imagePath: String, imageName: String, imageExtension: String) async throws -> Bool? {
         let localFile = URL(string: imagePath)!
         let imagesRef = self.storageReference.child("\(self.rootReference)/\(imageName).\(imageExtension)")
         do {
@@ -29,54 +29,51 @@ struct FirebaseStorageService: IFirebaseStorageService {
             }
             return true
         } catch {
-            print("Error on FirebaseStorageService add: \(error.localizedDescription)")
-            return nil
+            fatalError("Error on FirebaseStorageService add: \(error.localizedDescription)")
         }
     }
     
-    func get(imageName: String, imageExtension: String) async -> URL? {
+    func get(imageName: String, imageExtension: String) async throws -> URL? {
 //        let pathReference = storage.reference(withPath: "\(rootReference)/\(imageName).\(imageExtension)")
         let imageReference = self.storageReference.parent()?.child("\(imageName).\(imageExtension)")
         do {
             let result = try await imageReference?.downloadURL()
             return result
         } catch {
-            print("Error on FirebaseStorageService get: \(error.localizedDescription)")
-            return nil
+            fatalError("Error on FirebaseStorageService get: \(error.localizedDescription)")
         }
     }
     
-    func delete(imageName: String, imageExtension: String) async -> Bool {
+    func delete(imageName: String, imageExtension: String) async throws -> Bool {
         let imageReference = self.storageReference.parent()?.child("\(imageName).\(imageExtension)")
         do {
             let _ = try await imageReference?.delete()
             return true
         } catch {
-            print("Error on FirebaseStorageService delete: \(error.localizedDescription)")
-            return false
+            fatalError("Error on FirebaseStorageService delete: \(error.localizedDescription)")
         }
     }
     
-    func listMedia(completion: @escaping (Array<UIImage>) -> Void) async -> Void {
+    func getList() async throws -> Array<URL> {
         do {
-            var imageList: Array<UIImage> = []
             let imageReference: StorageListResult? = try await self.storageReference.listAll()
-            let urlList: Array<String>? = imageReference?.items.map({ item in
-                let url = item.name
+            let urlList: Array<URL>? = imageReference?.items.map({ item in
+                let url = URL(string: item.name)!
                 return url
             })
-            urlList?.forEach({ url in
-                self.download(fromURL: url) { downloadImage in
-                    guard let image = downloadImage else {
-                        print("Error on FirebaseStorageService listMedia > download")
-                        return
-                    }
-                    imageList.append(image)
-                }
-            })
-            completion(imageList)
+            return urlList ?? []
+//            urlList?.forEach({ url in
+//                self.download(fromURL: url) { downloadImage in
+//                    guard let image = downloadImage else {
+//                        print("Error on FirebaseStorageService listMedia > download")
+//                        return
+//                    }
+//                    imageList.append(image)
+//                }
+//            })
+//            completion(imageList)
         } catch {
-            print("Error on FirebaseStorageService listMedia: \(error.localizedDescription)")
+            fatalError("Error on FirebaseStorageService listMedia: \(error.localizedDescription)")
         }
     }
     

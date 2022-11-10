@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+struct DeleteMediaService: IDeleteMediaService {
+    let firebaseStorageService: IFirebaseStorageService
+    
+    init(firebaseStorageService: IFirebaseStorageService = FirebaseStorageService()) {
+        self.firebaseStorageService = firebaseStorageService
+    }
+    
+    func execute(imageName: String, imageExtension: String) async throws -> Bool {
+        do {
+            let result = try await self.firebaseStorageService.delete(imageName: imageName, imageExtension: imageExtension)
+            return result
+        } catch {
+            throw DeleteMediaErrorService(message: "Error on DeleteMediaErrorService: \(error.localizedDescription)")
+        }
+    }
+}
