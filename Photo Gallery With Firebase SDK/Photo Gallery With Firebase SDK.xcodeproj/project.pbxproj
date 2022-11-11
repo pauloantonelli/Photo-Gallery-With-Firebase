@@ -65,6 +65,8 @@
 		7B7093B729118CD6004C1156 /* GalleryPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093B629118CD6004C1156 /* GalleryPermissionService.swift */; };
 		7B7093B929118CFB004C1156 /* CameraPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093B829118CFB004C1156 /* CameraPermissionService.swift */; };
 		7B7093BD2911A39F004C1156 /* CameraPermissionUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7093BC2911A39F004C1156 /* CameraPermissionUseCaseTest.swift */; };
+		7B7A5715291E9EE900B56CD0 /* IDependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A5714291E9EE900B56CD0 /* IDependencyInjection.swift */; };
+		7B7A5718291E9F1600B56CD0 /* DependencyInjectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A5717291E9F1600B56CD0 /* DependencyInjectionError.swift */; };
 		7B88F65B291AF9A700F5DD66 /* IMediaFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88F65A291AF9A700F5DD66 /* IMediaFileService.swift */; };
 		7B88F65D291AF9B300F5DD66 /* MediaFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88F65C291AF9B300F5DD66 /* MediaFileService.swift */; };
 		7B88F65F291AFB3800F5DD66 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88F65E291AFB3800F5DD66 /* NetworkService.swift */; };
@@ -72,8 +74,6 @@
 		7B9529742908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529732908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc */; };
 		7B95297A2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B95296F2908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.framework */; };
 		7B9529802908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B9529722908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7B95298E2908BC92006F203F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95298D2908BC92006F203F /* Login.swift */; };
-		7B9529902908BC9D006F203F /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95298F2908BC9D006F203F /* Register.swift */; };
 		7B9529922908BCC5006F203F /* OpenCameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529912908BCC5006F203F /* OpenCameraService.swift */; };
 		7B9529942908BCF4006F203F /* OpenGalleryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529932908BCF4006F203F /* OpenGalleryService.swift */; };
 		7B9529962908BD3D006F203F /* CheckNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9529952908BD3D006F203F /* CheckNetworkService.swift */; };
@@ -187,6 +187,8 @@
 		7B7093B629118CD6004C1156 /* GalleryPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionService.swift; sourceTree = "<group>"; };
 		7B7093B829118CFB004C1156 /* CameraPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionService.swift; sourceTree = "<group>"; };
 		7B7093BC2911A39F004C1156 /* CameraPermissionUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionUseCaseTest.swift; sourceTree = "<group>"; };
+		7B7A5714291E9EE900B56CD0 /* IDependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDependencyInjection.swift; sourceTree = "<group>"; };
+		7B7A5717291E9F1600B56CD0 /* DependencyInjectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionError.swift; sourceTree = "<group>"; };
 		7B88F65A291AF9A700F5DD66 /* IMediaFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMediaFileService.swift; sourceTree = "<group>"; };
 		7B88F65C291AF9B300F5DD66 /* MediaFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFileService.swift; sourceTree = "<group>"; };
 		7B88F65E291AFB3800F5DD66 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -195,8 +197,6 @@
 		7B9529722908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo_Gallery_With_Firebase_SDK.h; sourceTree = "<group>"; };
 		7B9529732908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Photo_Gallery_With_Firebase_SDK.docc; sourceTree = "<group>"; };
 		7B9529792908BB7B006F203F /* Photo Gallery With Firebase SDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo Gallery With Firebase SDKTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B95298D2908BC92006F203F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		7B95298F2908BC9D006F203F /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		7B9529912908BCC5006F203F /* OpenCameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCameraService.swift; sourceTree = "<group>"; };
 		7B9529932908BCF4006F203F /* OpenGalleryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGalleryService.swift; sourceTree = "<group>"; };
 		7B9529952908BD3D006F203F /* CheckNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetworkService.swift; sourceTree = "<group>"; };
@@ -482,9 +482,9 @@
 		7B46363D29143435002B23C6 /* CheckNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				7B9529952908BD3D006F203F /* CheckNetworkService.swift */,
 				7B46363E29143443002B23C6 /* ICheckNetworkService.swift */,
 				7BAE04D229171E62004AA68A /* ICheckNetworkServiceDelegate.swift */,
+				7B9529952908BD3D006F203F /* CheckNetworkService.swift */,
 			);
 			path = CheckNetwork;
 			sourceTree = "<group>";
@@ -733,6 +733,14 @@
 			path = Gallery;
 			sourceTree = "<group>";
 		};
+		7B7A5716291E9F0700B56CD0 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				7B7A5717291E9F1600B56CD0 /* DependencyInjectionError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		7B88F659291AF98300F5DD66 /* MediaFileService */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,7 +783,6 @@
 				7B9529A529099E15006F203F /* Domain */,
 				7B9529A929099E6A006F203F /* External */,
 				7B9529A12908BE41006F203F /* Common */,
-				7B9529892908BBD0006F203F /* Autentication */,
 				7B9529722908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.h */,
 				7B9529732908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc */,
 			);
@@ -792,21 +799,12 @@
 			path = "Photo Gallery With Firebase SDKTests";
 			sourceTree = "<group>";
 		};
-		7B9529892908BBD0006F203F /* Autentication */ = {
-			isa = PBXGroup;
-			children = (
-				7B95298D2908BC92006F203F /* Login.swift */,
-				7B95298F2908BC9D006F203F /* Register.swift */,
-			);
-			path = Autentication;
-			sourceTree = "<group>";
-		};
 		7B95298A2908BBE3006F203F /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				7B9529912908BCC5006F203F /* OpenCameraService.swift */,
 				7BAE04DB29172216004AA68A /* IOpenCameraService.swift */,
 				7BAE04D9291721D5004AA68A /* IOpenCameraServiceDelegate.swift */,
+				7B9529912908BCC5006F203F /* OpenCameraService.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -814,9 +812,9 @@
 		7B95298B2908BBE9006F203F /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				7B9529932908BCF4006F203F /* OpenGalleryService.swift */,
 				7BAE04D529171FBE004AA68A /* IOpenGalleryService.swift */,
 				7BAE04D729171FEB004AA68A /* IOpenGalleryServiceDelegate.swift */,
+				7B9529932908BCF4006F203F /* OpenGalleryService.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -833,9 +831,9 @@
 		7B9529972908BD5F006F203F /* Permission */ = {
 			isa = PBXGroup;
 			children = (
-				7B9529982908BDB0006F203F /* MediaPermissionService.swift */,
 				7BAE04DD2917227F004AA68A /* IMediaPermissionService.swift */,
 				7BAE04DF291723BE004AA68A /* IMediaPermissionServiceDelegate.swift */,
+				7B9529982908BDB0006F203F /* MediaPermissionService.swift */,
 			);
 			path = Permission;
 			sourceTree = "<group>";
@@ -1087,6 +1085,8 @@
 		7BC1CA40290C6A7F00A178DA /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
+				7B7A5716291E9F0700B56CD0 /* Error */,
+				7B7A5714291E9EE900B56CD0 /* IDependencyInjection.swift */,
 				7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */,
 			);
 			path = DependencyInjection;
@@ -1302,7 +1302,6 @@
 				7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */,
 				7B1FC353291B141A00FF02F3 /* SaveMediaError.swift in Sources */,
 				7BB02DC3291D345E00DD0A59 /* DeleteMediaDrive.swift in Sources */,
-				7B9529902908BC9D006F203F /* Register.swift in Sources */,
 				7B1FC351291B134A00FF02F3 /* ISaveMediaUseCase.swift in Sources */,
 				7B9529742908BB7B006F203F /* Photo_Gallery_With_Firebase_SDK.docc in Sources */,
 				7B01A511290B0EB3002E502A /* LoginDataSource.swift in Sources */,
@@ -1311,6 +1310,7 @@
 				7B6D209D291D85D2000387BF /* IGetMediaListUrlUseCase.swift in Sources */,
 				7B9529C32909D24F006F203F /* Password.swift in Sources */,
 				7B01A50D290B0DAB002E502A /* ILoginDataSource.swift in Sources */,
+				7B7A5715291E9EE900B56CD0 /* IDependencyInjection.swift in Sources */,
 				7B01A502290B0BBA002E502A /* IRegisterRepository.swift in Sources */,
 				7B7093AA29118A27004C1156 /* CameraPermissionDrive.swift in Sources */,
 				7B9529922908BCC5006F203F /* OpenCameraService.swift in Sources */,
@@ -1369,8 +1369,8 @@
 				7B9529992908BDB0006F203F /* MediaPermissionService.swift in Sources */,
 				7B1FC35F291B17C700FF02F3 /* SaveMediaService.swift in Sources */,
 				7BB02DD6291D49AE00DD0A59 /* GetMediaListUrlError.swift in Sources */,
-				7B95298E2908BC92006F203F /* Login.swift in Sources */,
 				7B1FC36E291C01ED00FF02F3 /* GetMediaUrlError.swift in Sources */,
+				7B7A5718291E9F1600B56CD0 /* DependencyInjectionError.swift in Sources */,
 				7BB02DB8291D30B200DD0A59 /* IDeleteMediaUseCase.swift in Sources */,
 				7B7093B929118CFB004C1156 /* CameraPermissionService.swift in Sources */,
 				7B1FC359291B14F700FF02F3 /* ISaveMediaDrive.swift in Sources */,
@@ -1419,6 +1419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1482,6 +1483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

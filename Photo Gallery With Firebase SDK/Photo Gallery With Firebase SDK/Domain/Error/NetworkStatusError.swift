@@ -11,7 +11,7 @@ protocol NetworkStatusError: Error {
     var message: String { get }
 }
 
-class NetworkStatusErrorUseCase: NetworkStatusError {
+public class NetworkStatusErrorUseCase: NetworkStatusError {
     let message: String
     init(message: String) {
         self.message = message

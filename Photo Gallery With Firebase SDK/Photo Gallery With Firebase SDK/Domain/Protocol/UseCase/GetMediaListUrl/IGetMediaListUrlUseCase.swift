@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IGetMediaListUrlUseCase {
+public protocol IGetMediaListUrlUseCase {
     func execute() async -> Result<Array<URL>, GetMediaListUrlErrorUseCase>
 }

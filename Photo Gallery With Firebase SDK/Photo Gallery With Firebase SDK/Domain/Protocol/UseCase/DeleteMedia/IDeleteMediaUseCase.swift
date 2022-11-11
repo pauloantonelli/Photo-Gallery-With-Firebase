@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IDeleteMediaUseCase {
+public protocol IDeleteMediaUseCase {
     func execute(imageName: String, imageExtension: String) async -> Result<Bool, DeleteMediaErrorUseCase>
 }

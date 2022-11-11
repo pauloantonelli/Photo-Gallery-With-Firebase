@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+public protocol IDependencyInjection {
+    static func register<T>(type: T.Type, instance: Any) -> Void
+    static func get<T>(_ type: T.Type) -> T?
+}

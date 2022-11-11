@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol INetworkService {
+public protocol INetworkService {
     var baseUrl: String { get set }
     
     func get(url: String) async -> (Data, HTTPURLResponse)

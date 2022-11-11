@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct GetMediaListUrlUseCase: IGetMediaListUrlUseCase {
+public struct GetMediaListUrlUseCase: IGetMediaListUrlUseCase {
     let drive: IGetMediaListUrlDrive
     
     init(drive: IGetMediaListUrlDrive = GetMediaListUrlDrive()) {
         self.drive = drive
     }
     
-    func execute() async -> Result<Array<URL>, GetMediaListUrlErrorUseCase> {
+    public func execute() async -> Result<Array<URL>, GetMediaListUrlErrorUseCase> {
         let result = await self.drive.execute()
         return result
     }

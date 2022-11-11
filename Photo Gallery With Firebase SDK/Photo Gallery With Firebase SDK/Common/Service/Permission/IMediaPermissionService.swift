@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-protocol IMediaPermissionService {
+public protocol IMediaPermissionService {
     var authorizationStatus: AVAuthorizationStatus { get }
     var delegate: IMediaPermissionServiceDelegate? { get }
     

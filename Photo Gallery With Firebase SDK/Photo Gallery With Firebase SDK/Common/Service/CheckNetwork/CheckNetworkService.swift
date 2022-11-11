@@ -8,15 +8,15 @@
 import Foundation
 import Network
 
-class CheckNetworkService: ICheckNetworkService {
+public class CheckNetworkService: ICheckNetworkService {
     fileprivate let monitor: NWPathMonitor
     fileprivate let dispatchQueue: DispatchQueue = DispatchQueue(label: "Monitor")
     fileprivate let connectionTypeList: Array<NWInterface.InterfaceType> = [.wifi, .cellular]
-    var currentConnectionType: NWInterface.InterfaceType = .wifi
-    var hasConnection: Bool = false
-    var delegate: ICheckNetworkServiceDelegate?
+    public var currentConnectionType: NWInterface.InterfaceType = .wifi
+    public var hasConnection: Bool = false
+    public var delegate: ICheckNetworkServiceDelegate?
     
-    init(monitor: NWPathMonitor = NWPathMonitor()) {
+    public init(monitor: NWPathMonitor = NWPathMonitor()) {
         self.monitor = monitor
         self.prepare()
         self.initMonitor()
@@ -26,14 +26,14 @@ class CheckNetworkService: ICheckNetworkService {
         self.monitor.start(queue: self.dispatchQueue)
     }
     
-    func initMonitor() -> Void {
+    public func initMonitor() -> Void {
         self.monitor.pathUpdateHandler = { [weak self] path in
             self?.updateHasConnection(path)
             self?.updateCurrentConnectionType(path)
         }
     }
     
-    func stopMonitor() -> Void {
+    public func stopMonitor() -> Void {
         self.monitor.cancel()
     }
     

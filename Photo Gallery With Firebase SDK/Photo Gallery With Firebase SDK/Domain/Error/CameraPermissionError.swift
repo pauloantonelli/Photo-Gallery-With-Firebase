@@ -11,7 +11,7 @@ protocol CameraPermissionError: Error {
     var message: String { get }
 }
 
-class CameraPermissionErrorUseCase: CameraPermissionError {
+public class CameraPermissionErrorUseCase: CameraPermissionError {
     let message: String
     init(message: String) {
         self.message = message

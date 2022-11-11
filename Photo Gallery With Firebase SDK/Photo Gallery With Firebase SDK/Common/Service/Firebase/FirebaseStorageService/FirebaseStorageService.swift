@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import FirebaseStorage
 
-struct FirebaseStorageService: IFirebaseStorageService {
+public struct FirebaseStorageService: IFirebaseStorageService {
     fileprivate let storage: Storage
     fileprivate let storageReference: StorageReference
     fileprivate let rootReference: String = "media"
@@ -19,7 +19,7 @@ struct FirebaseStorageService: IFirebaseStorageService {
         self.storageReference = storage.reference()
     }
     
-    func add(imagePath: String, imageName: String, imageExtension: String) async throws -> Bool? {
+    public func add(imagePath: String, imageName: String, imageExtension: String) async throws -> Bool? {
         let localFile = URL(string: imagePath)!
         let imagesRef = self.storageReference.child("\(self.rootReference)/\(imageName).\(imageExtension)")
         do {
@@ -33,7 +33,7 @@ struct FirebaseStorageService: IFirebaseStorageService {
         }
     }
     
-    func get(imageName: String, imageExtension: String) async throws -> URL? {
+    public func get(imageName: String, imageExtension: String) async throws -> URL? {
 //        let pathReference = storage.reference(withPath: "\(rootReference)/\(imageName).\(imageExtension)")
         let imageReference = self.storageReference.parent()?.child("\(imageName).\(imageExtension)")
         do {
@@ -44,7 +44,7 @@ struct FirebaseStorageService: IFirebaseStorageService {
         }
     }
     
-    func delete(imageName: String, imageExtension: String) async throws -> Bool {
+    public func delete(imageName: String, imageExtension: String) async throws -> Bool {
         let imageReference = self.storageReference.parent()?.child("\(imageName).\(imageExtension)")
         do {
             let _ = try await imageReference?.delete()
@@ -54,7 +54,7 @@ struct FirebaseStorageService: IFirebaseStorageService {
         }
     }
     
-    func getList() async throws -> Array<URL> {
+    public func getList() async throws -> Array<URL> {
         do {
             let imageReference: StorageListResult? = try await self.storageReference.listAll()
             let urlList: Array<URL>? = imageReference?.items.map({ item in
@@ -77,7 +77,7 @@ struct FirebaseStorageService: IFirebaseStorageService {
         }
     }
     
-    func download(fromURL: String, completion: @escaping (UIImage?) -> Void) -> Void {
+    public func download(fromURL: String, completion: @escaping (UIImage?) -> Void) -> Void {
         let imageReference = self.storageReference.parent()?.child(fromURL)
         let task = imageReference?.getData(maxSize: 1 * 1024 * 1024, completion: { (data, error) in
             if error != nil {
@@ -96,7 +96,7 @@ struct FirebaseStorageService: IFirebaseStorageService {
         task?.resume()
     }
     
-    func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {
+    public func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {
         let metadata = StorageMetadata()
         metadata.contentType = "\(imageName).\(imageExtension)"
         return metadata

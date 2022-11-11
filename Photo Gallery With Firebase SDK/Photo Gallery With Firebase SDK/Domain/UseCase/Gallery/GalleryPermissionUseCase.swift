@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct GalleryPermissionUseCase: IGalleryPermissionUseCase {
+public struct GalleryPermissionUseCase: IGalleryPermissionUseCase {
     let drive: IGalleryPermissionDrive
     
     init(drive: IGalleryPermissionDrive = GalleryPermissionDrive()) {
         self.drive = drive
     }
     
-    func execute() async -> Result<Bool, GalleryPermissionErrorUseCase> {
+    public func execute() async -> Result<Bool, GalleryPermissionErrorUseCase> {
         let result = await self.drive.execute()
         return result
     }

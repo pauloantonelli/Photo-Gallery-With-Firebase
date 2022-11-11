@@ -11,7 +11,7 @@ protocol GetMediaUrlError: Error {
     var message: String { get }
 }
 
-class GetMediaUrlErrorUseCase: GetMediaUrlError {
+public class GetMediaUrlErrorUseCase: GetMediaUrlError {
     let message: String
     init(message: String) {
         self.message = message

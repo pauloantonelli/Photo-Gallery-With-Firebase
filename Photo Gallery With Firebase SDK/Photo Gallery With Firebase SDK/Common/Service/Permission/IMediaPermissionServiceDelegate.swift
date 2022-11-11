@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IMediaPermissionServiceDelegate {
+public protocol IMediaPermissionServiceDelegate {
     func updatePermitionStatus(status: Bool) -> Void
 }

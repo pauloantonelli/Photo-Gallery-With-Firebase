@@ -7,28 +7,16 @@
 
 import Foundation
 
-struct DependencyInjectionError: Error {
-    let message: String
-    init(message: String) {
-        self.message = message
-    }
-}
-
-protocol IDependencyInjection {
-    static func register<T>(type: T.Type, instance: Any) -> Void
-    static func get<T>(_ type: T.Type) -> T?
-}
-
-final class DependencyInjection: IDependencyInjection {
+public final class DependencyInjection: IDependencyInjection {
     private init() {}
     
     static fileprivate var instanceList: [String: Any] = [:]
     
-    static func register<T>(type: T.Type, instance: Any) -> Void {
+    public static func register<T>(type: T.Type, instance: Any) -> Void {
         self.instanceList["\(type)"] = instance
     }
     
-    static func get<T>(_ type: T.Type) -> T? {
+    public static func get<T>(_ type: T.Type) -> T? {
         if self.instanceList["\(type)"] == nil {
             print(DependencyInjectionError(message: "Instance not found \(type)"))
         }
@@ -36,7 +24,7 @@ final class DependencyInjection: IDependencyInjection {
         return result
     }
     
-    static func dispose<T>(_ type: T.Type) -> T? {
+    public static func dispose<T>(_ type: T.Type) -> T? {
         guard let result = self.instanceList.removeValue(forKey: "\(type)") else {
             return nil
         }

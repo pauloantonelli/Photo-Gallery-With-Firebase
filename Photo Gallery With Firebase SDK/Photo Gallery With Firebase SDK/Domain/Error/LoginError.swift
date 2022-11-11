@@ -11,7 +11,7 @@ protocol LoginError: Error {
     var message: String { get }
 }
 
-class LoginErrorUseCase: LoginError {
+public class LoginErrorUseCase: LoginError {
     let message: String
     init(message: String) {
         self.message = message

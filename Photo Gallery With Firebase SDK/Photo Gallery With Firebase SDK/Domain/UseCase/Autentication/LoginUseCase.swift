@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct LoginUseCase: ILoginUseCase {
+public struct LoginUseCase: ILoginUseCase {
     let repository: LoginRepository
     
     init(repository: LoginRepository) {
         self.repository = repository
     }
     
-    func execute(withCredential credential: Credential) async -> Result<User, LoginErrorUseCase> {
+    public func execute(withCredential credential: Credential) async -> Result<User, LoginErrorUseCase> {
         if credential.email.isInvalid {
             return .failure(LoginErrorUseCase(message: "Email is invalid"))
         }

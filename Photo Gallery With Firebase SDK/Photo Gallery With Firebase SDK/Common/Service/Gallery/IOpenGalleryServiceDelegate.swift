@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-protocol IOpenGalleryServiceDelegate {
+public protocol IOpenGalleryServiceDelegate {
     func updateImage(withImage image: UIImage) -> Void
 }

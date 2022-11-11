@@ -8,15 +8,15 @@
 import Foundation
 import AVFoundation
 
-struct MediaPermissionService: IMediaPermissionService  {
-    internal let authorizationStatus: AVAuthorizationStatus
-    var delegate: IMediaPermissionServiceDelegate?
+public struct MediaPermissionService: IMediaPermissionService  {
+    public let authorizationStatus: AVAuthorizationStatus
+    public var delegate: IMediaPermissionServiceDelegate?
     
-    init(authorizationStatus: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)) {
+    public init(authorizationStatus: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)) {
         self.authorizationStatus = authorizationStatus
     }
     
-    func execute() -> Bool? {
+    public func execute() -> Bool? {
         let result = self.authorizationStatus
         if result == .denied {
             self.delegate?.updatePermitionStatus(status: false)

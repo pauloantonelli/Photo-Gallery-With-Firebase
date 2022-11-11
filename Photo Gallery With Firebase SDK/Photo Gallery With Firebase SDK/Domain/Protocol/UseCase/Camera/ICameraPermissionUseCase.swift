@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ICameraPermissionUseCase {
+public protocol ICameraPermissionUseCase {
     func execute() async -> Result<Bool, CameraPermissionErrorUseCase>
 }

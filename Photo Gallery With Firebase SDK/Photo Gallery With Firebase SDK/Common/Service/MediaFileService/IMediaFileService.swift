@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol IMediaFileService {
+public protocol IMediaFileService {
     var documentsUrl: URL { get }
     
     func save(fileName: String, image: UIImage) -> String?

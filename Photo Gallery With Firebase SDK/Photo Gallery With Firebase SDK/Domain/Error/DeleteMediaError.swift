@@ -11,7 +11,7 @@ protocol DeleteMediaError: Error {
     var message: String { get }
 }
 
-class DeleteMediaErrorUseCase: DeleteMediaError {
+public class DeleteMediaErrorUseCase: DeleteMediaError {
     let message: String
     init(message: String) {
         self.message = message

@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct User {
+public struct User {
     let id: String
     let username: String
     let photoUrl: URL
     let credential: Credential
     
-    init(id: String, username: String = "", photoUrl: URL = URL(string: "")!, credential: Credential = Credential()) {
+    public init(id: String, username: String = "", photoUrl: URL = URL(string: "")!, credential: Credential = Credential()) {
         self.id = id
         self.username = username
         self.photoUrl = photoUrl

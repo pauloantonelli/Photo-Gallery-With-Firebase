@@ -9,27 +9,27 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class OpenGalleryService: NSObject, IOpenGalleryService, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    internal var imagePickerController: UIImagePickerController = UIImagePickerController()
-    internal var allowsEditing: Bool
-    var delegate: IOpenGalleryServiceDelegate?
+public class OpenGalleryService: NSObject, IOpenGalleryService, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    public var imagePickerController: UIImagePickerController = UIImagePickerController()
+    public let allowsEditing: Bool
+    public var delegate: IOpenGalleryServiceDelegate?
     
-    init(allowsEditing: Bool = false) {
+    public init(allowsEditing: Bool = false) {
         self.allowsEditing = allowsEditing
         super.init()
         self.configureImagePickerController()
     }
     
-    internal func configureImagePickerController() {
-        imagePickerController.allowsEditing = self.allowsEditing
-        imagePickerController.delegate = self
+    public func configureImagePickerController() {
+        self.imagePickerController.allowsEditing = self.allowsEditing
+        self.imagePickerController.delegate = self
     }
     
-    func execute() -> UIImagePickerController {
+    public func execute() -> UIImagePickerController {
         return self.imagePickerController
     }
     
-    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
         if let image = info[.editedImage] as? UIImage {
             self.delegate?.updateImage(withImage: image)
@@ -39,7 +39,7 @@ class OpenGalleryService: NSObject, IOpenGalleryService, UINavigationControllerD
         }
     }
     
-    internal func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
 }

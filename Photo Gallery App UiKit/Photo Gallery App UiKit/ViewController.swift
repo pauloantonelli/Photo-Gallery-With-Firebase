@@ -8,17 +8,17 @@
 import UIKit
 import Photo_Gallery_With_Firebase_SDK
 
-class ViewController: UIViewController, CheckNetworkDelegate, ICameraMediaServiceDelegate, IGalleryMediaServiceDelegate {
-    var cameraPermissionService: MediaPermissionService = MediaPermissionService()
-    var cameraMediaService: ICameraMediaService = CameraMediaService(allowsEditing: true)
-    var galleryMediaService: IGalleryMediaService = GalleryMediaService(allowsEditing: true)
-    var checkNetwork: CheckNetwork = CheckNetwork()
-    
+class ViewController: UIViewController, ICheckNetworkServiceDelegate, IOpenGalleryServiceDelegate, IOpenCameraServiceDelegate {
+    var checkNetwork: ICheckNetworkService = CheckNetworkService()
+    var mediaPermissionService: IMediaPermissionService = MediaPermissionService()
+    var galleryMediaService: IOpenGalleryService = OpenGalleryService(allowsEditing: false)
+    var cameraMediaService: IOpenCameraService = OpenCameraService(allowsEditing: false)
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.checkNetwork.delegate = self
-        self.cameraMediaService.delegate = self
         self.galleryMediaService.delegate = self
+        self.cameraMediaService.delegate = self
     }
     
     @IBAction func permissionButton(_ sender: UIButton) {
@@ -34,8 +34,8 @@ class ViewController: UIViewController, CheckNetworkDelegate, ICameraMediaServic
     }
     
     func permission() -> Void {
-        let result = self.cameraPermissionService.execute()
-        present(self.alertFactory(title: "Camera and Gallery permission", message: "status \(result)", actionTitle: "fechar"), animated: true)
+        let result = self.mediaPermissionService.execute()
+        present(self.alertFactory(title: "Camera and Gallery permission", message: "status \(String(describing: result))", actionTitle: "fechar"), animated: true)
     }
     
     func camera() -> Void {
@@ -48,7 +48,7 @@ class ViewController: UIViewController, CheckNetworkDelegate, ICameraMediaServic
         present(result, animated: true)
     }
     
-    func updateImage(withImage image: UIImage) {
+    func updateImage(withImage image: UIImage) -> Void {
         present(self.alertFactory(title: "New Image", message: "image size \(image.size)", actionTitle: "fechar"), animated: true)
     }
     

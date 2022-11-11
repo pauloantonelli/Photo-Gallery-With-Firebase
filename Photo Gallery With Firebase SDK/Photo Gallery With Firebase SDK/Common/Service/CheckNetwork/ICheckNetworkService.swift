@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-protocol ICheckNetworkService {
+public protocol ICheckNetworkService {
     var currentConnectionType: NWInterface.InterfaceType { get set }
     var hasConnection: Bool { get set }
     var delegate: ICheckNetworkServiceDelegate? { get set }

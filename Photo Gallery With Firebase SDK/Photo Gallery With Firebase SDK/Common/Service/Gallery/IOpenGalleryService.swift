@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-protocol IOpenGalleryService {
+public protocol IOpenGalleryService {
     var imagePickerController: UIImagePickerController { get }
     var allowsEditing: Bool { get }
     var delegate: IOpenGalleryServiceDelegate? { get set }

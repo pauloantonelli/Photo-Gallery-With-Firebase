@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct CameraPermissionUseCase: ICameraPermissionUseCase {
+public struct CameraPermissionUseCase: ICameraPermissionUseCase {
     let drive: ICameraPermissionDrive
     
     init(drive: ICameraPermissionDrive = CameraPermissionDrive()) {
         self.drive = drive
     }
     
-    func execute() async -> Result<Bool, CameraPermissionErrorUseCase> {
+    public func execute() async -> Result<Bool, CameraPermissionErrorUseCase> {
         let result = await self.drive.execute()
         return result
     }

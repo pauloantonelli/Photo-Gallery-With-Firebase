@@ -11,7 +11,7 @@ protocol SaveMediaError: Error {
     var message: String { get }
 }
 
-class SaveMediaErrorUseCase: SaveMediaError {
+public class SaveMediaErrorUseCase: SaveMediaError {
     let message: String
     init(message: String) {
         self.message = message

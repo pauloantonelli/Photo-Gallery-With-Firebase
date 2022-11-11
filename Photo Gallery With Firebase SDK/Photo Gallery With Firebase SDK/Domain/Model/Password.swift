@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Password {
+public struct Password {
     let value: String
     var isValid: Bool {
         get {
@@ -21,7 +21,7 @@ struct Password {
         return !self.isValid
     }
     
-    init(password: String = "") {
+    public init(password: String = "") {
         self.value = password
     }
 }

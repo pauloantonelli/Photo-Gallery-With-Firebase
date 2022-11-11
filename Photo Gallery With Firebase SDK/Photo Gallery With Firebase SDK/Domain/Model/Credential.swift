@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Credential {
+public struct Credential {
     let email: Email
     let password: Password
     
-    init(email: Email = Email(), password: Password = Password()) {
+    public init(email: Email = Email(), password: Password = Password()) {
         self.email = email
         self.password = password
     }

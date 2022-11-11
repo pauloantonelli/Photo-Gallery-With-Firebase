@@ -16,8 +16,8 @@
 		7B46366C291592B1002B23C6 /* Photo_Gallery_App_UiKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B46366B291592B1002B23C6 /* Photo_Gallery_App_UiKitTests.swift */; };
 		7B463676291592B1002B23C6 /* Photo_Gallery_App_UiKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B463675291592B1002B23C6 /* Photo_Gallery_App_UiKitUITests.swift */; };
 		7B463678291592B1002B23C6 /* Photo_Gallery_App_UiKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B463677291592B1002B23C6 /* Photo_Gallery_App_UiKitUITestsLaunchTests.swift */; };
-		7B6D20BC291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6D20BB291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework */; };
-		7B6D20BD291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6D20BB291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7B7A5711291E780900B56CD0 /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6D20BB291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework */; };
+		7B7A5712291E780900B56CD0 /* Photo_Gallery_With_Firebase_SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6D20BB291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7B6D20BE291D90C4000387BF /* Embed Frameworks */ = {
+		7B7A5713291E780900B56CD0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7B6D20BD291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework in Embed Frameworks */,
+				7B7A5712291E780900B56CD0 /* Photo_Gallery_With_Firebase_SDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B6D20BC291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */,
+				7B7A5711291E780900B56CD0 /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +164,7 @@
 				7B46364D291592AD002B23C6 /* Sources */,
 				7B46364E291592AD002B23C6 /* Frameworks */,
 				7B46364F291592AD002B23C6 /* Resources */,
-				7B6D20BE291D90C4000387BF /* Embed Frameworks */,
+				7B7A5713291E780900B56CD0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

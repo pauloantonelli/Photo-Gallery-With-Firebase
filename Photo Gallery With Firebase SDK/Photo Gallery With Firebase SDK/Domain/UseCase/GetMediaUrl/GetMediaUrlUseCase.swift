@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct GetMediaUrlUseCase: IGetMediaUrlUseCase {
+public struct GetMediaUrlUseCase: IGetMediaUrlUseCase {
     var drive: IGetMediaUrlDrive
     
     init(drive: IGetMediaUrlDrive = GetMediaUrlDrive()) {
         self.drive = drive
     }
     
-    func execute(imageName: String, imageExtension: String) async -> Result<URL, GetMediaUrlErrorUseCase> {
+    public func execute(imageName: String, imageExtension: String) async -> Result<URL, GetMediaUrlErrorUseCase> {
         if imageName.isEmpty {
             return .failure(GetMediaUrlErrorUseCase(message: "Error on GetMediaUrlUseCase: imageName is empty"))
         }

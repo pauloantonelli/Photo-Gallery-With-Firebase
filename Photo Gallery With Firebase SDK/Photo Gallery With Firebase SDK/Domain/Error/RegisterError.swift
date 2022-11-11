@@ -11,7 +11,7 @@ protocol RegisterError: Error {
     var message: String { get }
 }
 
-class RegisterErrorUseCase: RegisterError {
+public class RegisterErrorUseCase: RegisterError {
     let message: String
     init(message: String) {
         self.message = message

@@ -9,28 +9,32 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class OpenCameraService: NSObject, IOpenCameraService, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    internal var imagePickerController: UIImagePickerController = UIImagePickerController()
-    internal let allowsEditing: Bool
-    var delegate: IOpenCameraServiceDelegate?
+public class OpenCameraService: NSObject, IOpenCameraService, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    public var imagePickerController: UIImagePickerController = UIImagePickerController()
+    public let allowsEditing: Bool
+    public var delegate: IOpenCameraServiceDelegate?
     
-    init(allowsEditing: Bool = false) {
+    public init(allowsEditing: Bool = false) {
         self.allowsEditing = allowsEditing
         super.init()
         self.configureImagePickerController()
     }
     
-    internal func configureImagePickerController() -> Void {
-        imagePickerController.allowsEditing = self.allowsEditing
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .camera
+    public func configureImagePickerController() -> Void {
+        self.imagePickerController.allowsEditing = self.allowsEditing
+        self.imagePickerController.delegate = self
+        let sourceType = UIImagePickerController.SourceType.camera
+        let isSourceTypeAvailable = UIImagePickerController.isSourceTypeAvailable(sourceType)
+        if isSourceTypeAvailable {
+            self.imagePickerController.sourceType = .camera
+        }
     }
     
-    func execute() -> UIImagePickerController {
+    public func execute() -> UIImagePickerController {
         return self.imagePickerController
     }
     
-    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
         if let image = info[.editedImage] as? UIImage {
             self.delegate?.updateImage(withImage: image)
@@ -40,7 +44,7 @@ class OpenCameraService: NSObject, IOpenCameraService, UINavigationControllerDel
         }
     }
     
-    internal func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
 }

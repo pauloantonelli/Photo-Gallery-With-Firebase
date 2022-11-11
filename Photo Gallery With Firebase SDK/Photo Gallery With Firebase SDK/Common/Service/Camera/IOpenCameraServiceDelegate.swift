@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-protocol IOpenCameraServiceDelegate {
+public protocol IOpenCameraServiceDelegate {
     func updateImage(withImage image: UIImage) -> Void
 }

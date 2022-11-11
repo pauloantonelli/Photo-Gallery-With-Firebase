@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ICheckNetworkServiceDelegate {
+public protocol ICheckNetworkServiceDelegate {
     func updateNetworkStatus(status: Bool) -> Void
 }

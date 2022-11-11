@@ -7,14 +7,14 @@
 
 import Foundation
 
-class NetworkService: INetworkService {
-    var baseUrl: String
+public struct NetworkService: INetworkService {
+    public var baseUrl: String
     
-    init(baseUrl: String) {
+    public init(baseUrl: String) {
         self.baseUrl = baseUrl
     }
     
-    func get(url: String) async -> (Data, HTTPURLResponse) {
+    public func get(url: String) async -> (Data, HTTPURLResponse) {
         let url: URL = URL(string: "\(baseUrl)\(url)")!
         let request = URLRequest(url: url)
         do {
@@ -28,7 +28,7 @@ class NetworkService: INetworkService {
         }
     }
     
-    func post(url: String, withBody body: [String : AnyHashable]) async -> (Data, HTTPURLResponse) {
+    public func post(url: String, withBody body: [String : AnyHashable]) async -> (Data, HTTPURLResponse) {
         let url: URL = URL(string: "\(baseUrl)\(url)")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -45,7 +45,7 @@ class NetworkService: INetworkService {
         }
     }
     
-    func put(url: String, withBody body: [String : AnyHashable]) async -> (Data, HTTPURLResponse) {
+    public func put(url: String, withBody body: [String : AnyHashable]) async -> (Data, HTTPURLResponse) {
         let url: URL = URL(string: "\(baseUrl)\(url)")!
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
@@ -62,7 +62,7 @@ class NetworkService: INetworkService {
         }
     }
     
-    func delete(url: String, withBody body: [String : AnyHashable]?) async -> (Data, HTTPURLResponse) {
+    public func delete(url: String, withBody body: [String : AnyHashable]?) async -> (Data, HTTPURLResponse) {
         let url: URL = URL(string: "\(baseUrl)\(url)")!
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"

@@ -8,12 +8,12 @@
 import FirebaseCore
 import FirebaseAuth
 
-protocol IFirebaseService {
+public protocol IFirebaseService {
     func login(email: String, password: String) async throws -> User
     func register(email: String, password: String) async throws -> User
 }
 
-class FirebaseService: IFirebaseService {
+public class FirebaseService: IFirebaseService {
     var user: User = User(id: "")
     var shared: FirebaseService {
         let result = FirebaseService()
@@ -30,7 +30,7 @@ class FirebaseService: IFirebaseService {
         FirebaseApp.configure()
     }
     
-    func login(email: String, password: String) async throws -> User {
+    public func login(email: String, password: String) async throws -> User {
 //        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
 //            if error != nil {
 //                completion(nil)
@@ -51,7 +51,7 @@ class FirebaseService: IFirebaseService {
         }
     }
     
-    func register(email: String, password: String) async throws -> User {
+    public func register(email: String, password: String) async throws -> User {
 //        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
 //            if error != nil {
 //                completion(nil)

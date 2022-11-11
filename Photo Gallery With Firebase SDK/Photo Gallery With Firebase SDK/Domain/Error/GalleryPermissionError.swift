@@ -11,7 +11,7 @@ protocol GalleryPermissionError: Error {
     var message: String { get }
 }
 
-class GalleryPermissionErrorUseCase: GalleryPermissionError {
+public class GalleryPermissionErrorUseCase: GalleryPermissionError {
     let message: String
     init(message: String) {
         self.message = message

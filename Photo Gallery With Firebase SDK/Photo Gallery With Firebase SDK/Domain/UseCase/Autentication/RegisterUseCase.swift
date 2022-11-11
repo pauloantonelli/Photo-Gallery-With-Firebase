@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct RegisterUseCase: IRegisterUseCase {
+public struct RegisterUseCase: IRegisterUseCase {
     let repository: RegisterRepository
     
     init(repository: RegisterRepository) {
         self.repository = repository
     }
     
-    func execute(withCredential credential: Credential) async -> Result<User, RegisterErrorUseCase> {
+    public func execute(withCredential credential: Credential) async -> Result<User, RegisterErrorUseCase> {
         if credential.email.isInvalid {
             return .failure(RegisterErrorUseCase(message: "Email is invalid"))
         }

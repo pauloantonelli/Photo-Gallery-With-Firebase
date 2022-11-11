@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 
-struct SaveMediaUseCase: ISaveMediaUseCase {
+public struct SaveMediaUseCase: ISaveMediaUseCase {
     let drive: ISaveMediaDrive
     
     init(drive: ISaveMediaDrive = SaveMediaDrive()) {
         self.drive = drive
     }
     
-    func execute(fileName: String, image: UIImage) async -> Result<Bool, SaveMediaErrorUseCase> {
+    public func execute(fileName: String, image: UIImage) async -> Result<Bool, SaveMediaErrorUseCase> {
         if fileName.isEmpty {
             return .failure(SaveMediaErrorUseCase(message: "Erro on SaveMediaUseCase: fileName cannot be empty"))
         }

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import FirebaseStorage
 
-protocol IFirebaseStorageService {
+public protocol IFirebaseStorageService {
     func add(imagePath: String, imageName: String, imageExtension: String) async throws -> Bool?
     func get(imageName: String, imageExtension: String) async throws -> URL?
     func delete(imageName: String, imageExtension: String) async throws -> Bool

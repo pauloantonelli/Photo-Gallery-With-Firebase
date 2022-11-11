@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-struct MediaFileService: IMediaFileService {
-    var documentsUrl: URL {
+public struct MediaFileService: IMediaFileService {
+    public var documentsUrl: URL {
         let result = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return result
     }
     
-    func save(fileName: String, image: UIImage) -> String? {
+    public func save(fileName: String, image: UIImage) -> String? {
         let fileUrl = self.filePath(fileName: fileName)
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {
             fatalError("Error on MediaFileService save")
@@ -27,7 +27,7 @@ struct MediaFileService: IMediaFileService {
         }
     }
     
-    func load(fileName: String) -> UIImage? {
+    public func load(fileName: String) -> UIImage? {
         let fileUrl = self.filePath(fileName: fileName)
         do {
             let result = try Data(contentsOf: fileUrl)
@@ -37,7 +37,7 @@ struct MediaFileService: IMediaFileService {
         }
     }
     
-    func filePath(fileName: String) -> URL {
+    public func filePath(fileName: String) -> URL {
         let fileUrl = self.documentsUrl.appendingPathComponent(fileName)
         return fileUrl
     }

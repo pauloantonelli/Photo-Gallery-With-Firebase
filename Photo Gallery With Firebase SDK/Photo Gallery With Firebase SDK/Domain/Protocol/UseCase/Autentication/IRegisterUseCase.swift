@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IRegisterUseCase {
+public protocol IRegisterUseCase {
     func execute(withCredential credential: Credential) async -> Result<User, RegisterErrorUseCase>
 }

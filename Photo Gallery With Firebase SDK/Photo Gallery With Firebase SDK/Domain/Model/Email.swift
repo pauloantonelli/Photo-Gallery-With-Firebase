@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Email {
+public struct Email {
     let value: String
     var isValid: Bool {
         get {
@@ -21,7 +21,7 @@ struct Email {
         return !self.isValid
     }
     
-    init(email: String = "") {
+    public init(email: String = "") {
         self.value = email
     }
 }
