@@ -53,7 +53,7 @@ class ViewController: UIViewController, ICheckNetworkServiceDelegate, IOpenGalle
     }
     
     func updateNetworkStatus(status: Bool) {
-        present(self.alertFactory(title: "Network", message: "has connection \(status)", actionTitle: "fechar"), animated: true)
+//        present(self.alertFactory(title: "Network", message: "has connection \(status)", actionTitle: "fechar"), animated: true)
     }
     
     func alertFactory(title: String, message: String, actionTitle: String) -> UIAlertController {
