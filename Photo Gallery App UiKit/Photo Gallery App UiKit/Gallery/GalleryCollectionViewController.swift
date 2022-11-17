@@ -17,31 +17,31 @@ class GalleryCollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.collectionView!.register(GalleryCellCollectionViewCell.self, forCellWithReuseIdentifier: Constant.reuseIdentifier)
+        self.collectionView!.register(UINib(nibName: "GalleryCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Constant.reuseIdentifier)
     }
     
     func initPhotoList() -> Void {
-        for item in 0...10 {
-            let image = UIImage(systemName: "pencil")!
+        for item in 0...200 {
+            let image = UIImage(named: "gallery-permission")!
             self.photoList.append(image)
         }
-        print(self.photoList.count)
     }
-
+}
+extension GalleryCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.photoList.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
-        if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.reuseIdentifier, for: indexPath) as? GalleryCellCollectionViewCell {
-            customCell.updatePhoto(withPhoto: self.photoList[indexPath.row])
-            cell = customCell
+            return self.photoList.count
         }
-        return cell
-    }
 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("photo escolhida: \(self.photoList[indexPath.row])")
-    }
+        override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            var cell = UICollectionViewCell()
+            if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.reuseIdentifier, for: indexPath) as? GalleryCellCollectionViewCell {
+                customCell.updatePhoto(withPhoto: self.photoList[indexPath.row])
+                cell = customCell
+            }
+            return cell
+        }
+
+        override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            print("photo escolhida: \(self.photoList[indexPath.row])")
+        }
 }

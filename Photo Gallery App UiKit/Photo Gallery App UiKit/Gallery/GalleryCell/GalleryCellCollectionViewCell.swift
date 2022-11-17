@@ -15,6 +15,6 @@ class GalleryCellCollectionViewCell: UICollectionViewCell {
     }
 
     func updatePhoto(withPhoto image: UIImage) -> Void {
-        self.photoImage?.image = image
+        self.photoImage.image = image
     }
 }
