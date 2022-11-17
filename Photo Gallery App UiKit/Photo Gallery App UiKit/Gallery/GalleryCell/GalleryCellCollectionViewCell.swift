@@ -8,10 +8,13 @@
 import UIKit
 
 class GalleryCellCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var photoImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
+    func updatePhoto(withPhoto image: UIImage) -> Void {
+        self.photoImage?.image = image
+    }
 }

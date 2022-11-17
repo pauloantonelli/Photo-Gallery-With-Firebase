@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aiB-PW-qy3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bJY-Rf-mqH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,43 +12,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="hb8-Yw-v0l">
             <objects>
-                <viewController id="QIY-tu-lmB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QIY-tu-lmB" customClass="OnboardingViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sme-1F-gdw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T7L-4D-x07">
-                                <rect key="frame" x="20" y="153" width="374" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="19" y="172" width="374" height="550"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETE-Fb-XoI">
-                                        <rect key="frame" x="8" y="8" width="358" height="267"/>
+                                        <rect key="frame" x="7" y="8" width="358" height="267"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swift-firebase" translatesAutoresizingMaskIntoConstraints="NO" id="UHY-Rh-pHa">
-                                                <rect key="frame" x="0.0" y="0.0" width="358" height="259"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <rect key="frame" x="0.0" y="7" width="358" height="258"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-If-aQh">
-                                        <rect key="frame" x="8" y="283" width="358" height="128"/>
+                                        <rect key="frame" x="7" y="283" width="358" height="128"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNP-Dr-vLh">
-                                                <rect key="frame" x="8" y="8" width="342" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <rect key="frame" x="6" y="8" width="344" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <color key="textColor" name="LabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best place to save your life stories and share experiences whever you want" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwg-fT-WqK">
-                                                <rect key="frame" x="8" y="54" width="350" height="66"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <rect key="frame" x="6" y="53" width="352" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <color key="textColor" name="LabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -56,26 +57,32 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1c-Ki-yqj">
-                                        <rect key="frame" x="8" y="419" width="358" height="106"/>
+                                        <rect key="frame" x="7" y="419" width="358" height="106"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOp-9b-fYi">
-                                                <rect key="frame" x="1" y="8" width="356" height="35"/>
+                                                <rect key="frame" x="0.0" y="8" width="357" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign In">
                                                     <color key="baseForegroundColor" name="ButtonLabelColor"/>
                                                     <color key="baseBackgroundColor" name="ButtonBackgroundColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="goToSignIn:" destination="QIY-tu-lmB" eventType="touchUpInside" id="hEo-d4-UGR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSh-wh-UTC">
-                                                <rect key="frame" x="0.0" y="63" width="356" height="35"/>
+                                                <rect key="frame" x="0.0" y="63" width="355" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up">
                                                     <color key="baseForegroundColor" name="ButtonLabelColor"/>
                                                     <color key="baseBackgroundColor" name="ButtonBackgroundColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="goToSignUp:" destination="QIY-tu-lmB" eventType="touchUpInside" id="bGm-WU-ggo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -84,7 +91,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DpL-Av-XFn">
-                                <rect key="frame" x="20" y="812" width="374" height="50"/>
+                                <rect key="frame" x="19" y="763" width="374" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zoominitcode-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qri-rZ-81c">
@@ -105,7 +112,7 @@
                         <viewLayoutGuide key="safeArea" id="o6D-p0-BaB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Tag-59-HTQ"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Tag-59-HTQ"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="go-to-sign-in" id="E4c-8u-VDR"/>
                         <segue destination="kXi-24-QLG" kind="show" identifier="go-to-sign-up" id="sar-eT-NA3"/>
@@ -113,32 +120,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LK7-SK-6Gs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757.97101449275374" y="85.714285714285708"/>
+            <point key="canvasLocation" x="1668.1159420289857" y="85.714285714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="sign-in" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sign-in" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SignInViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="pkZ-7U-tKh">
-                                <rect key="frame" x="19" y="244" width="374" height="418"/>
+                                <rect key="frame" x="16" y="244" width="374" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-ex-ckm">
-                                        <rect key="frame" x="-2" y="8" width="353" height="119"/>
+                                        <rect key="frame" x="-4" y="8" width="352" height="119"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swift-firebase" translatesAutoresizingMaskIntoConstraints="NO" id="6ys-A4-l62">
-                                                <rect key="frame" x="52" y="-5" width="235" height="128"/>
+                                                <rect key="frame" x="51" y="-5" width="235" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qkT-GV-aca">
-                                        <rect key="frame" x="8" y="144" width="356" height="38"/>
+                                        <rect key="frame" x="6" y="144" width="356" height="38"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login to your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSd-4J-H5z">
@@ -152,7 +159,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gR-6g-GsV">
-                                        <rect key="frame" x="8" y="190" width="356" height="50"/>
+                                        <rect key="frame" x="6" y="190" width="356" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQj-3p-TmJ">
@@ -164,7 +171,7 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGO-Cr-qiN">
-                                        <rect key="frame" x="8" y="248" width="356" height="50"/>
+                                        <rect key="frame" x="6" y="248" width="356" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y3h-xa-fHW">
@@ -176,39 +183,45 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" id="ggI-do-6az">
-                                        <rect key="frame" x="9" y="306" width="356" height="51"/>
+                                        <rect key="frame" x="6" y="306" width="357" height="51"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ5-fl-7Zk">
-                                                <rect key="frame" x="0.0" y="8" width="356" height="35"/>
+                                                <rect key="frame" x="0.0" y="8" width="357" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign In">
                                                     <color key="baseForegroundColor" name="ButtonLabelColor"/>
                                                     <color key="baseBackgroundColor" name="ButtonBackgroundColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="goToPermission:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ykO-5p-Zio"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" id="azV-g6-c6v">
-                                        <rect key="frame" x="9" y="365" width="356" height="25"/>
+                                        <rect key="frame" x="6" y="365" width="357" height="25"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OU-SM-4zN">
-                                                <rect key="frame" x="0.0" y="0.0" width="356" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="357" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
                                                     <color key="baseForegroundColor" name="LinkColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="executeForgotPassoword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PwT-rz-26j"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </view>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oxd-gM-IkF">
-                                <rect key="frame" x="19" y="798" width="374" height="34"/>
+                                <rect key="frame" x="16" y="796" width="374" height="33"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uM9-i8-Hay">
@@ -219,12 +232,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ae-SN-Dwg">
-                                        <rect key="frame" x="291" y="-1" width="83" height="35"/>
+                                        <rect key="frame" x="290" y="-1" width="84" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign up">
                                             <color key="baseForegroundColor" name="LinkColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4TH-UG-gmf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
@@ -232,40 +248,42 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" style="editor" id="o3r-n6-cqB"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" style="editor" id="o3r-n6-cqB"/>
                     <connections>
+                        <outlet property="Password" destination="Y3h-xa-fHW" id="1m4-Sw-MBn"/>
+                        <outlet property="email" destination="mQj-3p-TmJ" id="NXO-0g-FAn"/>
                         <segue destination="kXi-24-QLG" kind="show" identifier="go-from-sign-in-to-sing-up" id="9dZ-Hz-T2f"/>
                         <segue destination="gh5-LU-pKh" kind="show" identifier="go-from-sign-in-to-permission" id="5Z2-dh-Zd7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610" y="-242"/>
+            <point key="canvasLocation" x="2518.840579710145" y="-242.41071428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="XkQ-Nc-91b">
             <objects>
-                <viewController storyboardIdentifier="sign-up" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kXi-24-QLG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sign-up" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kXi-24-QLG" customClass="SignUpViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hPz-aV-hkV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="9F8-XW-E2A">
-                                <rect key="frame" x="19" y="252" width="374" height="456"/>
+                                <rect key="frame" x="16" y="251" width="374" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWY-Rn-ezw">
-                                        <rect key="frame" x="0.0" y="8" width="348" height="119"/>
+                                        <rect key="frame" x="0.0" y="8" width="346" height="119"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swift-firebase" translatesAutoresizingMaskIntoConstraints="NO" id="Vrd-qc-uZQ">
-                                                <rect key="frame" x="50" y="-5" width="242" height="128"/>
+                                                <rect key="frame" x="49" y="-5" width="241" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3w-pt-ClB">
-                                        <rect key="frame" x="13" y="135" width="349" height="38"/>
+                                        <rect key="frame" x="11" y="135" width="349" height="38"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwh-eF-fvQ">
@@ -279,7 +297,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rmA-GX-CCY">
-                                        <rect key="frame" x="13" y="181" width="349" height="50"/>
+                                        <rect key="frame" x="11" y="181" width="349" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7J-z0-RbF">
@@ -291,7 +309,7 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kVa-bg-gwn">
-                                        <rect key="frame" x="13" y="239" width="349" height="50"/>
+                                        <rect key="frame" x="11" y="239" width="349" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FjM-lQ-7nr">
@@ -303,7 +321,7 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZg-td-fcB">
-                                        <rect key="frame" x="13" y="297" width="349" height="50"/>
+                                        <rect key="frame" x="11" y="297" width="349" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="daa-70-ajQ">
@@ -315,7 +333,7 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" id="Q6t-15-tUF">
-                                        <rect key="frame" x="13" y="355" width="349" height="51"/>
+                                        <rect key="frame" x="11" y="355" width="349" height="51"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECG-aN-ukz">
@@ -326,6 +344,9 @@
                                                     <color key="baseForegroundColor" name="ButtonLabelColor"/>
                                                     <color key="baseBackgroundColor" name="ButtonBackgroundColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="goToPermission:" destination="kXi-24-QLG" eventType="touchUpInside" id="25A-Tg-5XE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </view>
@@ -337,48 +358,51 @@
                     </view>
                     <navigationItem key="navigationItem" style="editor" id="9eY-cf-hir"/>
                     <connections>
+                        <outlet property="confirmPassword" destination="daa-70-ajQ" id="und-Ca-1ld"/>
+                        <outlet property="email" destination="F7J-z0-RbF" id="LwU-7w-byI"/>
+                        <outlet property="password" destination="FjM-lQ-7nr" id="5o1-Gr-ALv"/>
                         <segue destination="gh5-LU-pKh" kind="show" identifier="go-from-sign-up-to-permission" id="6Ym-8g-A9r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJZ-Sg-c51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="477"/>
+            <point key="canvasLocation" x="2518.840579710145" y="476.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Permission View Controller-->
         <scene sceneID="E4k-fc-c9T">
             <objects>
-                <viewController id="gh5-LU-pKh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="permission" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gh5-LU-pKh" customClass="PermissionViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zuq-Nn-DIH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OfL-jm-wgk">
-                                <rect key="frame" x="18" y="282" width="375" height="387"/>
+                                <rect key="frame" x="15" y="281" width="374" height="388"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lze-FV-PEc">
-                                        <rect key="frame" x="0.0" y="8" width="375" height="128"/>
+                                        <rect key="frame" x="0.0" y="8" width="374" height="128"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="permission" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-J8-zO6">
-                                                <rect key="frame" x="65" y="0.0" width="239" height="128"/>
+                                                <rect key="frame" x="63" y="0.0" width="238" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8L0-gf-f7O">
-                                        <rect key="frame" x="0.0" y="144" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="144" width="374" height="100"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow your Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92L-Ss-YsC">
-                                                <rect key="frame" x="8" y="8" width="359" height="24"/>
+                                                <rect key="frame" x="7" y="8" width="359" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="textColor" name="LabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We will need your camera to give you better experience." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsX-4L-bgD">
-                                                <rect key="frame" x="8" y="40" width="358" height="60"/>
+                                                <rect key="frame" x="7" y="40" width="357" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <color key="textColor" name="LabelColor"/>
@@ -387,20 +411,11 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XkI-CH-x1t">
-                                        <rect key="frame" x="0.0" y="252" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="252" width="374" height="90"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5r-wq-cSg">
-                                                <rect key="frame" x="55" y="55" width="264" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Not now">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="baseForegroundColor" name="PermissionButtonBackgroundColor"/>
-                                                </buttonConfiguration>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ3-D3-jT2">
-                                                <rect key="frame" x="55" y="8" width="264" height="36"/>
+                                                <rect key="frame" x="53" y="8" width="265" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Sure, I'd Like that">
@@ -408,13 +423,28 @@
                                                     <color key="baseForegroundColor" name="PermissionButtonLabelColor"/>
                                                     <color key="baseBackgroundColor" name="PermissionButtonBackgroundColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="grantPermission:" destination="gh5-LU-pKh" eventType="touchUpInside" id="kpP-7X-jUO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5r-wq-cSg">
+                                                <rect key="frame" x="53" y="55" width="265" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Not now">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="baseForegroundColor" name="PermissionButtonBackgroundColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="deniPermission:" destination="gh5-LU-pKh" eventType="touchUpInside" id="LZw-wn-EJq"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </view>
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpA-tq-cD2">
-                                <rect key="frame" x="18" y="75" width="375" height="128"/>
+                                <rect key="frame" x="15" y="75" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
@@ -429,36 +459,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCZ-8D-Ol0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2475" y="86"/>
+            <point key="canvasLocation" x="3384.057971014493" y="85.714285714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="Dyw-Ha-NSf">
             <objects>
-                <viewController id="aiB-PW-qy3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aiB-PW-qy3" customClass="HomeViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eH9-h7-z63">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NbC-Sv-6Oi">
-                                <rect key="frame" x="20" y="185" width="374" height="128"/>
+                                <rect key="frame" x="17" y="184" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a send method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwJ-p7-mE5">
-                                        <rect key="frame" x="9" y="8" width="358" height="24"/>
+                                        <rect key="frame" x="7" y="8" width="358" height="24"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" name="LabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose camera to take an photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sph-dT-LN1">
-                                        <rect key="frame" x="8" y="40" width="358" height="24"/>
+                                        <rect key="frame" x="7" y="40" width="358" height="24"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                         <color key="textColor" name="LabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose gallery and pick an photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s0-vY-xJT">
-                                        <rect key="frame" x="8" y="72" width="358" height="24"/>
+                                        <rect key="frame" x="7" y="72" width="358" height="24"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                         <color key="textColor" name="LabelColor"/>
@@ -468,26 +498,52 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pK0-Xc-usL">
-                                <rect key="frame" x="20" y="353" width="374" height="100"/>
+                                <rect key="frame" x="17" y="353" width="374" height="98"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpP-dR-Vvb">
-                                        <rect key="frame" x="40" y="0.0" width="100" height="100"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpP-dR-Vvb" userLabel="CameraButton">
+                                        <rect key="frame" x="39" y="0.0" width="98" height="98"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="camera-permission">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration"/>
                                         </state>
+                                        <connections>
+                                            <action selector="CameraButton:" destination="aiB-PW-qy3" eventType="touchUpInside" id="dU3-ba-DXm"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be4-Ae-laS">
-                                        <rect key="frame" x="227" y="0.0" width="102" height="100"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be4-Ae-laS" userLabel="GalleryButton">
+                                        <rect key="frame" x="226" y="0.0" width="102" height="98"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="gallery-permission"/>
+                                        <connections>
+                                            <action selector="GalleryButton:" destination="aiB-PW-qy3" eventType="touchUpInside" id="MOF-2o-Ete"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gB4-Ku-kK0">
+                                <rect key="frame" x="18" y="796" width="373" height="77"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9a-u9-DTs" userLabel="GalleryButton">
+                                        <rect key="frame" x="136" y="7" width="99" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <imageReference key="image" image="photo.on.rectangle" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                                            <color key="baseBackgroundColor" name="LinkColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToGallery:" destination="aiB-PW-qy3" eventType="touchUpInside" id="Klo-8V-ixW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NL9-2Y-1fy"/>
@@ -496,17 +552,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZJW-ae-1PY"/>
                     <connections>
-                        <segue destination="bJY-Rf-mqH" kind="show" identifier="go-from-home-to-permission" id="NWH-GV-4Dv"/>
+                        <segue destination="bJY-Rf-mqH" kind="show" identifier="go-from-home-to-gallery" id="NWH-GV-4Dv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ep-ks-u5s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3289.8550724637685" y="85.714285714285708"/>
+            <point key="canvasLocation" x="4200" y="85.714285714285708"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Gallery Collection View Controller-->
         <scene sceneID="D5A-s5-3gY">
             <objects>
-                <collectionViewController id="bJY-Rf-mqH" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="gallery" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bJY-Rf-mqH" customClass="GalleryCollectionViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Gt7-S4-1D2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -518,12 +574,18 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Yqf-fK-mk3">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="Yqf-fK-mk3" customClass="GalleryCellCollectionViewCell" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xDu-FQ-MfQ">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xDu-FQ-MfQ" customClass="GalleryCellCollectionViewCell" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gallery-permission" translatesAutoresizingMaskIntoConstraints="NO" id="aXh-ac-1yy">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </collectionViewCellContentView>
                             </collectionViewCell>
                         </cells>
@@ -533,38 +595,44 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="neg-Hi-Wqi"/>
+                    <connections>
+                        <outlet property="galleryCollectionView" destination="Gt7-S4-1D2" id="8tI-1H-jHJ"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGa-fO-ysQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4119" y="86"/>
+            <point key="canvasLocation" x="5028.985507246377" y="85.714285714285708"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Sr6-3p-YLf">
+        <scene sceneID="Q1Y-ks-ZZN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dcY-oJ-Cze" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="WOG-nQ-w3x" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QwJ-au-CQC">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ddm-3v-9k8">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="seD-sL-gz6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="QIY-tu-lmB" kind="relationship" relationship="rootViewController" destinationCreationSelector="go-to-onboard" id="Tk5-7Z-U3j"/>
+                        <segue destination="QIY-tu-lmB" kind="relationship" relationship="rootViewController" id="FUS-Dx-qfu"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ktd-fE-9rW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XvA-O7-Bmd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="86"/>
+            <point key="canvasLocation" x="757.97101449275374" y="85.714285714285708"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6Ym-8g-A9r"/>
+        <segue reference="5Z2-dh-Zd7"/>
         <segue reference="9dZ-Hz-T2f"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera-permission" width="512" height="512"/>
         <image name="gallery-permission" width="512" height="512"/>
         <image name="permission" width="512" height="512"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>
         <image name="swift-firebase" width="500" height="500"/>
         <image name="zoominitcode-logo" width="380" height="200"/>
         <namedColor name="ButtonBackgroundColor">

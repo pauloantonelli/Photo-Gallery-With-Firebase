@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct Constant {
+    // MARK: navigation
+    static let goToSignIn = "go-to-sign-in"
+    static let goToSignUp = "go-to-sign-up"
+    static let goFromSignInToSingUp = "go-from-sign-in-to-sing-up"
+    static let goFromSignInToPermission = "go-from-sign-in-to-permission"
+    static let goFromSignUpToPermission = "go-from-sign-up-to-permission"
+    static let goFromPermissionToHome = "go-from-permission-to-home"
+    static let goFromHomeToGallery = "go-from-home-to-gallery"
+    
+    // MARK: identifier
+    static let reuseIdentifier = "photoCell"
+}

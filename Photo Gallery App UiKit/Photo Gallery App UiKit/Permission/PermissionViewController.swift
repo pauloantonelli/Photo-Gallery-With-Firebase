@@ -8,22 +8,20 @@
 import UIKit
 
 class PermissionViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
-        // Do any additional setup after loading the view.
+    @IBAction func grantPermission(_ sender: UIButton) {
+        self.goToHome()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func deniPermission(_ sender: Any) {
+        self.goToHome()
     }
-    */
-
+    
+    func goToHome() -> Void {
+        self.performSegue(withIdentifier: Constant.goFromPermissionToHome, sender: self)
+    }
 }
