@@ -21,7 +21,7 @@ class GalleryCollectionViewController: UICollectionViewController {
     }
     
     func initPhotoList() -> Void {
-        for item in 0...200 {
+        for item in 0...10 {
             let image = UIImage(named: "gallery-permission")!
             self.photoList.append(image)
         }

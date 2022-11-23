@@ -8,12 +8,12 @@
 import Foundation
 
 public struct User {
-    let id: String
-    let username: String
-    let photoUrl: URL
-    let credential: Credential
+    public let id: String
+    public let username: String
+    public let photoUrl: URL
+    public let credential: Credential
     
-    public init(id: String, username: String = "", photoUrl: URL = URL(string: "")!, credential: Credential = Credential()) {
+    public init(id: String, username: String = "", photoUrl: URL = URL(string: AppConstant.image)!, credential: Credential = Credential()) {
         self.id = id
         self.username = username
         self.photoUrl = photoUrl

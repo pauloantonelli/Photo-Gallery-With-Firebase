@@ -8,9 +8,9 @@
 import Foundation
 
 public struct RegisterUseCase: IRegisterUseCase {
-    let repository: RegisterRepository
+    let repository: IRegisterRepository
     
-    init(repository: RegisterRepository) {
+    public init(repository: IRegisterRepository = RegisterRepository()) {
         self.repository = repository
     }
     

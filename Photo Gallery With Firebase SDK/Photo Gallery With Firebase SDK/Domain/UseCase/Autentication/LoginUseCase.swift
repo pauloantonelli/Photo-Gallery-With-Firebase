@@ -8,9 +8,9 @@
 import Foundation
 
 public struct LoginUseCase: ILoginUseCase {
-    let repository: LoginRepository
+    let repository: ILoginRepository
     
-    init(repository: LoginRepository) {
+    public init(repository: ILoginRepository = LoginRepository()) {
         self.repository = repository
     }
     

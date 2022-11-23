@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ILoginDataSource {
+public protocol ILoginDataSource {
     func execute(withCredential credential: Credential) async throws -> User
 }

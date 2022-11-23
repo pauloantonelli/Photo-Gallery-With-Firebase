@@ -27,6 +27,7 @@
 		7B9D191B2923B46800C719C0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D191A2923B46800C719C0 /* SignUpViewController.swift */; };
 		7B9D191E2923B49300C719C0 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D191D2923B49300C719C0 /* OnboardingViewController.swift */; };
 		7B9D19202923B53900C719C0 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D191F2923B53900C719C0 /* GalleryCollectionViewController.swift */; };
+		7BC068D2292D22A900975349 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC068D1292D22A900975349 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B7A5711291E780900B56CD0 /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */,
+				7BC068D2292D22A900975349 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +264,9 @@
 			dependencies = (
 			);
 			name = "Photo Gallery App UiKit";
+			packageProductDependencies = (
+				7BC068D1292D22A900975349 /* IQKeyboardManagerSwift */,
+			);
 			productName = "Photo Gallery App UiKit";
 			productReference = 7B463651291592AD002B23C6 /* Photo Gallery App UiKit.app */;
 			productType = "com.apple.product-type.application";
@@ -334,6 +339,9 @@
 				Base,
 			);
 			mainGroup = 7B463648291592AD002B23C6;
+			packageReferences = (
+				7BC068D0292D22A900975349 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 7B463652291592AD002B23C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -730,6 +738,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7BC068D0292D22A900975349 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7BC068D1292D22A900975349 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BC068D0292D22A900975349 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7B463649291592AD002B23C6 /* Project object */;
 }

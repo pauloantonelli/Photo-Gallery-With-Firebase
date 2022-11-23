@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct LoginRepository: ILoginRepository {
-    let datasource: LoginDataSource
+public struct LoginRepository: ILoginRepository {
+    let datasource: ILoginDataSource
     
-    init(datasource: LoginDataSource = LoginDataSource(firebase: DependencyInjection.get(IFirebaseService.self)!)) {
+    public init(datasource: ILoginDataSource = LoginDataSource(firebase: DependencyInjection.get(IFirebaseService.self)!)) {
         self.datasource = datasource
     }
     
-    func execute(withCredential credential: Credential) async -> Result<User, LoginErrorUseCase> {
+    public func execute(withCredential credential: Credential) async -> Result<User, LoginErrorUseCase> {
         do {
             let result = try await self.datasource.execute(withCredential: credential)
             return .success(result)

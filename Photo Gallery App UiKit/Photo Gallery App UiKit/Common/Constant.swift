@@ -12,6 +12,7 @@ struct Constant {
     static let goToSignIn = "go-to-sign-in"
     static let goToSignUp = "go-to-sign-up"
     static let goFromSignInToSingUp = "go-from-sign-in-to-sing-up"
+    static let goFromSignUpToSingIn = "go-from-sign-up-to-sing-in"
     static let goFromSignInToPermission = "go-from-sign-in-to-permission"
     static let goFromSignUpToPermission = "go-from-sign-up-to-permission"
     static let goFromPermissionToHome = "go-from-permission-to-home"

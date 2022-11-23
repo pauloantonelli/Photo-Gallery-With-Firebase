@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IRegisterDataSource {
+public protocol IRegisterDataSource {
     func execute(withCredential credential: Credential) async throws -> User
 }

@@ -18,6 +18,14 @@ struct RegisterFirebaseErrorMock: IFirebaseService {
     func register(email: String, password: String) async throws -> User {
         throw RegisterErrorDataSource(message: "Error on register")
     }
+    
+    func signOut() throws -> Bool {
+        false
+    }
+    
+    func forgotPassword(withEmail email: String) async throws -> Bool {
+        false
+    }
 }
 class RegisterDataSourceTest: XCTestCase {
     var firebaseService: IFirebaseService!

@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct LoginDataSource: ILoginDataSource {
+public struct LoginDataSource: ILoginDataSource {
     let firebase: IFirebaseService
     
-    init(firebase: IFirebaseService) {
+    public init(firebase: IFirebaseService) {
         self.firebase = firebase
     }
     
-    func execute(withCredential credential: Credential) async throws -> User {
+    public func execute(withCredential credential: Credential) async throws -> User {
         do {
             let result = try await self.firebase.login(email: credential.email.value, password: credential.password.value)
             return result

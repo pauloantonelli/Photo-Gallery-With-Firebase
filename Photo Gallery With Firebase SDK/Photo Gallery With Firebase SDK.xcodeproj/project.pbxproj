@@ -106,6 +106,19 @@
 		7BB02DE2291D4C7500DD0A59 /* GetMediaListUrlDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DE1291D4C7500DD0A59 /* GetMediaListUrlDrive.swift */; };
 		7BB02DE5291D4DA700DD0A59 /* GetMediaListUrlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DE4291D4DA700DD0A59 /* GetMediaListUrlService.swift */; };
 		7BB02DEB291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DEA291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift */; };
+		7BC068CC292BEFAF00975349 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068CB292BEFAF00975349 /* AlertService.swift */; };
+		7BC068CF292C1F2E00975349 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068CE292C1F2E00975349 /* AppConstant.swift */; };
+		7BC068D5292D263900975349 /* KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068D4292D263900975349 /* KeyboardDismiss.swift */; };
+		7BC068DD292E8BF000975349 /* IFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068DC292E8BF000975349 /* IFirebaseService.swift */; };
+		7BC068DF292E90BA00975349 /* IForgotPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068DE292E90BA00975349 /* IForgotPasswordUseCase.swift */; };
+		7BC068E1292E910400975349 /* ForgotPasswordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068E0292E910400975349 /* ForgotPasswordError.swift */; };
+		7BC068E3292E915F00975349 /* ForgotPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068E2292E915F00975349 /* ForgotPasswordUseCase.swift */; };
+		7BC068E5292E91AA00975349 /* IForgotPasswordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068E4292E91AA00975349 /* IForgotPasswordRepository.swift */; };
+		7BC068E7292E948D00975349 /* ForgotPasswordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068E6292E948D00975349 /* ForgotPasswordRepository.swift */; };
+		7BC068E9292E94CD00975349 /* ForgotPasswordDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068E8292E94CD00975349 /* ForgotPasswordDataSource.swift */; };
+		7BC068EB292E94F100975349 /* IForgotPasswordDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068EA292E94F100975349 /* IForgotPasswordDataSource.swift */; };
+		7BC068ED292E97A500975349 /* ForgotPasswordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068EC292E97A500975349 /* ForgotPasswordUseCaseTest.swift */; };
+		7BC068EF292E9EA000975349 /* ForgotPasswordDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068EE292E9EA000975349 /* ForgotPasswordDataSourceTest.swift */; };
 		7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */; };
 		7BC1CA4E290C788400A178DA /* DependencyInjectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1CA4D290C788400A178DA /* DependencyInjectionTest.swift */; };
 		7BF8812F2911B33400E30301 /* GalleryPermissionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8812E2911B33400E30301 /* GalleryPermissionTest.swift */; };
@@ -229,6 +242,19 @@
 		7BB02DE1291D4C7500DD0A59 /* GetMediaListUrlDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlDrive.swift; sourceTree = "<group>"; };
 		7BB02DE4291D4DA700DD0A59 /* GetMediaListUrlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlService.swift; sourceTree = "<group>"; };
 		7BB02DEA291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlServiceTest.swift; sourceTree = "<group>"; };
+		7BC068CB292BEFAF00975349 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		7BC068CE292C1F2E00975349 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		7BC068D4292D263900975349 /* KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismiss.swift; sourceTree = "<group>"; };
+		7BC068DC292E8BF000975349 /* IFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFirebaseService.swift; sourceTree = "<group>"; };
+		7BC068DE292E90BA00975349 /* IForgotPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IForgotPasswordUseCase.swift; sourceTree = "<group>"; };
+		7BC068E0292E910400975349 /* ForgotPasswordError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordError.swift; sourceTree = "<group>"; };
+		7BC068E2292E915F00975349 /* ForgotPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUseCase.swift; sourceTree = "<group>"; };
+		7BC068E4292E91AA00975349 /* IForgotPasswordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IForgotPasswordRepository.swift; sourceTree = "<group>"; };
+		7BC068E6292E948D00975349 /* ForgotPasswordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRepository.swift; sourceTree = "<group>"; };
+		7BC068E8292E94CD00975349 /* ForgotPasswordDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataSource.swift; sourceTree = "<group>"; };
+		7BC068EA292E94F100975349 /* IForgotPasswordDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IForgotPasswordDataSource.swift; sourceTree = "<group>"; };
+		7BC068EC292E97A500975349 /* ForgotPasswordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUseCaseTest.swift; sourceTree = "<group>"; };
+		7BC068EE292E9EA000975349 /* ForgotPasswordDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataSourceTest.swift; sourceTree = "<group>"; };
 		7BC1CA41290C6A9D00A178DA /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		7BC1CA4D290C788400A178DA /* DependencyInjectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionTest.swift; sourceTree = "<group>"; };
 		7BF8812E2911B33400E30301 /* GalleryPermissionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionTest.swift; sourceTree = "<group>"; };
@@ -265,6 +291,7 @@
 			children = (
 				7B01A4F5290B0834002E502A /* LoginError.swift */,
 				7B01A4F9290B0ACF002E502A /* RegisterError.swift */,
+				7BC068E0292E910400975349 /* ForgotPasswordError.swift */,
 				7B46362C2912AD4C002B23C6 /* NetworkStatusError.swift */,
 				7BB02DD5291D49AE00DD0A59 /* GetMediaListUrlError.swift */,
 				7B1FC36D291C01ED00FF02F3 /* GetMediaUrlError.swift */,
@@ -303,6 +330,7 @@
 			children = (
 				7B01A501290B0BBA002E502A /* IRegisterRepository.swift */,
 				7B01A503290B0BF2002E502A /* ILoginRepository.swift */,
+				7BC068E4292E91AA00975349 /* IForgotPasswordRepository.swift */,
 			);
 			path = Autentication;
 			sourceTree = "<group>";
@@ -312,6 +340,7 @@
 			children = (
 				7B01A4F0290AF56B002E502A /* IRegisterUseCase.swift */,
 				7B01A4F2290AF58F002E502A /* ILoginUseCase.swift */,
+				7BC068DE292E90BA00975349 /* IForgotPasswordUseCase.swift */,
 			);
 			path = Autentication;
 			sourceTree = "<group>";
@@ -321,6 +350,7 @@
 			children = (
 				7B01A4F7290B09AA002E502A /* LoginUseCase.swift */,
 				7B01A4FB290B0B09002E502A /* RegisterUseCase.swift */,
+				7BC068E2292E915F00975349 /* ForgotPasswordUseCase.swift */,
 			);
 			path = Autentication;
 			sourceTree = "<group>";
@@ -330,6 +360,7 @@
 			children = (
 				7B01A507290B0C5B002E502A /* LoginRepository.swift */,
 				7B01A509290B0CB9002E502A /* RegisterRepository.swift */,
+				7BC068E6292E948D00975349 /* ForgotPasswordRepository.swift */,
 			);
 			path = Autentication;
 			sourceTree = "<group>";
@@ -339,6 +370,7 @@
 			children = (
 				7B01A50C290B0DAB002E502A /* ILoginDataSource.swift */,
 				7B01A50E290B0E5E002E502A /* IRegisterDataSource.swift */,
+				7BC068EA292E94F100975349 /* IForgotPasswordDataSource.swift */,
 			);
 			path = Autentication;
 			sourceTree = "<group>";
@@ -524,6 +556,7 @@
 			children = (
 				7B64E5F3290D5A7B003F8457 /* LoginUseCaseTest.swift */,
 				7B70938429105B5B004C1156 /* RegisterUseCaseTest.swift */,
+				7BC068EC292E97A500975349 /* ForgotPasswordUseCaseTest.swift */,
 			);
 			path = Autentication;
 			sourceTree = "<group>";
@@ -741,13 +774,13 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		7B88F659291AF98300F5DD66 /* MediaFileService */ = {
+		7B88F659291AF98300F5DD66 /* MediaFile */ = {
 			isa = PBXGroup;
 			children = (
 				7B88F65A291AF9A700F5DD66 /* IMediaFileService.swift */,
 				7B88F65C291AF9B300F5DD66 /* MediaFileService.swift */,
 			);
-			path = MediaFileService;
+			path = MediaFile;
 			sourceTree = "<group>";
 		};
 		7B88F662291AFBB200F5DD66 /* Service */ = {
@@ -855,6 +888,8 @@
 		7B9529A12908BE41006F203F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7BC068D3292D262400975349 /* Util */,
+				7BC068CD292C1F0900975349 /* Constant */,
 				7BAE04D429171ECB004AA68A /* Service */,
 				7BC1CA40290C6A7F00A178DA /* DependencyInjection */,
 			);
@@ -864,9 +899,9 @@
 		7B9529A42908BEAA006F203F /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				7BC068DB292E8BDD00975349 /* FirebaseService */,
 				7BFA8857291A96080023D13D /* FirebaseStorageService */,
 				7B9529AE2909CB44006F203F /* Config */,
-				7B9529A22908BE9E006F203F /* FirebaseService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -959,7 +994,8 @@
 		7BAE04D429171ECB004AA68A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				7B88F659291AF98300F5DD66 /* MediaFileService */,
+				7BC068CA292BEF8000975349 /* Alert */,
+				7B88F659291AF98300F5DD66 /* MediaFile */,
 				7B95298C2908BBF7006F203F /* Network */,
 				7B95298B2908BBE9006F203F /* Gallery */,
 				7B95298A2908BBE3006F203F /* Camera */,
@@ -1082,6 +1118,39 @@
 			path = GetMediaListUrl;
 			sourceTree = "<group>";
 		};
+		7BC068CA292BEF8000975349 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				7BC068CB292BEFAF00975349 /* AlertService.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		7BC068CD292C1F0900975349 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				7BC068CE292C1F2E00975349 /* AppConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		7BC068D3292D262400975349 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7BC068D4292D263900975349 /* KeyboardDismiss.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		7BC068DB292E8BDD00975349 /* FirebaseService */ = {
+			isa = PBXGroup;
+			children = (
+				7BC068DC292E8BF000975349 /* IFirebaseService.swift */,
+				7B9529A22908BE9E006F203F /* FirebaseService.swift */,
+			);
+			path = FirebaseService;
+			sourceTree = "<group>";
+		};
 		7BC1CA40290C6A7F00A178DA /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1143,6 +1212,7 @@
 			children = (
 				7B01A510290B0EB3002E502A /* LoginDataSource.swift */,
 				7B01A512290B0ED7002E502A /* RegisterDataSource.swift */,
+				7BC068E8292E94CD00975349 /* ForgotPasswordDataSource.swift */,
 			);
 			path = Autentication;
 			sourceTree = "<group>";
@@ -1160,6 +1230,7 @@
 			children = (
 				7B70938829105CF1004C1156 /* LoginDataSourceTest.swift */,
 				7B70938A29106272004C1156 /* RegisterDataSourceTest.swift */,
+				7BC068EE292E9EA000975349 /* ForgotPasswordDataSourceTest.swift */,
 			);
 			path = Autentication;
 			sourceTree = "<group>";
@@ -1294,10 +1365,12 @@
 				7B7093B529118BF3004C1156 /* ICameraPermissionService.swift in Sources */,
 				7B01A4FA290B0ACF002E502A /* RegisterError.swift in Sources */,
 				7BB02DD9291D4AF600DD0A59 /* IGetMediaListUrlDrive.swift in Sources */,
+				7BC068D5292D263900975349 /* KeyboardDismiss.swift in Sources */,
 				7B7093B729118CD6004C1156 /* GalleryPermissionService.swift in Sources */,
 				7BFA886F291AA2FB0023D13D /* IFirebaseStorageService.swift in Sources */,
 				7BAE04DE2917227F004AA68A /* IMediaPermissionService.swift in Sources */,
 				7B46362D2912AD4C002B23C6 /* NetworkStatusError.swift in Sources */,
+				7BC068E7292E948D00975349 /* ForgotPasswordRepository.swift in Sources */,
 				7BB02DBA291D315800DD0A59 /* DeleteMediaError.swift in Sources */,
 				7BC1CA42290C6A9D00A178DA /* DependencyInjection.swift in Sources */,
 				7B1FC353291B141A00FF02F3 /* SaveMediaError.swift in Sources */,
@@ -1309,7 +1382,9 @@
 				7B1FC35C291B167400FF02F3 /* SaveMediaDrive.swift in Sources */,
 				7B6D209D291D85D2000387BF /* IGetMediaListUrlUseCase.swift in Sources */,
 				7B9529C32909D24F006F203F /* Password.swift in Sources */,
+				7BC068EB292E94F100975349 /* IForgotPasswordDataSource.swift in Sources */,
 				7B01A50D290B0DAB002E502A /* ILoginDataSource.swift in Sources */,
+				7BC068DD292E8BF000975349 /* IFirebaseService.swift in Sources */,
 				7B7A5715291E9EE900B56CD0 /* IDependencyInjection.swift in Sources */,
 				7B01A502290B0BBA002E502A /* IRegisterRepository.swift in Sources */,
 				7B7093AA29118A27004C1156 /* CameraPermissionDrive.swift in Sources */,
@@ -1345,6 +1420,7 @@
 				7B1FC377291C041900FF02F3 /* GetMediaUrlDrive.swift in Sources */,
 				7BB02DC0291D321F00DD0A59 /* IDeleteMediaDrive.swift in Sources */,
 				7B1FC36B291C019700FF02F3 /* IGetMediaUrl.swift in Sources */,
+				7BC068E1292E910400975349 /* ForgotPasswordError.swift in Sources */,
 				7B70939629106B50004C1156 /* CameraPermissionError.swift in Sources */,
 				7B9529BD2909D042006F203F /* User.swift in Sources */,
 				7BAE04D329171E62004AA68A /* ICheckNetworkServiceDelegate.swift in Sources */,
@@ -1355,10 +1431,15 @@
 				7B88F65D291AF9B300F5DD66 /* MediaFileService.swift in Sources */,
 				7B88F65B291AF9A700F5DD66 /* IMediaFileService.swift in Sources */,
 				7BB02DBD291D31C100DD0A59 /* DeleteMediaUseCase.swift in Sources */,
+				7BC068CC292BEFAF00975349 /* AlertService.swift in Sources */,
 				7B1FC37A291C045C00FF02F3 /* IGetMediaUrlService.swift in Sources */,
+				7BC068E9292E94CD00975349 /* ForgotPasswordDataSource.swift in Sources */,
 				7B7093A12911889E004C1156 /* IGalleryPermissionDrive.swift in Sources */,
 				7B70939A29118798004C1156 /* IGalleryPermissionUseCase.swift in Sources */,
+				7BC068DF292E90BA00975349 /* IForgotPasswordUseCase.swift in Sources */,
 				7B7093A329118926004C1156 /* GalleryPermissionUseCase.swift in Sources */,
+				7BC068CF292C1F2E00975349 /* AppConstant.swift in Sources */,
+				7BC068E3292E915F00975349 /* ForgotPasswordUseCase.swift in Sources */,
 				7B1FC37D291C057300FF02F3 /* GetMediaUrlService.swift in Sources */,
 				7BB02DE5291D4DA700DD0A59 /* GetMediaListUrlService.swift in Sources */,
 				7B01A50F290B0E5E002E502A /* IRegisterDataSource.swift in Sources */,
@@ -1375,6 +1456,7 @@
 				7B7093B929118CFB004C1156 /* CameraPermissionService.swift in Sources */,
 				7B1FC359291B14F700FF02F3 /* ISaveMediaDrive.swift in Sources */,
 				7BAE04E0291723BE004AA68A /* IMediaPermissionServiceDelegate.swift in Sources */,
+				7BC068E5292E91AA00975349 /* IForgotPasswordRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1393,10 +1475,12 @@
 				7B1FC34E291B0F1E00FF02F3 /* MediaFileServiceTest.swift in Sources */,
 				7B6D2097291D82A6000387BF /* GetMediaListUrlTest.swift in Sources */,
 				7B70938B29106272004C1156 /* RegisterDataSourceTest.swift in Sources */,
+				7BC068EF292E9EA000975349 /* ForgotPasswordDataSourceTest.swift in Sources */,
 				7BF881342911B5CD00E30301 /* CameraPermissionServiceTest.swift in Sources */,
 				7B64E5F4290D5A7B003F8457 /* LoginUseCaseTest.swift in Sources */,
 				7B1FC381291C08C300FF02F3 /* GetMediaUrlUseCaseTest.swift in Sources */,
 				7BF8813629126BBB00E30301 /* GalleryPermissionServiceTest.swift in Sources */,
+				7BC068ED292E97A500975349 /* ForgotPasswordUseCaseTest.swift in Sources */,
 				7B46364729154D65002B23C6 /* NetworkTest.swift in Sources */,
 				7B1FC368291B247D00FF02F3 /* SaveMediaServiceTest.swift in Sources */,
 				7B1FC384291C0D6500FF02F3 /* GetMediaUrlServiceTest.swift in Sources */,

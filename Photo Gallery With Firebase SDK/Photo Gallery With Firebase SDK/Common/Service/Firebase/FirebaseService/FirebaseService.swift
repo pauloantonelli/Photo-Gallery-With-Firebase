@@ -8,11 +8,6 @@
 import FirebaseCore
 import FirebaseAuth
 
-public protocol IFirebaseService {
-    func login(email: String, password: String) async throws -> User
-    func register(email: String, password: String) async throws -> User
-}
-
 public class FirebaseService: IFirebaseService {
     var user: User = User(id: "")
     var shared: FirebaseService {
@@ -26,20 +21,15 @@ public class FirebaseService: IFirebaseService {
         self.initListenerUserState()
     }
     
+    deinit {
+        self.disposeListenerLoginState()
+    }
+    
     func initFirebase() -> Void {
         FirebaseApp.configure()
     }
     
     public func login(email: String, password: String) async throws -> User {
-//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-//            if error != nil {
-//                completion(nil)
-//            }
-//          guard let strongSelf = self else { return }
-//            let user: User = User(id: authResult?.user.uid ?? "", username: authResult?.user.displayName ?? "", photoUrl: authResult?.user.photoURL ?? URL(string: "")!, credential: Credential(email: Email(email: email)))
-//            strongSelf.updateUser(user: user)
-//            completion(user)
-//        }
         do {
             let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
             let user: User = User(id: authResult.user.uid, username: authResult.user.displayName ?? "", photoUrl: authResult.user.photoURL ?? URL(string: AppConstant.image)!, credential: Credential(email: Email(email: email)))
@@ -52,15 +42,6 @@ public class FirebaseService: IFirebaseService {
     }
     
     public func register(email: String, password: String) async throws -> User {
-//        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
-//            if error != nil {
-//                completion(nil)
-//            }
-//            guard let strongSelf = self else { return }
-//            let user: User = User(id: authResult?.user.uid ?? "", username: authResult?.user.displayName ?? "", photoUrl: authResult?.user.photoURL ?? URL(string: "")!, credential: Credential(email: Email(email: email)))
-//            strongSelf.updateUser(user: user)
-//            completion(user)
-//        }
         do {
             let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
             let user: User = User(id: authResult.user.uid, username: authResult.user.displayName ?? "", photoUrl: authResult.user.photoURL ?? URL(string: AppConstant.image)!, credential: Credential(email: Email(email: email)))
@@ -69,6 +50,27 @@ public class FirebaseService: IFirebaseService {
         } catch {
             let user: User = User(id: "")
             return user
+        }
+    }
+    
+    public func signOut() throws -> Bool {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            return true
+        } catch let signOutError as NSError {
+            print("Error sign out: %@", signOutError)
+            return false
+        }
+    }
+    
+    public func forgotPassword(withEmail email: String) async throws -> Bool {
+        do {
+            try await Auth.auth().sendPasswordReset(withEmail: email)
+            return true
+        } catch let forgotPasswordError as NSError {
+            print("Error forgot password: %@", forgotPasswordError)
+            return false
         }
     }
     

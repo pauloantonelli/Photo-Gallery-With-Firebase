@@ -6,30 +6,68 @@
 //
 
 import XCTest
+@testable import Photo_Gallery_With_Firebase_SDK
 
+struct ForgotPasswordDataSourceFirebaseMock: IFirebaseService {
+    let user: User = User(id: "user123", username: "Paulo Antonelli", photoUrl: URL(string: "https://minhafoto.com/pauloantonelli")!)
+    
+    func login(email: String, password: String) async throws -> User {
+        return self.user
+    }
+    
+    func register(email: String, password: String) async throws -> User {
+        return self.user
+    }
+    
+    func signOut() throws -> Bool {
+        false
+    }
+    
+    func forgotPassword(withEmail email: String) async throws -> Bool {
+        true
+    }
+}
+struct ForgotPasswordDataSourceFirebaseErrorMock: IFirebaseService {
+    let user: User = User(id: "user123", username: "Paulo Antonelli", photoUrl: URL(string: "https://minhafoto.com/pauloantonelli")!)
+    
+    func login(email: String, password: String) async throws -> User {
+        return self.user
+    }
+    
+    func register(email: String, password: String) async throws -> User {
+        return self.user
+    }
+    
+    func signOut() throws -> Bool {
+        false
+    }
+    
+    func forgotPassword(withEmail email: String) async throws -> Bool {
+        throw ForgotPasswordErrorDataSource(message: "Error")
+    }
+}
 final class ForgotPasswordDataSourceTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var datasource: IForgotPasswordDataSource!
+    var firebaseService: IFirebaseService!
+    let email: Email = Email(email: "pauloantonelli@zoominitcode.dev")
+    
+    func initDependency(withMock mock: IFirebaseService) -> Void {
+        self.firebaseService = mock
+        self.datasource = ForgotPasswordDataSource(firebaseService: mock)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testForgotPasswordDataSourceWithoutError() async throws {
+        self.initDependency(withMock: ForgotPasswordDataSourceFirebaseMock())
+        let result = try await self.datasource.execute(withEmail: self.email)
+        XCTAssert(result == true)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testForgotPasswordDataSourceWithError() async throws {
+        self.initDependency(withMock: ForgotPasswordDataSourceFirebaseErrorMock())
+        do {
+            let _ = try await self.datasource.execute(withEmail: self.email)
+        } catch {
+            XCTAssert(error is ForgotPasswordErrorDataSource)
         }
     }
-
 }

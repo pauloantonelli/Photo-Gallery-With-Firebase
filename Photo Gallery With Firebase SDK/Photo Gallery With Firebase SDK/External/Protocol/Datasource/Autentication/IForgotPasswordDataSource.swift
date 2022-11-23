@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+public protocol IForgotPasswordDataSource {
+    func execute(withEmail email: Email) async throws -> Bool
+}

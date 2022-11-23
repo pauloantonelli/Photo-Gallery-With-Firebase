@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol LoginError: Error {
+public protocol LoginError: Error {
     var message: String { get }
 }
 
 public class LoginErrorUseCase: LoginError {
-    let message: String
+    public let message: String
     init(message: String) {
         self.message = message
     }

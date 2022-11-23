@@ -18,6 +18,14 @@ struct LoginFirebaseMock: IFirebaseService {
     func register(email: String, password: String) async throws -> User {
         return self.user
     }
+    
+    func signOut() throws -> Bool {
+        false
+    }
+    
+    func forgotPassword(withEmail email: String) async throws -> Bool {
+        false
+    }
 }
 class LoginUseCaseTest: XCTestCase {
     var firebaseService: IFirebaseService!

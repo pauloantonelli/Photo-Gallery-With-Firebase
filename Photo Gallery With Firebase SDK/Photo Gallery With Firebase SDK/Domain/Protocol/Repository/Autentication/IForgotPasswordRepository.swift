@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+public protocol IForgotPasswordRepository {
+    func execute(withEmail email: Email) async -> Result<Bool, ForgotPasswordErrorUseCase>
+}

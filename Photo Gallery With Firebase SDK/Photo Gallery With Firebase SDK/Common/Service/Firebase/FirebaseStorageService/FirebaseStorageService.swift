@@ -14,7 +14,7 @@ public struct FirebaseStorageService: IFirebaseStorageService {
     fileprivate let storageReference: StorageReference
     fileprivate let rootReference: String = "media"
     
-    init(storage: Storage = Storage.storage()) {
+    public init(storage: Storage = Storage.storage()) {
         self.storage = storage
         self.storageReference = storage.reference()
     }

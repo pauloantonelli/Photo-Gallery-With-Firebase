@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+public struct AppConstant {
+    public static let image: String = "https://via.placeholder.com/150.png"
+}

@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol RegisterError: Error {
+public protocol RegisterError: Error {
     var message: String { get }
 }
 
 public class RegisterErrorUseCase: RegisterError {
-    let message: String
+    public let message: String
     init(message: String) {
         self.message = message
     }

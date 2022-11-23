@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ILoginRepository {
+public protocol ILoginRepository {
     func execute(withCredential credential: Credential) async -> Result<User, LoginErrorUseCase>
 }
