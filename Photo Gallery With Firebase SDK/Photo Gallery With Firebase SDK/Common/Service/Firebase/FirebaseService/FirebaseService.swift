@@ -21,7 +21,7 @@ public class FirebaseService: IFirebaseService {
     }
     var authState: AuthStateDidChangeListenerHandle!
     
-    init() {
+    public init() {
         self.initFirebase()
         self.initListenerUserState()
     }
@@ -42,7 +42,7 @@ public class FirebaseService: IFirebaseService {
 //        }
         do {
             let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
-            let user: User = User(id: authResult.user.uid, username: authResult.user.displayName ?? "", photoUrl: authResult.user.photoURL ?? URL(string: "")!, credential: Credential(email: Email(email: email)))
+            let user: User = User(id: authResult.user.uid, username: authResult.user.displayName ?? "", photoUrl: authResult.user.photoURL ?? URL(string: AppConstant.image)!, credential: Credential(email: Email(email: email)))
             self.updateUser(user: user)
             return user
         } catch {
@@ -63,7 +63,7 @@ public class FirebaseService: IFirebaseService {
 //        }
         do {
             let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
-            let user: User = User(id: authResult.user.uid, username: authResult.user.displayName ?? "", photoUrl: authResult.user.photoURL ?? URL(string: "")!, credential: Credential(email: Email(email: email)))
+            let user: User = User(id: authResult.user.uid, username: authResult.user.displayName ?? "", photoUrl: authResult.user.photoURL ?? URL(string: AppConstant.image)!, credential: Credential(email: Email(email: email)))
             self.updateUser(user: user)
             return user
         } catch {
@@ -78,7 +78,7 @@ public class FirebaseService: IFirebaseService {
                 return
             }
             guard let strongSelf = self else { return }
-            let user: User = User(id: user?.uid ?? "", username: user?.displayName ?? "", photoUrl: user?.photoURL ?? URL(string: "")!, credential: Credential(email: Email(email: user?.email ?? "")))
+            let user: User = User(id: user?.uid ?? "", username: user?.displayName ?? "", photoUrl: user?.photoURL ?? URL(string: AppConstant.image)!, credential: Credential(email: Email(email: user?.email ?? "")))
             strongSelf.updateUser(user: user)
         }
     }
