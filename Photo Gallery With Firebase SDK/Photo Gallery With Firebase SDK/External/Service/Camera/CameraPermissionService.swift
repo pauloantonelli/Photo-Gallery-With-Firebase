@@ -8,15 +8,15 @@
 import Foundation
 import AVFoundation
 
-struct CameraPermissionService: ICameraPermissionService {
-    var mediaPermissionService: MediaPermissionService
+public struct CameraPermissionService: ICameraPermissionService {
+    let mediaPermissionService: IMediaPermissionService
     
-    init(mediaPermissionService: MediaPermissionService = MediaPermissionService()) {
+    public init(mediaPermissionService: IMediaPermissionService = MediaPermissionService()) {
         self.mediaPermissionService = mediaPermissionService
     }
     
-    func execute() throws -> Result<Bool, CameraPermissionErrorService> {
-        let result = self.mediaPermissionService.execute()
+    public func execute() async throws -> Result<Bool, CameraPermissionErrorService> {
+        let result = await self.mediaPermissionService.execute()
         if result == nil {
             throw CameraPermissionErrorService(message: "Error on Camera Permission Request: Permission Denied")
         }

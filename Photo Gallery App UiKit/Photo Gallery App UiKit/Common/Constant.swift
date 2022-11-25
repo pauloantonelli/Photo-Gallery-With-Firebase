@@ -9,6 +9,7 @@ import Foundation
 
 struct Constant {
     // MARK: navigation
+    static let goFromOnboardingToPermission = "go-from-onboarding-to-permission"
     static let goToSignIn = "go-to-sign-in"
     static let goToSignUp = "go-to-sign-up"
     static let goFromSignInToSingUp = "go-from-sign-in-to-sing-up"

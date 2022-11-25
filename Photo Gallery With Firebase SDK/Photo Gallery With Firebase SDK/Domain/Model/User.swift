@@ -12,6 +12,12 @@ public struct User {
     public let username: String
     public let photoUrl: URL
     public let credential: Credential
+    public var isLogged: Bool {
+        if self.id.count == 0 {
+            return false
+        }
+        return true
+    }
     
     public init(id: String, username: String = "", photoUrl: URL = URL(string: AppConstant.image)!, credential: Credential = Credential()) {
         self.id = id

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IGalleryPermissionService {
-    func execute() throws -> Result<Bool, GalleryPermissionErrorService>
+public protocol IGalleryPermissionService {
+    func execute() async throws -> Result<Bool, GalleryPermissionErrorService>
 }

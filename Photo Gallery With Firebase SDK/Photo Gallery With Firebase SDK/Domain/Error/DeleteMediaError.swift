@@ -7,24 +7,24 @@
 
 import Foundation
 
-protocol DeleteMediaError: Error {
+public protocol DeleteMediaError: Error {
     var message: String { get }
 }
 
 public class DeleteMediaErrorUseCase: DeleteMediaError {
-    let message: String
+    public let message: String
     init(message: String) {
         self.message = message
     }
 }
 
-class DeleteMediaErrorDrive: DeleteMediaErrorUseCase {
+public class DeleteMediaErrorDrive: DeleteMediaErrorUseCase {
     override init(message: String) {
         super.init(message: message)
     }
 }
 
-class DeleteMediaErrorService: DeleteMediaErrorDrive {
+public class DeleteMediaErrorService: DeleteMediaErrorDrive {
     override init(message: String) {
         super.init(message: message)
     }

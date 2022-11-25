@@ -10,7 +10,7 @@ import Foundation
 public struct CameraPermissionUseCase: ICameraPermissionUseCase {
     let drive: ICameraPermissionDrive
     
-    init(drive: ICameraPermissionDrive = CameraPermissionDrive()) {
+    public init(drive: ICameraPermissionDrive = CameraPermissionDrive()) {
         self.drive = drive
     }
     

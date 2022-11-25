@@ -18,13 +18,13 @@ public class LoginErrorUseCase: LoginError {
     }
 }
 
-class LoginErrorRepository: LoginErrorUseCase {
+public class LoginErrorRepository: LoginErrorUseCase {
     override init(message: String) {
         super.init(message: message)
     }
 }
 
-class LoginErrorDataSource: LoginErrorRepository {
+public class LoginErrorDataSource: LoginErrorRepository {
     override init(message: String) {
         super.init(message: message)
     }

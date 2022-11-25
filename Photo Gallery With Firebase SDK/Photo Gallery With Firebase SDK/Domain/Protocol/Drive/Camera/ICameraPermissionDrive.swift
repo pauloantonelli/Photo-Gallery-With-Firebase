@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ICameraPermissionDrive {
+public protocol ICameraPermissionDrive {
     func execute() async -> Result<Bool, CameraPermissionErrorUseCase>
 }

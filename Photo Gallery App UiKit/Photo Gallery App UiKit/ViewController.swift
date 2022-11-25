@@ -22,7 +22,9 @@ class ViewController: UIViewController, ICheckNetworkServiceDelegate, IOpenGalle
     }
     
     @IBAction func permissionButton(_ sender: UIButton) {
-        self.permission()
+        Task {
+            await self.permission()
+        }
     }
     
     @IBAction func cameraButton(_ sender: UIButton) {
@@ -33,8 +35,8 @@ class ViewController: UIViewController, ICheckNetworkServiceDelegate, IOpenGalle
         self.gallery()
     }
     
-    func permission() -> Void {
-        let result = self.mediaPermissionService.execute()
+    func permission() async -> Void {
+        let result = await self.mediaPermissionService.execute()
         present(self.alertFactory(title: "Camera and Gallery permission", message: "status \(String(describing: result))", actionTitle: "fechar"), animated: true)
     }
     

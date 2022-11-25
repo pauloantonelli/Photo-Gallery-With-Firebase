@@ -7,24 +7,24 @@
 
 import Foundation
 
-protocol NetworkStatusError: Error {
+public protocol NetworkStatusError: Error {
     var message: String { get }
 }
 
 public class NetworkStatusErrorUseCase: NetworkStatusError {
-    let message: String
+    public let message: String
     init(message: String) {
         self.message = message
     }
 }
 
-class NetworkStatusErrorDrive: NetworkStatusErrorUseCase {
+public class NetworkStatusErrorDrive: NetworkStatusErrorUseCase {
     override init(message: String) {
         super.init(message: message)
     }
 }
 
-class NetworkStatusErrorService: NetworkStatusErrorDrive {
+public class NetworkStatusErrorService: NetworkStatusErrorDrive {
     override init(message: String) {
         super.init(message: message)
     }

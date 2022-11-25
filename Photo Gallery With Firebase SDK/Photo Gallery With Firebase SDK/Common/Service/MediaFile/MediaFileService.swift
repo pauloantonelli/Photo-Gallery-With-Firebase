@@ -14,6 +14,8 @@ public struct MediaFileService: IMediaFileService {
         return result
     }
     
+    public init() {}
+    
     public func save(fileName: String, image: UIImage) -> String? {
         let fileUrl = self.filePath(fileName: fileName)
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {

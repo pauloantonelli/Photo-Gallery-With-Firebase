@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct CameraPermissionDrive: ICameraPermissionDrive {
+public struct CameraPermissionDrive: ICameraPermissionDrive {
     let service: ICameraPermissionService
     
-    init(service: ICameraPermissionService = CameraPermissionService()) {
+    public init(service: ICameraPermissionService = CameraPermissionService()) {
         self.service = service
     }
     
-    func execute() async -> Result<Bool, CameraPermissionErrorUseCase> {
+    public func execute() async -> Result<Bool, CameraPermissionErrorUseCase> {
         do {
-            let result = try self.service.execute().get()
+            let result = try await self.service.execute().get()
             return .success(result)
         } catch let error as CameraPermissionErrorService {
             return .failure(error)

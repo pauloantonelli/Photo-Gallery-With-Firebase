@@ -16,35 +16,39 @@ class GalleryPermissionServiceTest: XCTestCase {
         self.service = GalleryPermissionService(mediaPermissionService: mediaPermissionService)
     }
     
-    func testGalleryPermissionWithoutErrors() throws {
-        let mediaPermissionService = MediaPermissionService(authorizationStatus: AVAuthorizationStatus.authorized)
+    func testGalleryPermissionWithoutErrors() async throws {
+        var mediaPermissionService = MediaPermissionService()
+        mediaPermissionService.authorizationStatus = AVAuthorizationStatus.authorized
         self.initDependency(mediaPermissionService: mediaPermissionService)
-        let result = try self.service.execute().get()
+        let result = try await self.service.execute().get()
         XCTAssert(result == true)
     }
     
-    func testGalleryPermissionWithDeniedStatus() throws {
-        let mediaPermissionService = MediaPermissionService(authorizationStatus: AVAuthorizationStatus.denied)
+    func testGalleryPermissionWithDeniedStatus() async throws {
+        var mediaPermissionService = MediaPermissionService()
+        mediaPermissionService.authorizationStatus = AVAuthorizationStatus.denied
         self.initDependency(mediaPermissionService: mediaPermissionService)
         do {
-            let _ = try self.service.execute().get()
+            let _ = try await self.service.execute().get()
         } catch {
             XCTAssert(error is GalleryPermissionErrorService)
         }
     }
     
-    func testGalleryPermissionWithRestrictedStatus() throws {
-        let mediaPermissionService = MediaPermissionService(authorizationStatus: AVAuthorizationStatus.restricted)
+    func testGalleryPermissionWithRestrictedStatus() async throws {
+        var mediaPermissionService = MediaPermissionService()
+        mediaPermissionService.authorizationStatus = AVAuthorizationStatus.restricted
         self.initDependency(mediaPermissionService: mediaPermissionService)
-        let result = try self.service.execute().get()
+        let result = try await self.service.execute().get()
         XCTAssert(result == false)
     }
     
-    func testGalleryPermissionWithFailureError() throws {
-        let mediaPermissionService = MediaPermissionService(authorizationStatus: AVAuthorizationStatus.init(rawValue: -1)!)
+    func testGalleryPermissionWithFailureError() async throws {
+        var mediaPermissionService = MediaPermissionService()
+        mediaPermissionService.authorizationStatus = AVAuthorizationStatus.init(rawValue: -1)!
         self.initDependency(mediaPermissionService: mediaPermissionService)
         do {
-        let _ = try self.service.execute().get()
+        let _ = try await self.service.execute().get()
         } catch {
             XCTAssert(error is GalleryPermissionErrorService)
         }

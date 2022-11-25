@@ -7,24 +7,24 @@
 
 import Foundation
 
-protocol GalleryPermissionError: Error {
+public protocol GalleryPermissionError: Error {
     var message: String { get }
 }
 
 public class GalleryPermissionErrorUseCase: GalleryPermissionError {
-    let message: String
+    public let message: String
     init(message: String) {
         self.message = message
     }
 }
 
-class GalleryPermissionErrorDrive: GalleryPermissionErrorUseCase {
+public class GalleryPermissionErrorDrive: GalleryPermissionErrorUseCase {
     override init(message: String) {
         super.init(message: message)
     }
 }
 
-class GalleryPermissionErrorService: GalleryPermissionErrorDrive {
+public class GalleryPermissionErrorService: GalleryPermissionErrorDrive {
     override init(message: String) {
         super.init(message: message)
     }

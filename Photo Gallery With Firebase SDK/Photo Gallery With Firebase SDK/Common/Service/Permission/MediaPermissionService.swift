@@ -9,33 +9,36 @@ import Foundation
 import AVFoundation
 
 public struct MediaPermissionService: IMediaPermissionService  {
-    public let authorizationStatus: AVAuthorizationStatus
+    public var authorizationStatus: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
     public var delegate: IMediaPermissionServiceDelegate?
     
-    public init(authorizationStatus: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)) {
-        self.authorizationStatus = authorizationStatus
+    public init() {
     }
     
-    public func execute() -> Bool? {
-        let result = self.authorizationStatus
-        if result == .denied {
+    public func execute() async -> Bool? {
+        let status: AVAuthorizationStatus = self.authorizationStatus
+        if status == .denied {
             self.delegate?.updatePermitionStatus(status: false)
             return nil
         }
-        if result == .restricted {
+        if status == .restricted {
             self.delegate?.updatePermitionStatus(status: false)
             return false
         }
-        if result == .notDetermined {
-            AVCaptureDevice.requestAccess(for: .video) { _ in
-                self.execute()
-            }
+        if status == .notDetermined {
+            let permission = await self.askPermission()
+            return permission
         }
-        if result == .authorized {
+        if status == .authorized {
             self.delegate?.updatePermitionStatus(status: true)
             return true
         }
         self.delegate?.updatePermitionStatus(status: false)
         return nil
+    }
+    
+    public func askPermission() async -> Bool {
+        let result = await AVCaptureDevice.requestAccess(for: .video)
+        return result
     }
 }

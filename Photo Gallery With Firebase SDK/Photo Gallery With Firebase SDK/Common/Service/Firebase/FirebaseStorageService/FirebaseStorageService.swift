@@ -19,8 +19,7 @@ public struct FirebaseStorageService: IFirebaseStorageService {
         self.storageReference = storage.reference()
     }
     
-    public func add(imagePath: String, imageName: String, imageExtension: String) async throws -> Bool? {
-        let localFile = URL(string: imagePath)!
+    public func add(imagePath localFile: URL, imageName: String, imageExtension: String) async throws -> Bool? {
         let imagesRef = self.storageReference.child("\(self.rootReference)/\(imageName).\(imageExtension)")
         do {
             let metadata = try await imagesRef.putFileAsync(from: localFile, metadata: self.storageMetadataFactory(imageName: imageName, imageExtension: imageExtension))

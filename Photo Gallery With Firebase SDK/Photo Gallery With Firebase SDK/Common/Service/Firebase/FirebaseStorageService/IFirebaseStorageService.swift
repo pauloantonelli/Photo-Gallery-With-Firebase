@@ -10,7 +10,7 @@ import UIKit
 import FirebaseStorage
 
 public protocol IFirebaseStorageService {
-    func add(imagePath: String, imageName: String, imageExtension: String) async throws -> Bool?
+    func add(imagePath localFile: URL, imageName: String, imageExtension: String) async throws -> Bool?
     func get(imageName: String, imageExtension: String) async throws -> URL?
     func delete(imageName: String, imageExtension: String) async throws -> Bool
     func download(fromURL: String, completion: @escaping (UIImage?) -> Void) -> Void

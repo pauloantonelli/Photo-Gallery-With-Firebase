@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 
-struct SaveMediaDrive: ISaveMediaDrive {
+public struct SaveMediaDrive: ISaveMediaDrive {
     let service: ISaveMediaService
     
-    init(service: ISaveMediaService = SaveMediaService()) {
+    public init(service: ISaveMediaService = SaveMediaService()) {
         self.service = service
     }
     
-    func execute(fileName: String, image: UIImage) async -> Result<Bool, SaveMediaErrorUseCase> {
+    public func execute(fileName: String, image: UIImage) async -> Result<Bool, SaveMediaErrorUseCase> {
         do {
             let result = try await self.service.execute(fileName: fileName, image: image)
             return .success(result)

@@ -9,8 +9,9 @@ import FirebaseCore
 import FirebaseAuth
 
 public class FirebaseService: IFirebaseService {
-    var user: User = User(id: "")
-    var shared: FirebaseService {
+    public var user: User = User(id: "")
+    public var delegate: IFirebaseServiceDelegate?
+    public var shared: FirebaseService {
         let result = FirebaseService()
         return result
     }
@@ -75,13 +76,12 @@ public class FirebaseService: IFirebaseService {
     }
     
     func initListenerUserState() -> Void {
-        self.authState = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
-            if user == nil {
+        self.authState = Auth.auth().addStateDidChangeListener { auth, user in
+            guard let safeuser = user else {
                 return
             }
-            guard let strongSelf = self else { return }
-            let user: User = User(id: user?.uid ?? "", username: user?.displayName ?? "", photoUrl: user?.photoURL ?? URL(string: AppConstant.image)!, credential: Credential(email: Email(email: user?.email ?? "")))
-            strongSelf.updateUser(user: user)
+            let user: User = User(id: safeuser.uid, username: safeuser.displayName ?? "", photoUrl: safeuser.photoURL ?? URL(string: AppConstant.image)!, credential: Credential(email: Email(email: safeuser.email ?? "")))
+            self.updateUser(user: user)
         }
     }
     
@@ -91,5 +91,6 @@ public class FirebaseService: IFirebaseService {
     
     func updateUser(user: User) -> Void {
         self.user = user
+        self.delegate?.updateUser(user: user)
     }
 }

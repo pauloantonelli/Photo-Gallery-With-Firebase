@@ -7,24 +7,24 @@
 
 import Foundation
 
-protocol SaveMediaError: Error {
+public protocol SaveMediaError: Error {
     var message: String { get }
 }
 
 public class SaveMediaErrorUseCase: SaveMediaError {
-    let message: String
+    public let message: String
     init(message: String) {
         self.message = message
     }
 }
 
-class SaveMediaErrorDrive: SaveMediaErrorUseCase {
+public class SaveMediaErrorDrive: SaveMediaErrorUseCase {
     override init(message: String) {
         super.init(message: message)
     }
 }
 
-class SaveMediaErrorService: SaveMediaErrorDrive {
+public class SaveMediaErrorService: SaveMediaErrorDrive {
     override init(message: String) {
         super.init(message: message)
     }

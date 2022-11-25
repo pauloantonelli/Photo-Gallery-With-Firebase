@@ -18,13 +18,13 @@ public class RegisterErrorUseCase: RegisterError {
     }
 }
 
-class RegisterErrorRepository: RegisterErrorUseCase {
+public class RegisterErrorRepository: RegisterErrorUseCase {
     override init(message: String) {
         super.init(message: message)
     }
 }
 
-class RegisterErrorDataSource: RegisterErrorRepository {
+public class RegisterErrorDataSource: RegisterErrorRepository {
     override init(message: String) {
         super.init(message: message)
     }

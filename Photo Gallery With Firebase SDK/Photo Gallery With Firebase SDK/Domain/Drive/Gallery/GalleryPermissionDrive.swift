@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct GalleryPermissionDrive: IGalleryPermissionDrive {
+public struct GalleryPermissionDrive: IGalleryPermissionDrive {
     let service: IGalleryPermissionService
     
-    init(service: IGalleryPermissionService = GalleryPermissionService()) {
+    public init(service: IGalleryPermissionService = GalleryPermissionService()) {
         self.service = service
     }
     
-    func execute() async -> Result<Bool, GalleryPermissionErrorUseCase> {
+    public func execute() async -> Result<Bool, GalleryPermissionErrorUseCase> {
         do {
-            let result = try self.service.execute().get()
+            let result = try await self.service.execute().get()
             return .success(result)
         } catch let error as GalleryPermissionErrorService {
             return .failure(error)

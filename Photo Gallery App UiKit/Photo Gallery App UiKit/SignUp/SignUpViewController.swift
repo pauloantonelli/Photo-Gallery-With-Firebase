@@ -108,7 +108,7 @@ extension SignUpViewController {
     }
     
     func showAlert(title: String = "Unable to create an account", message: String, actionTitle: String = "I understood") -> Void {
-        let alert = AlertService.alert(title: title, message: message, actionTitle: actionTitle)
+        let alert = AlertService.alert(title: title, message: message, actionTitle: actionTitle) { _ in }
         self.present(alert, animated: true)
     }
     

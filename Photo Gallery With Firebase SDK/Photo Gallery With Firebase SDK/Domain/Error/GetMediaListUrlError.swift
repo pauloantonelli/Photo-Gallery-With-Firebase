@@ -7,24 +7,24 @@
 
 import Foundation
 
-protocol GetMediaListUrlError: Error {
+public protocol GetMediaListUrlError: Error {
     var message: String { get }
 }
 
 public class GetMediaListUrlErrorUseCase: GetMediaListUrlError {
-    let message: String
+    public let message: String
     init(message: String) {
         self.message = message
     }
 }
 
-class GetMediaListUrlErrorDrive: GetMediaListUrlErrorUseCase {
+public class GetMediaListUrlErrorDrive: GetMediaListUrlErrorUseCase {
     override init(message: String) {
         super.init(message: message)
     }
 }
 
-class GetMediaListUrlErrorService: GetMediaListUrlErrorDrive {
+public class GetMediaListUrlErrorService: GetMediaListUrlErrorDrive {
     override init(message: String) {
         super.init(message: message)
     }

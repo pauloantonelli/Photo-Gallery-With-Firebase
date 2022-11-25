@@ -10,7 +10,7 @@ import Foundation
 public struct GalleryPermissionUseCase: IGalleryPermissionUseCase {
     let drive: IGalleryPermissionDrive
     
-    init(drive: IGalleryPermissionDrive = GalleryPermissionDrive()) {
+    public init(drive: IGalleryPermissionDrive = GalleryPermissionDrive()) {
         self.drive = drive
     }
     

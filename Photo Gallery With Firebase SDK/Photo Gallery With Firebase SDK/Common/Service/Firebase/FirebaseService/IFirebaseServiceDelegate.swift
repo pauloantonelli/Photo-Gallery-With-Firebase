@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+public protocol IFirebaseServiceDelegate {
+    func updateUser(user: User) -> Void
+}

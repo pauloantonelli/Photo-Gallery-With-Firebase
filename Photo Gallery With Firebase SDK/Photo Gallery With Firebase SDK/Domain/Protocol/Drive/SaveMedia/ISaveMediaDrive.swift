@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-protocol ISaveMediaDrive {
+public protocol ISaveMediaDrive {
     func execute(fileName: String, image: UIImage) async -> Result<Bool, SaveMediaErrorUseCase>
 }

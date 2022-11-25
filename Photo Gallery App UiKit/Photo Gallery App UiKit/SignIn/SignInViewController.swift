@@ -39,7 +39,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func goToSignUp(_ sender: UIButton) {
-        self.performSegue(withIdentifier: Constant.goFromSignInToSingUp, sender: self)
+        self.goToSignUpPage()
     }
 }
 extension SignInViewController {
@@ -60,7 +60,7 @@ extension SignInViewController {
                 self.showAlert(message: "User not found")
                 return
             }
-            self.goToPermission()
+            self.goToPermissionPage()
         } catch {
             self.hideLoading()
             let e = error as! LoginErrorUseCase
@@ -74,6 +74,14 @@ extension SignInViewController {
         }
         do {
             let result = try await self.forgotPasswordUseCase?.execute(withEmail: email).get()
+            guard let safeResult = result else {
+                self.showAlert(title: "Email not sended", message: "Consult your email and try again")
+                return
+            }
+            if safeResult == false {
+                self.showAlert(title: "Email not sended", message: "Consult your email and try again")
+                return
+            }
             self.showAlert(title: "Email is sended", message: "Consult your email to renew your password")
         } catch {
             self.showAlert(title: "Email not sended", message: "Consult your email and try again")
@@ -88,7 +96,11 @@ extension SignInViewController {
         return true
     }
     
-    func goToPermission() {
+    func goToSignUpPage() -> Void {
+        self.performSegue(withIdentifier: Constant.goFromSignInToSingUp, sender: self)
+    }
+    
+    func goToPermissionPage() {
         self.performSegue(withIdentifier: Constant.goFromSignInToPermission, sender: self)
     }
 }
@@ -116,7 +128,7 @@ extension SignInViewController {
     }
     
     func showAlert(title: String = "Unable to login on account", message: String, actionTitle: String = "I understood") -> Void {
-        let alert = AlertService.alert(title: title, message: message, actionTitle: actionTitle)
+        let alert = AlertService.alert(title: title, message: message, actionTitle: actionTitle) { _ in }
         self.present(alert, animated: true)
     }
 }

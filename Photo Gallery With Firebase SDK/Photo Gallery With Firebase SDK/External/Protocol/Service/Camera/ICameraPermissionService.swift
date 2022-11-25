@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ICameraPermissionService {
-    func execute() throws -> Result<Bool, CameraPermissionErrorService>
+public protocol ICameraPermissionService {
+    func execute() async throws -> Result<Bool, CameraPermissionErrorService>
 }

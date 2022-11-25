@@ -18,13 +18,13 @@ public class ForgotPasswordErrorUseCase: ForgotPasswordError {
     }
 }
 
-class ForgotPasswordErrorRepository: ForgotPasswordErrorUseCase {
+public class ForgotPasswordErrorRepository: ForgotPasswordErrorUseCase {
     override init(message: String) {
         super.init(message: message)
     }
 }
 
-class ForgotPasswordErrorDataSource: ForgotPasswordErrorRepository {
+public class ForgotPasswordErrorDataSource: ForgotPasswordErrorRepository {
     override init(message: String) {
         super.init(message: message)
     }

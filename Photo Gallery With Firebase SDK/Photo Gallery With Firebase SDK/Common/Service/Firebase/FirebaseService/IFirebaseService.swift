@@ -8,6 +8,10 @@
 import Foundation
 
 public protocol IFirebaseService {
+    var user: User { get }
+    var shared: FirebaseService { get }
+    var delegate: IFirebaseServiceDelegate? { get set }
+    
     func login(email: String, password: String) async throws -> User
     func register(email: String, password: String) async throws -> User
     func signOut() throws -> Bool

@@ -11,7 +11,7 @@ import UIKit
 public struct SaveMediaUseCase: ISaveMediaUseCase {
     let drive: ISaveMediaDrive
     
-    init(drive: ISaveMediaDrive = SaveMediaDrive()) {
+    public init(drive: ISaveMediaDrive = SaveMediaDrive()) {
         self.drive = drive
     }
     
