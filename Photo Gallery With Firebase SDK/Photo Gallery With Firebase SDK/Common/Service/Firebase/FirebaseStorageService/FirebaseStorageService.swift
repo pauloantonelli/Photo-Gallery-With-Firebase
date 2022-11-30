@@ -28,7 +28,8 @@ public struct FirebaseStorageService: IFirebaseStorageService {
             }
             return true
         } catch {
-            fatalError("Error on FirebaseStorageService add: \(error.localizedDescription)")
+            print("Error on FirebaseStorageService add: \(error.localizedDescription)")
+            return nil
         }
     }
     
@@ -38,17 +39,19 @@ public struct FirebaseStorageService: IFirebaseStorageService {
             let result = try await imageReference?.downloadURL()
             return result
         } catch {
-            fatalError("Error on FirebaseStorageService get: \(error.localizedDescription)")
+            print("Error on FirebaseStorageService get: \(error.localizedDescription)")
+            return nil
         }
     }
     
     public func delete(imageName: String, imageExtension: String) async throws -> Bool {
-        let imageReference = self.storageReference.parent()?.child("\(imageName).\(imageExtension)")
+        let imageReference = self.storageReference.child("\(self.rootReference)/\(imageName).\(imageExtension)")
         do {
-            let _ = try await imageReference?.delete()
+            let _ = try await imageReference.delete()
             return true
         } catch {
-            fatalError("Error on FirebaseStorageService delete: \(error.localizedDescription)")
+            print("Error on FirebaseStorageService delete: \(error.localizedDescription)")
+            return false
         }
     }
     
@@ -61,7 +64,8 @@ public struct FirebaseStorageService: IFirebaseStorageService {
             })
             return urlList ?? []
         } catch {
-            fatalError("Error on FirebaseStorageService listMedia: \(error.localizedDescription)")
+            print("Error on FirebaseStorageService listMedia: \(error.localizedDescription)")
+            return []
         }
     }
     

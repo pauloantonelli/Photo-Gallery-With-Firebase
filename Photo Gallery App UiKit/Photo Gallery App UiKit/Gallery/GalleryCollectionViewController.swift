@@ -60,7 +60,6 @@ extension GalleryCollectionViewController {
 
 extension GalleryCollectionViewController {
     func goToDetailPage(withImage image: UIImage) -> Void {
-        print("aqui")
         self.performSegue(withIdentifier: Constant.goFromGalleryToGalleryDetail, sender: nil)
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Photo_Gallery_With_Firebase_SDK
+import SwiftUI
 
 class GalleyDetailViewController: UIViewController {
     var deleteMediaUseCase: IDeleteMediaUseCase!
@@ -22,9 +23,33 @@ class GalleyDetailViewController: UIViewController {
     }
     
     @IBAction func deleteImage(_ sender: UIButton) {
-//        self.dismiss(animated: true)
-        self.showLoading()
-        Timer.scheduledTimer(timeInterval: 5.0)
+        Task {
+            self.showLoading()
+            let result = await self.executeDeleteMedia(imageName: "abc")
+            self.hideLoading()
+            if result == false {
+                self.showAlert(message: "Could not delete file", completion: { _ in })
+                return
+            }
+            self.dismiss(animated: true)
+        }
+         
+    }
+}
+extension GalleyDetailViewController {
+    func executeDeleteMedia(imageName: String) async -> Bool {
+        do {
+            let result = try await self.deleteMediaUseCase.execute(imageName: imageName, imageExtension: "jpg").get()
+            return result
+        } catch let error as DeleteMediaErrorUseCase {
+            print("executeDeleteMedia: \(error.message)")
+            self.showAlert(message: error.message, completion: { _ in })
+            return false
+        } catch {
+            print("executeDeleteMedia: \(error.localizedDescription)")
+            self.showAlert(message: error.localizedDescription, completion: { _ in })
+            return false
+        }
     }
 }
 extension GalleyDetailViewController {
@@ -35,7 +60,12 @@ extension GalleyDetailViewController {
     
     func disableButton() -> Void {
         self.deleteImageButton.isEnabled = false
-        self.deleteImageButton.setTitle(nil, for: .disabled)
+        self.deleteImageButton.setTitle("", for: .disabled)
+    }
+    
+    func showAlert(title: String = "Image Delete", message: String, actionTitle: String = "Done", completion: ((UIAlertAction) -> Void)?) -> Void {
+        let alert = AlertService.alert(title: title, message: message, actionTitle: actionTitle, completion: completion)
+        self.present(alert, animated: true)
     }
 }
 extension GalleyDetailViewController {
@@ -56,7 +86,7 @@ extension GalleyDetailViewController {
     private func createActivityIndicator() -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.color = .purple
+        activityIndicator.color = UIColor(named: "BackgroundColor")
         return activityIndicator
     }
 
