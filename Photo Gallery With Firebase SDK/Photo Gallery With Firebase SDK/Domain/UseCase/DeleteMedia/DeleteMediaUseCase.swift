@@ -10,7 +10,7 @@ import Foundation
 public struct DeleteMediaUseCase: IDeleteMediaUseCase {
     let drive: IDeleteMediaDrive
     
-    init(drive: IDeleteMediaDrive = DeleteMediaDrive()) {
+    public init(drive: IDeleteMediaDrive = DeleteMediaDrive()) {
         self.drive = drive
     }
     

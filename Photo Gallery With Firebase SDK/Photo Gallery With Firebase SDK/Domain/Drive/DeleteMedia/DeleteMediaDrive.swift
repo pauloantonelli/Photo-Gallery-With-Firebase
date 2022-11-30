@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct DeleteMediaDrive: IDeleteMediaDrive {
+public struct DeleteMediaDrive: IDeleteMediaDrive {
     let service: IDeleteMediaService
     
-    init(service: IDeleteMediaService = DeleteMediaService()) {
+    public init(service: IDeleteMediaService = DeleteMediaService()) {
         self.service = service
     }
     
-    func execute(imageName: String, imageExtension: String) async -> Result<Bool, DeleteMediaErrorUseCase> {
+    public func execute(imageName: String, imageExtension: String) async -> Result<Bool, DeleteMediaErrorUseCase> {
         do {
             let result = try await self.service.execute(imageName: imageName, imageExtension: imageExtension)
             return .success(result)

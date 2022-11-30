@@ -55,6 +55,7 @@ extension AppDelegate {
         DependencyInjection.register(type: ISaveMediaUseCase.self, instance: SaveMediaUseCase())
         DependencyInjection.register(type: IGetMediaListUrlUseCase.self, instance: GetMediaListUrlUseCase())
         DependencyInjection.register(type: IGetMediaUrlUseCase.self, instance: GetMediaUrlUseCase())
+        DependencyInjection.register(type: IDeleteMediaUseCase.self, instance: DeleteMediaUseCase())
     }
 }
 extension AppDelegate {

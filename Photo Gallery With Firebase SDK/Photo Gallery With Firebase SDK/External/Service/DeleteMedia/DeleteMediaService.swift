@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct DeleteMediaService: IDeleteMediaService {
+public struct DeleteMediaService: IDeleteMediaService {
     let firebaseStorageService: IFirebaseStorageService
     
-    init(firebaseStorageService: IFirebaseStorageService = FirebaseStorageService()) {
+    public init(firebaseStorageService: IFirebaseStorageService = FirebaseStorageService()) {
         self.firebaseStorageService = firebaseStorageService
     }
     
-    func execute(imageName: String, imageExtension: String) async throws -> Bool {
+    public func execute(imageName: String, imageExtension: String) async throws -> Bool {
         do {
             let result = try await self.firebaseStorageService.delete(imageName: imageName, imageExtension: imageExtension)
             return result

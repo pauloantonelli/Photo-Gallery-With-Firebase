@@ -31,7 +31,8 @@ class GalleryCollectionViewController: UICollectionViewController {
         //            await self.getImageList()
         //        }
         for _ in 0...25 {
-            self.photoList.append(UIImage(named: "mock-image")!)
+            let image = UIImage(named: "mock-image")!
+            self.photoList.append(image.resize(to: self.sizePattern))
         }
         self.galleryCollectionView.reloadData()
     }
@@ -45,7 +46,7 @@ extension GalleryCollectionViewController {
                     guard let safeImage = image else {
                         return
                     }
-                    self.photoList.append(safeImage)
+                    self.photoList.append(safeImage.resize(to: self.sizePattern))
                     self.galleryCollectionView.reloadData()
                 }
             }
@@ -59,7 +60,8 @@ extension GalleryCollectionViewController {
 
 extension GalleryCollectionViewController {
     func goToDetailPage(withImage image: UIImage) -> Void {
-        
+        print("aqui")
+        self.performSegue(withIdentifier: Constant.goFromGalleryToGalleryDetail, sender: nil)
     }
 }
 extension GalleryCollectionViewController {

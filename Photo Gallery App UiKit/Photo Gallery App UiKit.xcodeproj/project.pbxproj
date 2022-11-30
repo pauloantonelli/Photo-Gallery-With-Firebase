@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0E0C7B2937A9E000816C9B /* UIImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E0C7A2937A9E000816C9B /* UIImageResize.swift */; };
+		7B0E0C7E2937CE9E00816C9B /* GalleyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E0C7D2937CE9E00816C9B /* GalleyDetailViewController.swift */; };
 		7B0EF88A2923DA93003A19B1 /* GalleryCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0EF8882923DA93003A19B1 /* GalleryCellCollectionViewCell.swift */; };
 		7B0EF88B2923DA93003A19B1 /* GalleryCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0EF8892923DA93003A19B1 /* GalleryCellCollectionViewCell.xib */; };
 		7B395FA02923B8B100EFFBCD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B395F9F2923B8B100EFFBCD /* Constant.swift */; };
@@ -62,6 +64,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B0E0C7A2937A9E000816C9B /* UIImageResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageResize.swift; sourceTree = "<group>"; };
+		7B0E0C7D2937CE9E00816C9B /* GalleyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleyDetailViewController.swift; sourceTree = "<group>"; };
 		7B0EF8882923DA93003A19B1 /* GalleryCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B0EF8892923DA93003A19B1 /* GalleryCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		7B395F9F2923B8B100EFFBCD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -114,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B0E0C7C2937CE7000816C9B /* GalleyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7B0E0C7D2937CE9E00816C9B /* GalleyDetailViewController.swift */,
+			);
+			path = GalleyDetail;
+			sourceTree = "<group>";
+		};
 		7B0EF8872923DA70003A19B1 /* GalleryCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				7B395F9F2923B8B100EFFBCD /* Constant.swift */,
+				7B0E0C7A2937A9E000816C9B /* UIImageResize.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -162,6 +175,7 @@
 				7B9D19132923B41300C719C0 /* Permission */,
 				7B9D19102923B3E200C719C0 /* Home */,
 				7B9D190D2923B34D00C719C0 /* Gallery */,
+				7B0E0C7C2937CE7000816C9B /* GalleyDetail */,
 				7B463654291592AD002B23C6 /* AppDelegate.swift */,
 				7B463656291592AD002B23C6 /* SceneDelegate.swift */,
 				7B463658291592AD002B23C6 /* ViewController.swift */,
@@ -387,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B9D19182923B44C00C719C0 /* SignInViewController.swift in Sources */,
+				7B0E0C7B2937A9E000816C9B /* UIImageResize.swift in Sources */,
 				7B9D19122923B40500C719C0 /* HomeViewController.swift in Sources */,
 				7B9D191B2923B46800C719C0 /* SignUpViewController.swift in Sources */,
 				7B9D19152923B42600C719C0 /* PermissionViewController.swift in Sources */,
@@ -396,6 +411,7 @@
 				7B9D191E2923B49300C719C0 /* OnboardingViewController.swift in Sources */,
 				7B395FA02923B8B100EFFBCD /* Constant.swift in Sources */,
 				7B9D19202923B53900C719C0 /* GalleryCollectionViewController.swift in Sources */,
+				7B0E0C7E2937CE9E00816C9B /* GalleyDetailViewController.swift in Sources */,
 				7B463657291592AD002B23C6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

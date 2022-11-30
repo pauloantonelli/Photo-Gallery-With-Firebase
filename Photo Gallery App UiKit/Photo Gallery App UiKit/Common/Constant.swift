@@ -18,4 +18,5 @@ struct Constant {
     static let goFromSignUpToPermission = "go-from-sign-up-to-permission"
     static let goFromPermissionToHome = "go-from-permission-to-home"
     static let goFromHomeToGallery = "go-from-home-to-gallery"
+    static let goFromGalleryToGalleryDetail = "go-from-gallery-to-gallery-detail"
 }
