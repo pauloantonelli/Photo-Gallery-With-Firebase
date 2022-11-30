@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct GetMediaListUrlService: IGetMediaListUrlService {
+public struct GetMediaListUrlService: IGetMediaListUrlService {
     let firebaseStorageService: IFirebaseStorageService
     
-    init(firebaseStorageService: IFirebaseStorageService = FirebaseStorageService()) {
+    public init(firebaseStorageService: IFirebaseStorageService) {
         self.firebaseStorageService = firebaseStorageService
     }
     
-    func execute() async throws -> Array<URL> {
+    public func execute() async throws -> Array<URL> {
         do {
             let result = try await self.firebaseStorageService.getList()
             return result

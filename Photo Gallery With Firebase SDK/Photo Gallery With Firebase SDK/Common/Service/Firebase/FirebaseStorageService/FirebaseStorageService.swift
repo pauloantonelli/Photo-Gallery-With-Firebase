@@ -33,7 +33,6 @@ public struct FirebaseStorageService: IFirebaseStorageService {
     }
     
     public func get(imageName: String, imageExtension: String) async throws -> URL? {
-//        let pathReference = storage.reference(withPath: "\(rootReference)/\(imageName).\(imageExtension)")
         let imageReference = self.storageReference.parent()?.child("\(imageName).\(imageExtension)")
         do {
             let result = try await imageReference?.downloadURL()
@@ -55,30 +54,20 @@ public struct FirebaseStorageService: IFirebaseStorageService {
     
     public func getList() async throws -> Array<URL> {
         do {
-            let imageReference: StorageListResult? = try await self.storageReference.listAll()
+            let imageReference: StorageListResult? = try await self.storageReference.child(self.rootReference).listAll()
             let urlList: Array<URL>? = imageReference?.items.map({ item in
                 let url = URL(string: item.name)!
                 return url
             })
             return urlList ?? []
-//            urlList?.forEach({ url in
-//                self.download(fromURL: url) { downloadImage in
-//                    guard let image = downloadImage else {
-//                        print("Error on FirebaseStorageService listMedia > download")
-//                        return
-//                    }
-//                    imageList.append(image)
-//                }
-//            })
-//            completion(imageList)
         } catch {
             fatalError("Error on FirebaseStorageService listMedia: \(error.localizedDescription)")
         }
     }
     
-    public func download(fromURL: String, completion: @escaping (UIImage?) -> Void) -> Void {
-        let imageReference = self.storageReference.parent()?.child(fromURL)
-        let task = imageReference?.getData(maxSize: 1 * 1024 * 1024, completion: { (data, error) in
+    public func download(withUrl url: URL, completion: @escaping (UIImage?) -> Void) -> Void {
+        let imageReference = self.storageReference.child("\(self.rootReference)/\(url.absoluteString)")
+        let task = imageReference.getData(maxSize: .max, completion: { (data, error) in
             if error != nil {
                 print("Error on FirebaseStorageService download: \(error!.localizedDescription)")
                 completion(nil)
@@ -92,7 +81,7 @@ public struct FirebaseStorageService: IFirebaseStorageService {
             let downloadedImage = UIImage(data: image)
             completion(downloadedImage)
         })
-        task?.resume()
+        task.resume()
     }
     
     public func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata {

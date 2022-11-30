@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     func initServiceDependency() -> Void {
         DependencyInjection.register(type: IFirebaseService.self, instance: FirebaseService())
+        DependencyInjection.register(type: IFirebaseStorageService.self, instance: FirebaseStorageService())        
         DependencyInjection.register(type: IMediaPermissionService.self, instance: MediaPermissionService())
         DependencyInjection.register(type: IOpenCameraService.self, instance: OpenCameraService())
         DependencyInjection.register(type: IOpenGalleryService.self, instance: OpenGalleryService())
@@ -52,6 +53,8 @@ extension AppDelegate {
         DependencyInjection.register(type: ICameraPermissionUseCase.self, instance: CameraPermissionUseCase())
         DependencyInjection.register(type: IGalleryPermissionUseCase.self, instance: GalleryPermissionUseCase())
         DependencyInjection.register(type: ISaveMediaUseCase.self, instance: SaveMediaUseCase())
+        DependencyInjection.register(type: IGetMediaListUrlUseCase.self, instance: GetMediaListUrlUseCase())
+        DependencyInjection.register(type: IGetMediaUrlUseCase.self, instance: GetMediaUrlUseCase())
     }
 }
 extension AppDelegate {

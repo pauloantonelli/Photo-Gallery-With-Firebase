@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IGetMediaUrlService {
+public protocol IGetMediaUrlService {
     func execute(imageName: String, imageExtension: String) async throws -> URL
 }

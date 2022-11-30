@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct GetMediaListUrlDrive: IGetMediaListUrlDrive {
+public struct GetMediaListUrlDrive: IGetMediaListUrlDrive {
     let service: IGetMediaListUrlService
     
-    init(service: IGetMediaListUrlService = GetMediaListUrlService()) {
+    public init(service: IGetMediaListUrlService = GetMediaListUrlService(firebaseStorageService: DependencyInjection.get(IFirebaseStorageService.self)!)) {
         self.service = service
     }
     
-    func execute() async -> Result<Array<URL>, GetMediaListUrlErrorUseCase> {
+    public func execute() async -> Result<Array<URL>, GetMediaListUrlErrorUseCase> {
         do {
             let result = try await self.service.execute()
             return .success(result)

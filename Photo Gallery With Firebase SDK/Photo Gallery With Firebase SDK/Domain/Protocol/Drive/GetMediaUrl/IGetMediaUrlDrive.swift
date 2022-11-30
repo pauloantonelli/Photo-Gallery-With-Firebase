@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IGetMediaUrlDrive {
+public protocol IGetMediaUrlDrive {
     func execute(imageName: String, imageExtension: String) async -> Result<URL, GetMediaUrlErrorUseCase>
 }

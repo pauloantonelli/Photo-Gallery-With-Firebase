@@ -13,7 +13,7 @@ public protocol IFirebaseStorageService {
     func add(imagePath localFile: URL, imageName: String, imageExtension: String) async throws -> Bool?
     func get(imageName: String, imageExtension: String) async throws -> URL?
     func delete(imageName: String, imageExtension: String) async throws -> Bool
-    func download(fromURL: String, completion: @escaping (UIImage?) -> Void) -> Void
+    func download(withUrl url: URL, completion: @escaping (UIImage?) -> Void) -> Void
     func getList() async throws -> Array<URL> 
     func storageMetadataFactory(imageName: String, imageExtension: String) -> StorageMetadata
 }

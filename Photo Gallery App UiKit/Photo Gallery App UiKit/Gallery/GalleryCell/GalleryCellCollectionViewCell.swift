@@ -8,6 +8,8 @@
 import UIKit
 
 class GalleryCellCollectionViewCell: UICollectionViewCell {
+    static let reuseIdentifier = "photoCell"
+    @IBOutlet weak var photoImageView: UIView!
     @IBOutlet weak var photoImage: UIImageView!
     
     override func awakeFromNib() {
@@ -15,6 +17,11 @@ class GalleryCellCollectionViewCell: UICollectionViewCell {
     }
 
     func updatePhoto(withPhoto image: UIImage) -> Void {
-        self.photoImage.image = image
+        self.photoImage.image = image        
+        self.photoImageView.isUserInteractionEnabled = false
+    }
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "GalleryCellCollectionViewCell", bundle: nil)
     }
 }

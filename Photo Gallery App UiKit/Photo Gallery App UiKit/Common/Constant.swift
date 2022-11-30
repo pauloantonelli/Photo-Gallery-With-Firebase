@@ -18,7 +18,4 @@ struct Constant {
     static let goFromSignUpToPermission = "go-from-sign-up-to-permission"
     static let goFromPermissionToHome = "go-from-permission-to-home"
     static let goFromHomeToGallery = "go-from-home-to-gallery"
-    
-    // MARK: identifier
-    static let reuseIdentifier = "photoCell"
 }

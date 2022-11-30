@@ -10,7 +10,7 @@ import Foundation
 public struct GetMediaListUrlUseCase: IGetMediaListUrlUseCase {
     let drive: IGetMediaListUrlDrive
     
-    init(drive: IGetMediaListUrlDrive = GetMediaListUrlDrive()) {
+    public init(drive: IGetMediaListUrlDrive = GetMediaListUrlDrive()) {
         self.drive = drive
     }
     

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IGetMediaListUrlDrive {
+public protocol IGetMediaListUrlDrive {
     func execute() async -> Result<Array<URL>, GetMediaListUrlErrorUseCase>
 }
