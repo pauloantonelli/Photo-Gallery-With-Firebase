@@ -60,7 +60,14 @@ extension GalleryCollectionViewController {
 
 extension GalleryCollectionViewController {
     func goToDetailPage(withImage image: UIImage) -> Void {
-        self.performSegue(withIdentifier: Constant.goFromGalleryToGalleryDetail, sender: nil)
+        self.performSegue(withIdentifier: Constant.goFromGalleryToGalleryDetail, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "go-from-gallery-to-gallery-detail" {
+            let galleyDetailViewController = segue.destination as! GalleyDetailViewController
+            galleyDetailViewController.teste = "galleyDetailViewController ok"
+        }
     }
 }
 extension GalleryCollectionViewController {

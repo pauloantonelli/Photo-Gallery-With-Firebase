@@ -17,9 +17,11 @@ class GalleyDetailViewController: UIViewController {
     @IBOutlet weak var imageDetail: UIImageView!
     @IBOutlet weak var deleteImageButtonView: UIView!
     @IBOutlet weak var deleteImageButton: UIButton!
+    var teste: String = ""
     
     override func viewDidLoad() {
         self.deleteMediaUseCase = DependencyInjection.get(IDeleteMediaUseCase.self)
+        print("GalleyDetailViewController teste: \(teste)")
     }
     
     @IBAction func deleteImage(_ sender: UIButton) {
