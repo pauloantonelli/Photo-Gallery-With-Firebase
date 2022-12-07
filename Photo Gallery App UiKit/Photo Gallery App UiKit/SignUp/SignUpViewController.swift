@@ -26,12 +26,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.registerUseCase = DependencyInjection.get(IRegisterUseCase.self)
         self.registerUiTextField()
-        self.setupNotification()
+//        self.setupNotification()
     }
     
     @IBAction func doSignUp(_ sender: UIButton) {
         Task {
-            await self.signUp()
+            let passwordEqual = self.verifyEqualPassword(password: self.password!.text!, repassword: self.confirmPassword!.text!)
+            if passwordEqual {
+                await self.signUp()
+            }
         }
     }
     
@@ -70,11 +73,12 @@ extension SignUpViewController {
            self.performSegue(withIdentifier: Constant.goFromSignUpToPermission, sender: self)
     }
     
-    func verifyEqualPassword(password: String, repassword: String) -> Void {
+    func verifyEqualPassword(password: String, repassword: String) -> Bool {
         let result: Bool = password.contains(repassword)
         if result == false {
             self.showAlert(message: "Password are not equal")
         }
+        return result
     }
 }
 extension SignUpViewController {

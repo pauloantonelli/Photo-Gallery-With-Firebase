@@ -33,7 +33,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func executeForgotPassoword(_ sender: UIButton) {
         Task {
-            let email: Email = Email(email: self.email.text ?? "")
+            if self.email.text == nil {
+                self.showAlert(message: "Email is Invalid")
+                return
+            }
+            if self.email!.text!.isEmpty {
+                self.showAlert(message: "Email is Invalid")
+                return
+            }
+            let email: Email = Email(email: self.email.text!)
             await self.forgotPassword(email: email)
         }
     }

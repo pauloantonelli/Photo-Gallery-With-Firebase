@@ -10,24 +10,29 @@ import UIKit
 import Photo_Gallery_With_Firebase_SDK
 import SwiftUI
 
-class GalleyDetailViewController: UIViewController {
+class GalleyDetailViewController: UIViewController, UIViewControllerTransitioningDelegate {
     var deleteMediaUseCase: IDeleteMediaUseCase!
     var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var imageDetailView: UIView!
     @IBOutlet weak var imageDetail: UIImageView!
     @IBOutlet weak var deleteImageButtonView: UIView!
     @IBOutlet weak var deleteImageButton: UIButton!
-    var teste: String = ""
+    var galleryImageModel: GalleryImageModel?
+    var onDismiss: ((Bool) -> Void)?
     
     override func viewDidLoad() {
         self.deleteMediaUseCase = DependencyInjection.get(IDeleteMediaUseCase.self)
-        print("GalleyDetailViewController teste: \(teste)")
+        if let safeImage = self.galleryImageModel {
+            self.imageDetail.image = safeImage.image
+        }
+        transitioningDelegate = self
     }
     
     @IBAction func deleteImage(_ sender: UIButton) {
+        if self.galleryImageModel == nil { return }
         Task {
             self.showLoading()
-            let result = await self.executeDeleteMedia(imageName: "abc")
+            let result = await self.executeDeleteMedia(imageName: self.galleryImageModel!.id)
             self.hideLoading()
             if result == false {
                 self.showAlert(message: "Could not delete file", completion: { _ in })
@@ -36,6 +41,11 @@ class GalleyDetailViewController: UIViewController {
             self.dismiss(animated: true)
         }
          
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.onDismiss!(true)
+        return nil
     }
 }
 extension GalleyDetailViewController {

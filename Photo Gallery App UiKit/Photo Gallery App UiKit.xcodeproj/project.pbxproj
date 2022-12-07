@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B029F572941041E006AF797 /* GalleryImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B029F562941041E006AF797 /* GalleryImageModel.swift */; };
 		7B0E0C7B2937A9E000816C9B /* UIImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E0C7A2937A9E000816C9B /* UIImageResize.swift */; };
 		7B0E0C7E2937CE9E00816C9B /* GalleyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E0C7D2937CE9E00816C9B /* GalleyDetailViewController.swift */; };
 		7B0EF88A2923DA93003A19B1 /* GalleryCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0EF8882923DA93003A19B1 /* GalleryCellCollectionViewCell.swift */; };
@@ -30,7 +31,6 @@
 		7B9D191E2923B49300C719C0 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D191D2923B49300C719C0 /* OnboardingViewController.swift */; };
 		7B9D19202923B53900C719C0 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D191F2923B53900C719C0 /* GalleryCollectionViewController.swift */; };
 		7BC068D2292D22A900975349 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC068D1292D22A900975349 /* IQKeyboardManagerSwift */; };
-		7BD244F6293E90D500A368B3 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD244F5293E90D500A368B3 /* NavigationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B029F562941041E006AF797 /* GalleryImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageModel.swift; sourceTree = "<group>"; };
 		7B0E0C7A2937A9E000816C9B /* UIImageResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageResize.swift; sourceTree = "<group>"; };
 		7B0E0C7D2937CE9E00816C9B /* GalleyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleyDetailViewController.swift; sourceTree = "<group>"; };
 		7B0EF8882923DA93003A19B1 /* GalleryCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		7B9D191A2923B46800C719C0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7B9D191D2923B49300C719C0 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7B9D191F2923B53900C719C0 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
-		7BD244F5293E90D500A368B3 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +120,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B029F53294103E7006AF797 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B029F562941041E006AF797 /* GalleryImageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B029F54294103EE006AF797 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				7B395F9F2923B8B100EFFBCD /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		7B029F55294103F5006AF797 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7B0E0C7A2937A9E000816C9B /* UIImageResize.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		7B0E0C7C2937CE7000816C9B /* GalleyDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,9 +164,9 @@
 		7B395F9E2923B89E00EFFBCD /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				7B395F9F2923B8B100EFFBCD /* Constant.swift */,
-				7B0E0C7A2937A9E000816C9B /* UIImageResize.swift */,
-				7BD244F5293E90D500A368B3 /* NavigationService.swift */,
+				7B029F55294103F5006AF797 /* Util */,
+				7B029F54294103EE006AF797 /* Constant */,
+				7B029F53294103E7006AF797 /* Model */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -407,6 +431,7 @@
 				7B0E0C7B2937A9E000816C9B /* UIImageResize.swift in Sources */,
 				7B9D19122923B40500C719C0 /* HomeViewController.swift in Sources */,
 				7B9D191B2923B46800C719C0 /* SignUpViewController.swift in Sources */,
+				7B029F572941041E006AF797 /* GalleryImageModel.swift in Sources */,
 				7B9D19152923B42600C719C0 /* PermissionViewController.swift in Sources */,
 				7B463659291592AD002B23C6 /* ViewController.swift in Sources */,
 				7B463655291592AD002B23C6 /* AppDelegate.swift in Sources */,
@@ -416,7 +441,6 @@
 				7B9D19202923B53900C719C0 /* GalleryCollectionViewController.swift in Sources */,
 				7B0E0C7E2937CE9E00816C9B /* GalleyDetailViewController.swift in Sources */,
 				7B463657291592AD002B23C6 /* SceneDelegate.swift in Sources */,
-				7BD244F6293E90D500A368B3 /* NavigationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

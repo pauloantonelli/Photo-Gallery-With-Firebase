@@ -13,7 +13,8 @@ class GalleryCollectionViewController: UICollectionViewController {
     var firebaseStorageService: IFirebaseStorageService!
     var getMediaListUrlUseCase: IGetMediaListUrlUseCase!
     let sizePattern: CGSize = CGSize(width: 120, height: 120)
-    var photoList: Array<UIImage> = []
+    var photoList: Array<GalleryImageModel> = []
+    var galleryImageModel: GalleryImageModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +28,18 @@ class GalleryCollectionViewController: UICollectionViewController {
     }
     
     func initPhotoList() -> Void {
-        //        Task {
-        //            await self.getImageList()
-        //        }
-        for _ in 0...25 {
-            let image = UIImage(named: "mock-image")!
-            self.photoList.append(image.resize(to: self.sizePattern))
+        Task {
+            await self.getImageList()
         }
+//        for item in 0...1 {
+//            let id = String(item)
+//            let image = UIImage(named: "mock-image")!
+//            self.photoList.append(GalleryImageModel(id: id, image: image.resize(to: self.sizePattern)))
+//        }
         self.galleryCollectionView.reloadData()
     }
+    
+   
 }
 extension GalleryCollectionViewController {
     func getImageList() async -> Void {
@@ -46,7 +50,9 @@ extension GalleryCollectionViewController {
                     guard let safeImage = image else {
                         return
                     }
-                    self.photoList.append(safeImage.resize(to: self.sizePattern))
+                    let id = url.absoluteString
+                    let image: UIImage = safeImage.resize(to: self.sizePattern)
+                    self.photoList.append(GalleryImageModel(id: id, image: image))
                     self.galleryCollectionView.reloadData()
                 }
             }
@@ -59,14 +65,18 @@ extension GalleryCollectionViewController {
 }
 
 extension GalleryCollectionViewController {
-    func goToDetailPage(withImage image: UIImage) -> Void {
+    func goToDetailPage(withGalleryImageModel model: GalleryImageModel) -> Void {
+        self.galleryImageModel = model
         self.performSegue(withIdentifier: Constant.goFromGalleryToGalleryDetail, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "go-from-gallery-to-gallery-detail" {
+        if segue.identifier == Constant.goFromGalleryToGalleryDetail {
             let galleyDetailViewController = segue.destination as! GalleyDetailViewController
-            galleyDetailViewController.teste = "galleyDetailViewController ok"
+            galleyDetailViewController.galleryImageModel = self.galleryImageModel
+            galleyDetailViewController.onDismiss = { status in
+                self.initPhotoList()
+            }
         }
     }
 }
@@ -78,7 +88,7 @@ extension GalleryCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCellCollectionViewCell.reuseIdentifier, for: indexPath) as? GalleryCellCollectionViewCell {
-            customCell.updatePhoto(withPhoto: self.photoList[indexPath.row])
+            customCell.updatePhoto(withPhoto: self.photoList[indexPath.row].image)
             cell = customCell
         }
         return cell
@@ -86,8 +96,8 @@ extension GalleryCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let image: UIImage = self.photoList[indexPath.row]
-        self.goToDetailPage(withImage: image)
+        let galleryImageModel: GalleryImageModel = self.photoList[indexPath.row]
+        self.goToDetailPage(withGalleryImageModel: galleryImageModel)
     }
 }
 extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout {
