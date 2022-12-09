@@ -8,10 +8,20 @@
 import UIKit
 
 class GalleryHeaderCollectionReusableView: UICollectionReusableView {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    static let reuseIdentifier = "gallery-collection-header"
+    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
     
+    @IBAction func backToHome(_ sender: UIButton) {
+    }
+    
+//    static func nib() -> UINib {
+//        return UINib(nibName: "GalleryHeaderCollectionReusableView", bundle: Bundle.main)
+//    }
 }

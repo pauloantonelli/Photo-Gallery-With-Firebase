@@ -11,9 +11,11 @@ import UIKit
 struct GalleryImageModel {
     let id: String
     let image: UIImage
+    var imageIndex: Int
     
-    init(id: String, image: UIImage) {
+    init(id: String, image: UIImage, imageIndex: Int = 0) {
         self.id = id
         self.image = image
+        self.imageIndex = imageIndex
     }
 }

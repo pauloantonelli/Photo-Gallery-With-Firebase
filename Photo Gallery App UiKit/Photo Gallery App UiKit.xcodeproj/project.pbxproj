@@ -22,6 +22,8 @@
 		7B46366C291592B1002B23C6 /* Photo_Gallery_App_UiKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B46366B291592B1002B23C6 /* Photo_Gallery_App_UiKitTests.swift */; };
 		7B463676291592B1002B23C6 /* Photo_Gallery_App_UiKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B463675291592B1002B23C6 /* Photo_Gallery_App_UiKitUITests.swift */; };
 		7B463678291592B1002B23C6 /* Photo_Gallery_App_UiKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B463677291592B1002B23C6 /* Photo_Gallery_App_UiKitUITestsLaunchTests.swift */; };
+		7B6AE34F294399A6006A3110 /* GalleryHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6AE34D294399A6006A3110 /* GalleryHeaderCollectionReusableView.swift */; };
+		7B6AE350294399A6006A3110 /* GalleryHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B6AE34E294399A6006A3110 /* GalleryHeaderCollectionReusableView.xib */; };
 		7B7A5711291E780900B56CD0 /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6D20BB291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework */; };
 		7B7A5712291E780900B56CD0 /* Photo_Gallery_With_Firebase_SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6D20BB291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B9D19122923B40500C719C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D19112923B40500C719C0 /* HomeViewController.swift */; };
@@ -84,6 +86,8 @@
 		7B463671291592B1002B23C6 /* Photo Gallery App UiKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo Gallery App UiKitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B463675291592B1002B23C6 /* Photo_Gallery_App_UiKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_Gallery_App_UiKitUITests.swift; sourceTree = "<group>"; };
 		7B463677291592B1002B23C6 /* Photo_Gallery_App_UiKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_Gallery_App_UiKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7B6AE34D294399A6006A3110 /* GalleryHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		7B6AE34E294399A6006A3110 /* GalleryHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		7B6D20BB291D90C4000387BF /* Photo_Gallery_With_Firebase_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Photo_Gallery_With_Firebase_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9D19112923B40500C719C0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7B9D19142923B42600C719C0 /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +235,15 @@
 			path = "Photo Gallery App UiKitUITests";
 			sourceTree = "<group>";
 		};
+		7B6AE34C2943991F006A3110 /* GalleryHeader */ = {
+			isa = PBXGroup;
+			children = (
+				7B6AE34D294399A6006A3110 /* GalleryHeaderCollectionReusableView.swift */,
+				7B6AE34E294399A6006A3110 /* GalleryHeaderCollectionReusableView.xib */,
+			);
+			path = GalleryHeader;
+			sourceTree = "<group>";
+		};
 		7B6D20BA291D909A000387BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +255,7 @@
 		7B9D190D2923B34D00C719C0 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				7B6AE34C2943991F006A3110 /* GalleryHeader */,
 				7B0EF8872923DA70003A19B1 /* GalleryCell */,
 				7B9D191F2923B53900C719C0 /* GalleryCollectionViewController.swift */,
 			);
@@ -400,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B463661291592B1002B23C6 /* LaunchScreen.storyboard in Resources */,
+				7B6AE350294399A6006A3110 /* GalleryHeaderCollectionReusableView.xib in Resources */,
 				7B46365E291592B1002B23C6 /* Assets.xcassets in Resources */,
 				7B46365C291592AD002B23C6 /* Main.storyboard in Resources */,
 				7B0EF88B2923DA93003A19B1 /* GalleryCellCollectionViewCell.xib in Resources */,
@@ -431,6 +446,7 @@
 				7B0E0C7B2937A9E000816C9B /* UIImageResize.swift in Sources */,
 				7B9D19122923B40500C719C0 /* HomeViewController.swift in Sources */,
 				7B9D191B2923B46800C719C0 /* SignUpViewController.swift in Sources */,
+				7B6AE34F294399A6006A3110 /* GalleryHeaderCollectionReusableView.swift in Sources */,
 				7B029F572941041E006AF797 /* GalleryImageModel.swift in Sources */,
 				7B9D19152923B42600C719C0 /* PermissionViewController.swift in Sources */,
 				7B463659291592AD002B23C6 /* ViewController.swift in Sources */,

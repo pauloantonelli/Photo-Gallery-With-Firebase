@@ -18,7 +18,7 @@ class GalleyDetailViewController: UIViewController, UIViewControllerTransitionin
     @IBOutlet weak var deleteImageButtonView: UIView!
     @IBOutlet weak var deleteImageButton: UIButton!
     var galleryImageModel: GalleryImageModel?
-    var onDismiss: ((Bool) -> Void)?
+    var onDismiss: ((Bool, Int) -> Void)?
     
     override func viewDidLoad() {
         self.deleteMediaUseCase = DependencyInjection.get(IDeleteMediaUseCase.self)
@@ -39,19 +39,20 @@ class GalleyDetailViewController: UIViewController, UIViewControllerTransitionin
                 return
             }
             self.dismiss(animated: true)
+            self.onDismiss!(true, self.galleryImageModel?.imageIndex ?? 0)
         }
          
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        self.onDismiss!(true)
+        print("BackToCollection")
         return nil
     }
 }
 extension GalleyDetailViewController {
     func executeDeleteMedia(imageName: String) async -> Bool {
         do {
-            let result = try await self.deleteMediaUseCase.execute(imageName: imageName, imageExtension: "jpg").get()
+            let result: Bool = try await self.deleteMediaUseCase.execute(imageName: imageName, imageExtension: "jpg").get()
             return result
         } catch let error as DeleteMediaErrorUseCase {
             print("executeDeleteMedia: \(error.message)")
