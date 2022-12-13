@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Photo Gallery App UiKit/Photo Gallery App UiKit.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Photo Gallery App SwiftUI/Photo Gallery App SwiftUI.xcodeproj">
+   </FileRef>
 </Workspace>
