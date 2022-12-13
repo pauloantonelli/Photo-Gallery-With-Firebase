@@ -8,11 +8,11 @@
 import UIKit
 import Photo_Gallery_With_Firebase_SDK
 
-class GalleryCollectionViewController: UICollectionViewController {
-    @IBOutlet weak var galleryCollectionView: UICollectionView!
+class GalleryCollectionViewController: UIViewController {
+    let galleryCollectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     var firebaseStorageService: IFirebaseStorageService!
     var getMediaListUrlUseCase: IGetMediaListUrlUseCase!
-    let sizePattern: CGSize = CGSize(width: 120, height: 120)
+    var sizePattern: CGSize = CGSize(width: 120.0, height: 120.0)
     var photoList: Array<GalleryImageModel> = []
     var galleryImageModel: GalleryImageModel?
     
@@ -20,66 +20,35 @@ class GalleryCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         self.firebaseStorageService = DependencyInjection.get(IFirebaseStorageService.self)
         self.getMediaListUrlUseCase = DependencyInjection.get(IGetMediaListUrlUseCase.self)
-        self.galleryCollectionView.register(GalleryHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: GalleryHeaderCollectionReusableView.reuseIdentifier)
-        self.setupCollectionView()
+        self.sizePattern = CGSize(width: (self.view.frame.size.width / 3) - 3, height: (self.view.frame.size.width / 3) - 3)
+        self.galleryCollectionView.delegate = self
+        self.galleryCollectionView.dataSource = self
+        self.view.addSubview(self.galleryCollectionView)
+        self.registerView()
         self.initPhotoList()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.galleryCollectionView.reloadData()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.galleryCollectionView.frame = self.view.bounds
     }
     
     func initPhotoList() -> Void {
-        //                Task {
-        //                    await self.getImageList(completion: { status in
-        //                        print(self.photoList)
-        //                    })
-        //                }
-        self.mockImageWeb()
-    }
-    
-    func mockImageWeb() -> Void {
-        let num = Int.random(in: 3...4)
-        print("num is \(num)")
-        let isPair = num / 2 == 2 ? true : false
-        print("isPair: \(isPair)")
-        let resolution = isPair == true ? "350" : "150"
-        self.photoList = []
-        let urlList = [URL(string: "https://via.placeholder.com/\(resolution)"), URL(string: "https://via.placeholder.com/\(resolution)"), URL(string: "https://via.placeholder.com/\(resolution)"), URL(string: "https://via.placeholder.com/\(resolution)"), URL(string: "https://via.placeholder.com/\(resolution)"), URL(string: "https://via.placeholder.com/\(resolution)"), URL(string: "https://via.placeholder.com/\(resolution)"), URL(string: "https://via.placeholder.com/\(resolution)"), URL(string: "https://via.placeholder.com/\(resolution)"), URL(string: "https://via.placeholder.com/\(resolution)"),]
-        urlList.forEach { url in
-            let data = NSData(contentsOf: url!)
-            let image = UIImage(data: data! as Data)
-            self.photoList.append(GalleryImageModel(id: url!.absoluteString, image: image!))
+        Task {
+            await self.getImageList(completion: { status in
+                if status == true {
+                    self.galleryCollectionView.reloadData()
+                }
+            })
         }
     }
     
-    @IBAction func backToHome(_ sender: UIButton) {
+    func backToHome(_ sender: UIButton) {
         self.performSegue(withIdentifier: Constant.goFromGalleryToHome, sender: self)
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: GalleryHeaderCollectionReusableView.reuseIdentifier, for: indexPath)
-        return header
-    }
-    
-//    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        switch kind {
-//        case UICollectionView.elementKindSectionHeader:
-//            self.collectionView.register(GalleryHeaderCollectionReusableView.nib(), forCellWithReuseIdentifier: GalleryHeaderCollectionReusableView.reuseIdentifier)
-//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: GalleryHeaderCollectionReusableView.reuseIdentifier, for: indexPath)
-//            headerView.backgroundColor = UIColor.blue;
-//            return headerView
-//        case UICollectionView.elementKindSectionFooter:
-//            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "gallery-collection-footer", for: indexPath as IndexPath)
-//            footerView.backgroundColor = UIColor.green;
-//            return footerView
-//        default:
-//            assert(false, "Unexpected element kind")
-//        }
-//    }
 }
 extension GalleryCollectionViewController {
-    func getImageList() async -> Void {
+    func getImageList(completion: @escaping (Bool) -> Void) async -> Void {
         do {
             let urlList = try await self.getMediaListUrlUseCase.execute().get()
             urlList.forEach { url in
@@ -90,6 +59,10 @@ extension GalleryCollectionViewController {
                     let id = url.absoluteString
                     let image: UIImage = safeImage.resize(to: self.sizePattern)
                     self.photoList.append(GalleryImageModel(id: id, image: image))
+                    if self.photoList.count == urlList.count {
+                        completion(true)
+                    }
+                    completion(false)
                 }
             }
         } catch let error as GetMediaListUrlErrorUseCase {
@@ -102,7 +75,7 @@ extension GalleryCollectionViewController {
     func deletePhotoListItem(indexImage: Int) -> Void {
         let indexPath: IndexPath = IndexPath(item: indexImage, section: 0)
         self.photoList.remove(at: indexImage)
-        self.collectionView.deleteItems(at: [indexPath])
+        self.galleryCollectionView.deleteItems(at: [indexPath])
     }
 }
 
@@ -122,12 +95,36 @@ extension GalleryCollectionViewController {
         }
     }
 }
-extension GalleryCollectionViewController {
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension GalleryCollectionViewController: UICollectionViewDelegate {
+    func registerView() -> Void {
+        self.galleryCollectionView.register(GalleryCellCollectionViewCell.nib(), forCellWithReuseIdentifier: GalleryCellCollectionViewCell.reuseIdentifier)
+        self.galleryCollectionView.register(GalleryHeaderCollectionReusableView.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: GalleryHeaderCollectionReusableView.reuseIdentifier)
+        GalleryHeaderCollectionReusableView.segueToHome = {
+            self.performSegue(withIdentifier: Constant.goFromGalleryToHome, sender: self)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            return UICollectionReusableView()
+        }
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: GalleryHeaderCollectionReusableView.reuseIdentifier, for: indexPath)
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        var galleryImageModel: GalleryImageModel = self.photoList[indexPath.row]
+        galleryImageModel.imageIndex = indexPath.row
+        self.goToDetailPage(withGalleryImageModel: galleryImageModel)
+    }
+}
+extension GalleryCollectionViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.photoList.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCellCollectionViewCell.reuseIdentifier, for: indexPath) as? GalleryCellCollectionViewCell {
             customCell.updatePhoto(withPhoto: self.photoList[indexPath.row].image)
@@ -135,30 +132,27 @@ extension GalleryCollectionViewController {
         }
         return cell
     }
+}
+extension GalleryCollectionViewController {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let size = CGSize(width: self.view.frame.width, height: 50)
+        return size
+    }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        var galleryImageModel: GalleryImageModel = self.photoList[indexPath.row]
-        galleryImageModel.imageIndex = indexPath.row
-        self.goToDetailPage(withGalleryImageModel: galleryImageModel)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20.0, left: 1.0, bottom: 1.0, right: 1.0)
     }
 }
 extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func setupCollectionView() -> Void {
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 15.0, left: 10.0, bottom: 15.0, right: 10.0)
-        layout.itemSize = self.sizePattern
-        layout.minimumLineSpacing = 5.0
-        layout.minimumInteritemSpacing = 10.0
-        layout.headerReferenceSize = CGSizeMake(0, 50);
-        self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        self.collectionView.showsVerticalScrollIndicator = false
-        self.collectionView.showsHorizontalScrollIndicator = false
-        self.collectionView.register(GalleryCellCollectionViewCell.nib(), forCellWithReuseIdentifier: GalleryCellCollectionViewCell.reuseIdentifier)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return self.sizePattern
     }
 }
-

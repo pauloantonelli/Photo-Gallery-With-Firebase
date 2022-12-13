@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WOG-nQ-w3x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WOG-nQ-w3x">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -128,11 +126,11 @@
             <objects>
                 <viewController storyboardIdentifier="sign-in" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SignInViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="pkZ-7U-tKh">
-                                <rect key="frame" x="14" y="213" width="374" height="416"/>
+                                <rect key="frame" x="14" y="215" width="374" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-ex-ckm">
@@ -222,7 +220,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oxd-gM-IkF">
-                                <rect key="frame" x="19" y="742" width="374" height="32"/>
+                                <rect key="frame" x="19" y="746" width="374" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uM9-i8-Hay">
@@ -268,19 +266,19 @@
             <objects>
                 <viewController storyboardIdentifier="sign-up" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kXi-24-QLG" customClass="SignUpViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hPz-aV-hkV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="9F8-XW-E2A">
-                                <rect key="frame" x="14" y="217" width="374" height="457"/>
+                                <rect key="frame" x="13" y="217" width="374" height="458"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWY-Rn-ezw">
-                                        <rect key="frame" x="0.0" y="8" width="345" height="119"/>
+                                        <rect key="frame" x="0.0" y="8" width="344" height="119"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swift-firebase" translatesAutoresizingMaskIntoConstraints="NO" id="Vrd-qc-uZQ">
-                                                <rect key="frame" x="47" y="-5" width="241" height="128"/>
+                                                <rect key="frame" x="46" y="-5" width="240" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -356,7 +354,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b5C-l0-Y1z">
-                                <rect key="frame" x="19" y="742" width="374" height="32"/>
+                                <rect key="frame" x="19" y="746" width="374" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I6-Es-ynS">
@@ -403,11 +401,11 @@
             <objects>
                 <viewController storyboardIdentifier="permission" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gh5-LU-pKh" customClass="PermissionViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zuq-Nn-DIH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OfL-jm-wgk">
-                                <rect key="frame" x="13" y="248" width="374" height="389"/>
+                                <rect key="frame" x="13" y="250" width="374" height="389"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lze-FV-PEc">
@@ -496,7 +494,7 @@
             <objects>
                 <viewController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aiB-PW-qy3" customClass="HomeViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eH9-h7-z63">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NbC-Sv-6Oi">
@@ -528,7 +526,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pK0-Xc-usL">
-                                <rect key="frame" x="15" y="327" width="374" height="96"/>
+                                <rect key="frame" x="15" y="328" width="374" height="96"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mn0-z0-eyq">
@@ -570,7 +568,7 @@
                                 <gestureRecognizers/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gB4-Ku-kK0">
-                                <rect key="frame" x="17" y="739" width="372" height="77"/>
+                                <rect key="frame" x="17" y="743" width="372" height="77"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9a-u9-DTs" userLabel="GalleryButton">
@@ -600,7 +598,7 @@
                         <outlet property="cameraButtonView" destination="mn0-z0-eyq" id="9zN-8J-wVi"/>
                         <outlet property="galleryButton" destination="be4-Ae-laS" id="5PL-C9-U0c"/>
                         <outlet property="galleryButtonView" destination="oB5-Oy-tmi" id="N0z-RX-vOR"/>
-                        <segue destination="bJY-Rf-mqH" kind="show" identifier="go-from-home-to-gallery" id="NWH-GV-4Dv"/>
+                        <segue destination="de5-a5-BKe" kind="show" identifier="go-from-home-to-gallery" id="o8t-cK-8cW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ep-ks-u5s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -608,82 +606,46 @@
             <point key="canvasLocation" x="4200" y="85.714285714285708"/>
         </scene>
         <!--Gallery Collection View Controller-->
-        <scene sceneID="D5A-s5-3gY">
+        <scene sceneID="S1z-Z7-XSe">
             <objects>
-                <collectionViewController storyboardIdentifier="gallery" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bJY-Rf-mqH" customClass="GalleryCollectionViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" indicatorStyle="black" dataMode="prototypes" id="Gt7-S4-1D2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="de5-a5-BKe" customClass="GalleryCollectionViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="42i-QD-dDn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Z87-C3-umf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" sectionInsetReference="layoutMargins" id="g6j-4E-gFU">
-                            <size key="itemSize" width="120" height="120"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="10" minY="15" maxX="10" maxY="15"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="photoCell" translatesAutoresizingMaskIntoConstraints="NO" id="Yqf-fK-mk3" customClass="GalleryCellCollectionViewCell" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target">
-                                <rect key="frame" x="18" y="73" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgQ-VY-29p">
-                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="gallery-collection-header" id="m5i-oA-AMU" customClass="GalleryHeaderCollectionReusableView" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="8" width="414" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hO7-lf-X9H">
-                                    <rect key="frame" x="0.0" y="-1" width="147" height="51"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Back to Home" buttonSize="large"/>
-                                    <connections>
-                                        <action selector="backToHome:" destination="bJY-Rf-mqH" eventType="touchUpInside" id="2Cm-7D-4vO"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" name="LinkColor"/>
-                        </collectionReusableView>
-                        <connections>
-                            <outlet property="dataSource" destination="bJY-Rf-mqH" id="AkA-AV-ycH"/>
-                            <outlet property="delegate" destination="bJY-Rf-mqH" id="u5m-Sw-Y3x"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="neg-Hi-Wqi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gkD-Lj-MXv"/>
                     <connections>
-                        <outlet property="galleryCollectionView" destination="Gt7-S4-1D2" id="Rra-3d-nDH"/>
-                        <segue destination="8ig-3x-8GE" kind="presentation" identifier="go-from-gallery-to-gallery-detail" id="f0l-qW-iXp"/>
-                        <segue destination="aiB-PW-qy3" kind="show" identifier="go-from-gallery-to-home" id="x7O-zv-g4n"/>
+                        <segue destination="8ig-3x-8GE" kind="presentation" identifier="go-from-gallery-to-gallery-detail" id="gE5-Zh-nae"/>
+                        <segue destination="aiB-PW-qy3" kind="show" identifier="go-from-gallery-to-home" id="60c-8S-ODx"/>
                     </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sGa-fO-ysQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXg-HM-wc3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5028.985507246377" y="85.714285714285708"/>
+            <point key="canvasLocation" x="5007" y="86"/>
         </scene>
         <!--Galley Detail View Controller-->
         <scene sceneID="M82-9T-CcE">
             <objects>
                 <viewController id="8ig-3x-8GE" customClass="GalleyDetailViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QaM-TO-n0S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbO-AF-xgK">
-                                <rect key="frame" x="20" y="45" width="374" height="649"/>
+                                <rect key="frame" x="20" y="45" width="374" height="652"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gallery-permission" translatesAutoresizingMaskIntoConstraints="NO" id="VGJ-Ie-p9c">
-                                        <rect key="frame" x="0.0" y="138" width="374" height="374"/>
+                                        <rect key="frame" x="0.0" y="139" width="374" height="374"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7DH-Pl-pPh">
-                                <rect key="frame" x="20" y="741" width="374" height="62"/>
+                                <rect key="frame" x="20" y="744" width="374" height="62"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZS-dY-2af">
@@ -704,6 +666,7 @@
                         <viewLayoutGuide key="safeArea" id="69d-0c-zqb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="o5s-7O-eJS"/>
                     <connections>
                         <outlet property="deleteImageButton" destination="VZS-dY-2af" id="4BY-Jb-1b5"/>
                         <outlet property="deleteImageButtonView" destination="7DH-Pl-pPh" id="xcE-gT-PY0"/>
@@ -737,7 +700,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="x7O-zv-g4n"/>
+        <segue reference="60c-8S-ODx"/>
         <segue reference="5Z2-dh-Zd7"/>
         <segue reference="9dZ-Hz-T2f"/>
         <segue reference="jWb-Cv-8R6"/>
@@ -746,7 +709,7 @@
         <image name="camera-permission" width="512" height="512"/>
         <image name="gallery-permission" width="512" height="512"/>
         <image name="permission" width="512" height="512"/>
-        <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="97"/>
         <image name="swift-firebase" width="500" height="500"/>
         <image name="zoominitcode-logo" width="380" height="200"/>
         <namedColor name="ButtonBackgroundColor">

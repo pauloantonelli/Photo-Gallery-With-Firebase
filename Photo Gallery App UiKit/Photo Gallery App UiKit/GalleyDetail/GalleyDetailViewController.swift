@@ -32,7 +32,9 @@ class GalleyDetailViewController: UIViewController, UIViewControllerTransitionin
         if self.galleryImageModel == nil { return }
         Task {
             self.showLoading()
-            let result = await self.executeDeleteMedia(imageName: self.galleryImageModel!.id)
+            let imageName: String = self.galleryImageModel!.id.extractImageNameFromString()
+            let imageExtension: String = self.galleryImageModel!.id.extractImageFormatFromString() ?? "jpeg"
+            let result = await self.executeDeleteMedia(imageName: imageName, imageExtension: imageExtension)
             self.hideLoading()
             if result == false {
                 self.showAlert(message: "Could not delete file", completion: { _ in })
@@ -50,9 +52,9 @@ class GalleyDetailViewController: UIViewController, UIViewControllerTransitionin
     }
 }
 extension GalleyDetailViewController {
-    func executeDeleteMedia(imageName: String) async -> Bool {
+    func executeDeleteMedia(imageName: String, imageExtension: String) async -> Bool {
         do {
-            let result: Bool = try await self.deleteMediaUseCase.execute(imageName: imageName, imageExtension: "jpg").get()
+            let result: Bool = try await self.deleteMediaUseCase.execute(imageName: imageName, imageExtension: imageExtension).get()
             return result
         } catch let error as DeleteMediaErrorUseCase {
             print("executeDeleteMedia: \(error.message)")
