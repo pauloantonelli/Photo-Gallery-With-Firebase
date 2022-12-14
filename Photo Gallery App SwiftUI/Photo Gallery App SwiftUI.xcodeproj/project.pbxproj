@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7B534FD62948CF2E00DA22AC /* Photo_Gallery_App_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B534FD52948CF2E00DA22AC /* Photo_Gallery_App_SwiftUIApp.swift */; };
-		7B534FD82948CF2E00DA22AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B534FD72948CF2E00DA22AC /* ContentView.swift */; };
 		7B534FDA2948CF3000DA22AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B534FD92948CF3000DA22AC /* Assets.xcassets */; };
 		7B534FDD2948CF3000DA22AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B534FDC2948CF3000DA22AC /* Preview Assets.xcassets */; };
 		7B534FE72948CF3100DA22AC /* Photo_Gallery_App_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B534FE62948CF3100DA22AC /* Photo_Gallery_App_SwiftUITests.swift */; };
 		7B534FF12948CF3100DA22AC /* Photo_Gallery_App_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B534FF02948CF3100DA22AC /* Photo_Gallery_App_SwiftUIUITests.swift */; };
 		7B534FF32948CF3100DA22AC /* Photo_Gallery_App_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B534FF22948CF3100DA22AC /* Photo_Gallery_App_SwiftUIUITestsLaunchTests.swift */; };
+		7BDFDE1B2948ED7C0022D309 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDFDE1A2948ED7C0022D309 /* OnboardingView.swift */; };
+		7BDFDE1E294903D20022D309 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDFDE1D294903D20022D309 /* SignInView.swift */; };
+		7BDFDE21294A365A0022D309 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDFDE20294A365A0022D309 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		7B534FD22948CF2E00DA22AC /* Photo Gallery App SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Gallery App SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B534FD52948CF2E00DA22AC /* Photo_Gallery_App_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_Gallery_App_SwiftUIApp.swift; sourceTree = "<group>"; };
-		7B534FD72948CF2E00DA22AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7B534FD92948CF3000DA22AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B534FDC2948CF3000DA22AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B534FE22948CF3100DA22AC /* Photo Gallery App SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo Gallery App SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,9 @@
 		7B534FEC2948CF3100DA22AC /* Photo Gallery App SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo Gallery App SwiftUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B534FF02948CF3100DA22AC /* Photo_Gallery_App_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_Gallery_App_SwiftUIUITests.swift; sourceTree = "<group>"; };
 		7B534FF22948CF3100DA22AC /* Photo_Gallery_App_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_Gallery_App_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7BDFDE1A2948ED7C0022D309 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		7BDFDE1D294903D20022D309 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		7BDFDE20294A365A0022D309 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,10 @@
 		7B534FD42948CF2E00DA22AC /* Photo Gallery App SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				7BDFDE192948ED410022D309 /* Onboarding */,
+				7BDFDE1C294903C00022D309 /* SignIn */,
+				7BDFDE1F294A36460022D309 /* SignUp */,
 				7B534FD52948CF2E00DA22AC /* Photo_Gallery_App_SwiftUIApp.swift */,
-				7B534FD72948CF2E00DA22AC /* ContentView.swift */,
 				7B534FD92948CF3000DA22AC /* Assets.xcassets */,
 				7B534FDB2948CF3000DA22AC /* Preview Content */,
 			);
@@ -125,6 +131,30 @@
 				7B534FF22948CF3100DA22AC /* Photo_Gallery_App_SwiftUIUITestsLaunchTests.swift */,
 			);
 			path = "Photo Gallery App SwiftUIUITests";
+			sourceTree = "<group>";
+		};
+		7BDFDE192948ED410022D309 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				7BDFDE1A2948ED7C0022D309 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		7BDFDE1C294903C00022D309 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				7BDFDE1D294903D20022D309 /* SignInView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		7BDFDE1F294A36460022D309 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				7BDFDE20294A365A0022D309 /* SignUpView.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B534FD82948CF2E00DA22AC /* ContentView.swift in Sources */,
+				7BDFDE21294A365A0022D309 /* SignUpView.swift in Sources */,
+				7BDFDE1E294903D20022D309 /* SignInView.swift in Sources */,
+				7BDFDE1B2948ED7C0022D309 /* OnboardingView.swift in Sources */,
 				7B534FD62948CF2E00DA22AC /* Photo_Gallery_App_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
