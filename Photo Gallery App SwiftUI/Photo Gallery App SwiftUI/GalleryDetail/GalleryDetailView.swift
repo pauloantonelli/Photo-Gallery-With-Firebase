@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct GalleyDetailView: View {
+struct GalleryDetailView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack {
             Spacer()
@@ -31,12 +33,12 @@ struct GalleyDetailView: View {
     }
     
     func executeDelete() -> Void {
-        
+        self.dismiss()
     }
 }
 
-struct GalleyDetailView_Previews: PreviewProvider {
+struct GalleryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        GalleyDetailView()
+        GalleryDetailView()
     }
 }

@@ -14,11 +14,23 @@ struct PermissionView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(minHeight: 0.0, maxHeight: 150.0, alignment: .center)
+                .padding(.bottom, 20.0)
             Text("Allow your Camera")
+                .font(.title3)
+                .fontWeight(.bold)
+                .foregroundColor(.black.opacity(0.7))
+                .padding(.bottom, 20.0)
             Text("We will need your camera to give you better experience.")
-            Button("Sure, I'd Like that", action: {
+                .font(.subheadline)
+                .fontWeight(.thin)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 20.0)
+            Button(action: {
                 self.grantPermition(status: true)
-            })
+            }) {
+              Text("Sure, I'd Like that")
+                    .fontWeight(.bold)
+            }
             .frame(
                 minWidth: 0,
                 maxWidth: .infinity,
@@ -28,16 +40,19 @@ struct PermissionView: View {
             .background(Color("PermissionButtonBackgroundColor"))
             .cornerRadius(5.0)
             .padding(.bottom, 10.0)
-            Button("Not now", action: {
+            Button(action: {
                 self.grantPermition(status: false)
-            })
+            }) {
+                Text("Not now")
+                    .fontWeight(.bold)
+            }
             .frame(
                 minWidth: 0,
                 maxWidth: .infinity,
                 maxHeight: 35.0
             )
             .foregroundColor(Color("PermissionButtonBackgroundColor"))
-            .background(Color("PermissionButtonLabelColor"))
+            .background(.white)
             .cornerRadius(5.0)
             .padding(.bottom, 10.0)
         }

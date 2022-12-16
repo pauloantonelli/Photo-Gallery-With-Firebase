@@ -108,7 +108,7 @@ extension SignInViewController {
         self.performSegue(withIdentifier: Constant.goFromSignInToSingUp, sender: self)
     }
     
-    func goToPermissionPage() {
+    func goToPermissionPage() -> Void {
         self.performSegue(withIdentifier: Constant.goFromSignInToPermission, sender: self)
     }
 }

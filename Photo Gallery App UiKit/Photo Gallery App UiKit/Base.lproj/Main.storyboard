@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WOG-nQ-w3x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WOG-nQ-w3x">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,18 +24,18 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETE-Fb-XoI">
-                                        <rect key="frame" x="5" y="8" width="358" height="267"/>
+                                        <rect key="frame" x="4" y="8" width="358" height="267"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swift-firebase" translatesAutoresizingMaskIntoConstraints="NO" id="UHY-Rh-pHa">
-                                                <rect key="frame" x="0.0" y="7" width="358" height="258"/>
+                                                <rect key="frame" x="0.0" y="7" width="358" height="257"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-If-aQh">
-                                        <rect key="frame" x="5" y="283" width="358" height="128"/>
+                                        <rect key="frame" x="4" y="283" width="358" height="128"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNP-Dr-vLh">
@@ -55,7 +56,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1c-Ki-yqj">
-                                        <rect key="frame" x="5" y="419" width="358" height="106"/>
+                                        <rect key="frame" x="4" y="419" width="358" height="106"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOp-9b-fYi">
@@ -71,7 +72,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSh-wh-UTC">
-                                                <rect key="frame" x="0.0" y="63" width="355" height="35"/>
+                                                <rect key="frame" x="0.0" y="63" width="354" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up">
@@ -126,11 +127,11 @@
             <objects>
                 <viewController storyboardIdentifier="sign-in" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SignInViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="pkZ-7U-tKh">
-                                <rect key="frame" x="14" y="215" width="374" height="416"/>
+                                <rect key="frame" x="13" y="212" width="375" height="417"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-ex-ckm">
@@ -138,7 +139,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swift-firebase" translatesAutoresizingMaskIntoConstraints="NO" id="6ys-A4-l62">
-                                                <rect key="frame" x="50" y="-5" width="236" height="128"/>
+                                                <rect key="frame" x="49" y="-5" width="237" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -220,7 +221,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oxd-gM-IkF">
-                                <rect key="frame" x="19" y="746" width="374" height="32"/>
+                                <rect key="frame" x="19" y="742" width="373" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uM9-i8-Hay">
@@ -231,7 +232,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ae-SN-Dwg">
-                                        <rect key="frame" x="289" y="-1" width="85" height="35"/>
+                                        <rect key="frame" x="287" y="-1" width="86" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign up">
@@ -266,15 +267,15 @@
             <objects>
                 <viewController storyboardIdentifier="sign-up" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kXi-24-QLG" customClass="SignUpViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hPz-aV-hkV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="9F8-XW-E2A">
-                                <rect key="frame" x="13" y="217" width="374" height="458"/>
+                                <rect key="frame" x="12" y="214" width="375" height="459"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWY-Rn-ezw">
-                                        <rect key="frame" x="0.0" y="8" width="344" height="119"/>
+                                        <rect key="frame" x="0.0" y="8" width="345" height="119"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swift-firebase" translatesAutoresizingMaskIntoConstraints="NO" id="Vrd-qc-uZQ">
@@ -284,7 +285,7 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3w-pt-ClB">
-                                        <rect key="frame" x="10" y="135" width="348" height="38"/>
+                                        <rect key="frame" x="9" y="135" width="349" height="38"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwh-eF-fvQ">
@@ -298,11 +299,11 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rmA-GX-CCY">
-                                        <rect key="frame" x="10" y="181" width="348" height="50"/>
+                                        <rect key="frame" x="9" y="181" width="349" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7J-z0-RbF">
-                                                <rect key="frame" x="0.0" y="8" width="348" height="34"/>
+                                                <rect key="frame" x="0.0" y="8" width="349" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="done" smartInsertDeleteType="yes" textContentType="email"/>
@@ -310,11 +311,11 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kVa-bg-gwn">
-                                        <rect key="frame" x="10" y="239" width="348" height="50"/>
+                                        <rect key="frame" x="9" y="239" width="349" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FjM-lQ-7nr">
-                                                <rect key="frame" x="0.0" y="8" width="348" height="34"/>
+                                                <rect key="frame" x="0.0" y="8" width="349" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -322,11 +323,11 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZg-td-fcB">
-                                        <rect key="frame" x="10" y="297" width="348" height="50"/>
+                                        <rect key="frame" x="9" y="297" width="349" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="daa-70-ajQ">
-                                                <rect key="frame" x="0.0" y="8" width="348" height="34"/>
+                                                <rect key="frame" x="0.0" y="8" width="349" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -334,11 +335,11 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" id="Q6t-15-tUF">
-                                        <rect key="frame" x="10" y="355" width="348" height="51"/>
+                                        <rect key="frame" x="9" y="355" width="349" height="51"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECG-aN-ukz">
-                                                <rect key="frame" x="0.0" y="8" width="348" height="35"/>
+                                                <rect key="frame" x="0.0" y="8" width="349" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up">
@@ -354,7 +355,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b5C-l0-Y1z">
-                                <rect key="frame" x="19" y="746" width="374" height="32"/>
+                                <rect key="frame" x="19" y="741" width="373" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I6-Es-ynS">
@@ -365,7 +366,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvW-ix-2m2">
-                                        <rect key="frame" x="289" y="-1" width="85" height="35"/>
+                                        <rect key="frame" x="287" y="-1" width="86" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign in">
@@ -401,29 +402,29 @@
             <objects>
                 <viewController storyboardIdentifier="permission" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gh5-LU-pKh" customClass="PermissionViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zuq-Nn-DIH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OfL-jm-wgk">
-                                <rect key="frame" x="13" y="250" width="374" height="389"/>
+                                <rect key="frame" x="12" y="247" width="375" height="389"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lze-FV-PEc">
-                                        <rect key="frame" x="0.0" y="8" width="374" height="128"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="128"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="permission" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-J8-zO6">
-                                                <rect key="frame" x="62" y="0.0" width="239" height="128"/>
+                                                <rect key="frame" x="61" y="0.0" width="241" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8L0-gf-f7O">
-                                        <rect key="frame" x="0.0" y="144" width="374" height="100"/>
+                                        <rect key="frame" x="0.0" y="144" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow your Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92L-Ss-YsC">
-                                                <rect key="frame" x="7" y="8" width="357" height="24"/>
+                                                <rect key="frame" x="7" y="8" width="358" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="textColor" name="LabelColor"/>
@@ -439,7 +440,7 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XkI-CH-x1t">
-                                        <rect key="frame" x="0.0" y="252" width="374" height="90"/>
+                                        <rect key="frame" x="0.0" y="252" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ3-D3-jT2">
@@ -472,7 +473,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpA-tq-cD2">
-                                <rect key="frame" x="13" y="75" width="374" height="128"/>
+                                <rect key="frame" x="12" y="75" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
@@ -494,29 +495,29 @@
             <objects>
                 <viewController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aiB-PW-qy3" customClass="HomeViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eH9-h7-z63">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NbC-Sv-6Oi">
-                                <rect key="frame" x="15" y="170" width="374" height="127"/>
+                                <rect key="frame" x="15" y="168" width="374" height="127"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a send method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwJ-p7-mE5">
-                                        <rect key="frame" x="5" y="8" width="358" height="24"/>
+                                        <rect key="frame" x="4" y="8" width="358" height="24"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" name="LabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose camera to take an photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sph-dT-LN1">
-                                        <rect key="frame" x="5" y="40" width="358" height="24"/>
+                                        <rect key="frame" x="4" y="40" width="358" height="24"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                         <color key="textColor" name="LabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose gallery and pick an photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s0-vY-xJT">
-                                        <rect key="frame" x="5" y="72" width="358" height="24"/>
+                                        <rect key="frame" x="4" y="72" width="358" height="24"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                         <color key="textColor" name="LabelColor"/>
@@ -526,11 +527,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pK0-Xc-usL">
-                                <rect key="frame" x="15" y="328" width="374" height="96"/>
+                                <rect key="frame" x="15" y="326" width="374" height="96"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mn0-z0-eyq">
-                                        <rect key="frame" x="45" y="-1" width="103" height="97"/>
+                                        <rect key="frame" x="44" y="-1" width="103" height="97"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpP-dR-Vvb" userLabel="CameraButton">
@@ -548,11 +549,11 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oB5-Oy-tmi">
-                                        <rect key="frame" x="228" y="0.0" width="103" height="97"/>
+                                        <rect key="frame" x="227" y="0.0" width="103" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be4-Ae-laS" userLabel="GalleryButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="103" height="97"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="97"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button" image="gallery-permission"/>
@@ -568,11 +569,11 @@
                                 <gestureRecognizers/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gB4-Ku-kK0">
-                                <rect key="frame" x="17" y="743" width="372" height="77"/>
+                                <rect key="frame" x="16" y="739" width="373" height="76"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9a-u9-DTs" userLabel="GalleryButton">
-                                        <rect key="frame" x="133" y="5" width="101" height="60"/>
+                                        <rect key="frame" x="133" y="4" width="101" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled">
@@ -610,7 +611,7 @@
             <objects>
                 <viewController id="de5-a5-BKe" customClass="GalleryCollectionViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="42i-QD-dDn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Z87-C3-umf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -630,26 +631,26 @@
             <objects>
                 <viewController id="8ig-3x-8GE" customClass="GalleyDetailViewController" customModule="Photo_Gallery_App_UiKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QaM-TO-n0S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbO-AF-xgK">
-                                <rect key="frame" x="20" y="45" width="374" height="652"/>
+                                <rect key="frame" x="20" y="45" width="374" height="648"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gallery-permission" translatesAutoresizingMaskIntoConstraints="NO" id="VGJ-Ie-p9c">
-                                        <rect key="frame" x="0.0" y="139" width="374" height="374"/>
+                                        <rect key="frame" x="0.0" y="136" width="374" height="375"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7DH-Pl-pPh">
-                                <rect key="frame" x="20" y="744" width="374" height="62"/>
+                                <rect key="frame" x="20" y="740" width="374" height="62"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZS-dY-2af">
-                                        <rect key="frame" x="8" y="0.0" width="358" height="62"/>
+                                        <rect key="frame" x="7" y="0.0" width="358" height="62"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Deletar">
@@ -709,7 +710,7 @@
         <image name="camera-permission" width="512" height="512"/>
         <image name="gallery-permission" width="512" height="512"/>
         <image name="permission" width="512" height="512"/>
-        <image name="photo.on.rectangle" catalog="system" width="128" height="97"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>
         <image name="swift-firebase" width="500" height="500"/>
         <image name="zoominitcode-logo" width="380" height="200"/>
         <namedColor name="ButtonBackgroundColor">
