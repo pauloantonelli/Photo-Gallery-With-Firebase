@@ -9,7 +9,7 @@ import SwiftUI
 import Photo_Gallery_With_Firebase_SDK
 
 struct SignInView: View {
-    var signInViewModel: SignInViewModel
+    @ObservedObject var signInViewModel: SignInViewModel
     @State var email: String = ""
     @State var password: String = ""
     @State var showAlert: Bool = false
@@ -20,10 +20,6 @@ struct SignInView: View {
         self.signInViewModel = signInViewModel as! SignInView.SignInViewModel
         self.emailFieldIsFocused = false
         self.passwordFieldIsFocused = false
-    }
-    
-    func showAlert(status: Bool) {
-        self.showAlert = status
     }
     
     var body: some View {
@@ -124,7 +120,8 @@ struct SignInView: View {
         }
         .padding(.horizontal, 20.0)
         .onReceive(
-            NotificationCenter.default.publisher(for: self.signInViewModel.showAlertConstant)) { status in
+            NotificationCenter.default.publisher(
+                for: self.signInViewModel.showAlertConstant)) { status in
                 self.showAlert = status.object as! Bool
             }
             .alert(isPresented: self.$showAlert) {

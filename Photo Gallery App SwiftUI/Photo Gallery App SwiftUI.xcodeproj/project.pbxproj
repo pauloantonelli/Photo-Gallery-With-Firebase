@@ -18,6 +18,8 @@
 		7B7723E9294B5F9C0053B14A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7723E8294B5F9C0053B14A /* HomeView.swift */; };
 		7B7723EC294B6E890053B14A /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7723EB294B6E890053B14A /* GalleryView.swift */; };
 		7B7723EF294BADC60053B14A /* GalleryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7723EE294BADC60053B14A /* GalleryDetailView.swift */; };
+		7B85E0112950E08500D6D015 /* PermissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B85E0102950E08500D6D015 /* PermissionViewModel.swift */; };
+		7B85E0132950F3CA00D6D015 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B85E0122950F3CA00D6D015 /* HomeViewModel.swift */; };
 		7BC55DF7294D01A7004CBC8B /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC55DF6294D01A7004CBC8B /* ActivityIndicatorView.swift */; };
 		7BD62F94294C9B4500EF0356 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD62F93294C9B4500EF0356 /* SignInViewModel.swift */; };
 		7BD62F99294C9F0700EF0356 /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD62F98294C9F0700EF0356 /* Photo_Gallery_With_Firebase_SDK.framework */; };
@@ -73,6 +75,8 @@
 		7B7723E8294B5F9C0053B14A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7B7723EB294B6E890053B14A /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		7B7723EE294BADC60053B14A /* GalleryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailView.swift; sourceTree = "<group>"; };
+		7B85E0102950E08500D6D015 /* PermissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewModel.swift; sourceTree = "<group>"; };
+		7B85E0122950F3CA00D6D015 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7BC55DF6294D01A7004CBC8B /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		7BD62F93294C9B4500EF0356 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		7BD62F98294C9F0700EF0356 /* Photo_Gallery_With_Firebase_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Photo_Gallery_With_Firebase_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				7B2C9FA8294A633B00ECD3B2 /* PermissionView.swift */,
+				7B85E0102950E08500D6D015 /* PermissionViewModel.swift */,
 			);
 			path = Permission;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				7B7723E8294B5F9C0053B14A /* HomeView.swift */,
+				7B85E0122950F3CA00D6D015 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -400,7 +406,9 @@
 				7B7723E9294B5F9C0053B14A /* HomeView.swift in Sources */,
 				7BD62F94294C9B4500EF0356 /* SignInViewModel.swift in Sources */,
 				7B7723EF294BADC60053B14A /* GalleryDetailView.swift in Sources */,
+				7B85E0132950F3CA00D6D015 /* HomeViewModel.swift in Sources */,
 				7BDFDE1B2948ED7C0022D309 /* OnboardingView.swift in Sources */,
+				7B85E0112950E08500D6D015 /* PermissionViewModel.swift in Sources */,
 				7B720D6E295092B40073AD17 /* SignUpViewModel.swift in Sources */,
 				7B534FD62948CF2E00DA22AC /* Photo_Gallery_App_SwiftUIApp.swift in Sources */,
 			);
@@ -564,6 +572,9 @@
 				DEVELOPMENT_TEAM = S5ZVG5XXCG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app will use camera.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to save photo in your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You can select photos from your album.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -593,6 +604,9 @@
 				DEVELOPMENT_TEAM = S5ZVG5XXCG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app will use camera.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to save photo in your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You can select photos from your album.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

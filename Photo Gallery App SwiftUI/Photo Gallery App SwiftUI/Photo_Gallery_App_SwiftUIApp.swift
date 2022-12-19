@@ -15,7 +15,7 @@ struct Photo_Gallery_App_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
 //            OnboardingView()
-            SignInView(signInViewModel: DependencyInjection.get(ISignInViewModel.self)!)
+            PermissionView(permissionViewModel: DependencyInjection.get(IPermissionViewModel.self)!)
         }
     }
 }
@@ -53,5 +53,17 @@ extension AppDelegate {
 extension AppDelegate {
     func initModelDependency() -> Void {
         DependencyInjection.register(type: ISignInViewModel.self, instance: SignInView.SignInViewModel())
+        DependencyInjection.register(type: ISignUpViewModel.self, instance: SignUpView.SignUpViewModel())
+        DependencyInjection.register(type: IPermissionViewModel.self, instance: PermissionView.PermissionViewModel(
+            mediaPermissionService: DependencyInjection.get(IMediaPermissionService.self),
+            cameraPermissionUseCase: DependencyInjection.get(ICameraPermissionUseCase.self),
+            galleryPermissionUseCase: DependencyInjection.get(IGalleryPermissionUseCase.self)
+        ))
+        DependencyInjection.register(type: IHomeViewModel.self, instance: HomeView.HomeViewModel(
+            firebaseService: DependencyInjection.get(IFirebaseService.self)!,
+            openCameraService: DependencyInjection.get(IOpenCameraService.self)!,
+            openGalleryService: DependencyInjection.get(IOpenGalleryService.self)!,
+            saveMediaUseCase: DependencyInjection.get(ISaveMediaUseCase.self)!
+        ))
     }
 }

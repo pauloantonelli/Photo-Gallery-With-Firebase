@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import Photo_Gallery_With_Firebase_SDK
 
 struct HomeView: View {
+    @ObservedObject var homeViewModel: HomeViewModel
+    
+    init(homeViewModel: IHomeViewModel) {
+        self.homeViewModel = homeViewModel as! HomeViewModel
+    }
+    
     var body: some View {
         VStack {
             Spacer(minLength: 50.0)
@@ -57,10 +64,27 @@ struct HomeView: View {
             .cornerRadius(5.0)
         }
     }
+    
+    func cameraButton() {
+        self.homeViewModel.openCamera()
+    }
+    
+    func galleryButton() {
+        self.homeViewModel.openGallery()
+    }
+    
+    func goToGallery(_ sender: Any) {
+        
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(homeViewModel: HomeView.HomeViewModel(
+            firebaseService: FirebaseService(),
+            openCameraService: OpenCameraService(),
+            openGalleryService: OpenGalleryService(),
+            saveMediaUseCase: SaveMediaUseCase())
+        )
     }
 }

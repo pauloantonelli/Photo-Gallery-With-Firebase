@@ -6,8 +6,16 @@
 //
 
 import SwiftUI
+import Photo_Gallery_With_Firebase_SDK
 
 struct PermissionView: View {
+    @ObservedObject var permissionViewModel: PermissionViewModel
+    @State var showAlert: Bool = false
+    
+    init(permissionViewModel: IPermissionViewModel) {
+        self.permissionViewModel = permissionViewModel as! PermissionViewModel
+    }
+    
     var body: some View {
         VStack {
             Image("permission")
@@ -26,7 +34,7 @@ struct PermissionView: View {
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 20.0)
             Button(action: {
-                self.grantPermition(status: true)
+                self.permitionState(status: true)
             }) {
               Text("Sure, I'd Like that")
                     .fontWeight(.bold)
@@ -41,7 +49,7 @@ struct PermissionView: View {
             .cornerRadius(5.0)
             .padding(.bottom, 10.0)
             Button(action: {
-                self.grantPermition(status: false)
+                self.permitionState(status: false)
             }) {
                 Text("Not now")
                     .fontWeight(.bold)
@@ -57,15 +65,30 @@ struct PermissionView: View {
             .padding(.bottom, 10.0)
         }
         .padding(.horizontal, 20.0)
+        .onReceive(
+            NotificationCenter.default.publisher(
+                for: self.permissionViewModel.showAlertConstant
+            )) { status in
+                self.showAlert = status.object as! Bool
+            }
+            .alert(isPresented: self.$showAlert) {
+                return self.permissionViewModel.alert
+            }
     }
     
-    func grantPermition(status: Bool) -> Void {
-        
+    func permitionState(status: Bool) -> Void {
+        if status == false {
+            self.permissionViewModel.deniPermission()
+            return
+        }
+        self.permissionViewModel.grantPermission()
     }
 }
 
 struct PermissionView_Previews: PreviewProvider {
     static var previews: some View {
-        PermissionView()
+        PermissionView(permissionViewModel: PermissionView.PermissionViewModel(
+        mediaPermissionService: MediaPermissionService(), cameraPermissionUseCase: CameraPermissionUseCase(), galleryPermissionUseCase: GalleryPermissionUseCase()
+        ))
     }
 }

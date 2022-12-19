@@ -5,9 +5,8 @@
 //  Created by Paulo Antonelli on 16/12/22.
 //
 
-import Foundation
-import Photo_Gallery_With_Firebase_SDK
 import SwiftUI
+import Photo_Gallery_With_Firebase_SDK
 
 protocol ISignInViewModel {
     func signIn(email: Email, password: Password) async -> Void
@@ -22,13 +21,13 @@ protocol ISignInViewModel {
     func executeForgotPassword(email: Email) async -> Void
 }
 extension SignInView {
-    class SignInViewModel: ISignInViewModel {
-        let showAlertConstant: NSNotification.Name = NSNotification.Name("alert")
+    class SignInViewModel: ISignInViewModel, ObservableObject {
+        let showAlertConstant: NSNotification.Name = NSNotification.Name("SignInAlert")
         var loginUseCase: ILoginUseCase?
         var forgotPasswordUseCase: IForgotPasswordUseCase?
         var email: String = ""
         var password: String = ""
-        var isLoading: Bool = false
+        @Published var isLoading: Bool = false
         var alert: Alert = Alert(
             title: Text(""),
             message: Text(""),
