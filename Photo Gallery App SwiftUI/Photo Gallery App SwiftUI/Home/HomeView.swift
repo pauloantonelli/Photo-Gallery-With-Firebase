@@ -10,6 +10,10 @@ import Photo_Gallery_With_Firebase_SDK
 
 struct HomeView: View {
     @ObservedObject var homeViewModel: HomeViewModel
+    @State var showAlert: Bool = false
+    @State var showCameraPicker: Bool = false
+    @State var showGalleryPicker: Bool = false
+    @State var image: Image?
     
     init(homeViewModel: IHomeViewModel) {
         self.homeViewModel = homeViewModel as! HomeViewModel
@@ -30,22 +34,50 @@ struct HomeView: View {
                 .font(.title3)
                 .fontWeight(.thin).foregroundColor(.black.opacity(0.7))
                 .padding(.bottom, 60.0)
-            HStack(
-                alignment: .center,
-                spacing: 80
-            ) {
-                Button(action: {}) {
-                    Image("camera-permission")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+            if self.homeViewModel.isLoading == true {
+                ActivityIndicatorView(color: Color("ButtonBackgroundColor"))
+                    .frame(width: 50.0, height: 50.0)
+            } else {
+                HStack(
+                    alignment: .center,
+                    spacing: 80
+                ) {
+                    Group {
+                        Button(action: {
+                            self.openCamera()
+                        }) {
+                            Image("camera-permission")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }
+                        .frame(minHeight: 0.0, maxHeight: 100.0)
+                        .sheet(isPresented: self.$showCameraPicker) {
+                            ImagePickerView(
+                                homeViewModel: self.homeViewModel,
+                                showCameraPicker: self.$showCameraPicker,
+                                showGalleryPicker: self.$showGalleryPicker,
+                                image: $image)
+                        }
+                    }
+                    Group {
+                        Button(action: {
+                            self.openGallery()
+                        }) {
+                            Image("gallery-permission")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }
+                        .frame(minHeight: 0.0, maxHeight: 100.0)
+                        .sheet(isPresented: self.$showGalleryPicker) {
+                            ImagePickerView(
+                                homeViewModel: self.homeViewModel,
+                                showCameraPicker: self.$showCameraPicker,
+                                showGalleryPicker: self.$showGalleryPicker,
+                                image: self.$image
+                            )
+                        }
+                    }
                 }
-                .frame(minHeight: 0.0, maxHeight: 100.0)
-                Button(action: {}) {
-                    Image("gallery-permission")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
-                .frame(minHeight: 0.0, maxHeight: 100.0)
             }
             Spacer()
             Button(action: {}) {
@@ -62,19 +94,26 @@ struct HomeView: View {
             )
             .background(Color("LinkColor"))
             .cornerRadius(5.0)
+        }.onReceive(NotificationCenter.default.publisher(for: self.homeViewModel.showAlertConstant)) { status in
+            self.showAlert = status.object as! Bool
+        }
+        .alert(isPresented: self.$showAlert) {
+            return self.homeViewModel.alert
         }
     }
     
-    func cameraButton() {
-        self.homeViewModel.openCamera()
+    func openCamera() -> Void {
+        self.showCameraPicker = true
+        self.showGalleryPicker = false
     }
     
-    func galleryButton() {
-        self.homeViewModel.openGallery()
+    func openGallery() -> Void {
+        self.showCameraPicker = false
+        self.showGalleryPicker = true
     }
     
-    func goToGallery(_ sender: Any) {
-        
+    func goToGallery() -> Void {
+        print("goToGallery")
     }
 }
 

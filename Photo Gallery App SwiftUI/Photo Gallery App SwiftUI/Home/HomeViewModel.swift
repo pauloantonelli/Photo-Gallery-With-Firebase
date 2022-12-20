@@ -13,11 +13,20 @@ enum MediaSource {
     case gallery
 }
 protocol IHomeViewModel {
-    
+    func setup() -> Void
+    func updateImage(withImage image: UIImage) -> Void
+    func openCamera() -> UIImagePickerController
+    func openGallery() -> UIImagePickerController
+    func alertAction() -> Void
+    func showLoading() -> Void
+    func hideLoading() -> Void
+    func saveImage(image: UIImage) async -> Void
+    func showAlert(title: String, message: String, actionTitle: String) -> Void
+    func emitAlertStatus(status: Bool) -> Void
 }
 extension HomeView {
     class HomeViewModel: IHomeViewModel, IOpenCameraServiceDelegate, IOpenGalleryServiceDelegate, ObservableObject {
-        let showAlertConstant: NSNotification.Name = NSNotification.Name("HomenAlert")
+        let showAlertConstant: NSNotification.Name = NSNotification.Name("HomeAlert")
         var firebaseService: IFirebaseService
         var openCameraService: IOpenCameraService
         var openGalleryService: IOpenGalleryService
@@ -52,28 +61,32 @@ extension HomeView {
             }
         }
         
-        func openCamera() -> Void {
+        func openCamera() -> UIImagePickerController {
             self.mediaSource = .camera
-            let camera = self.openCameraService.execute()
-//            self.present(camera, animated: true)
+            let camera: UIImagePickerController = self.openCameraService.execute()
+            return camera
         }
         
-        func openGallery() -> Void {
+        func openGallery() -> UIImagePickerController {
             self.mediaSource = .gallery
-            let gallery = self.openGalleryService.execute()
-//            self.present(gallery, animated: true)
+            let gallery: UIImagePickerController = self.openGalleryService.execute()
+            return gallery
+        }
+        
+        func showLoading() -> Void {
+            DispatchQueue.main.async {
+                self.isLoading = true
+            }
+        }
+        
+        func hideLoading() -> Void {
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
         }
         
         func alertAction() -> Void {
             
-        }
-        
-        func showLoading() -> Void {
-            self.isLoading = true
-        }
-        
-        func hideLoading() -> Void {
-            self.isLoading = false
         }
         
         func saveImage(image: UIImage) async -> Void {

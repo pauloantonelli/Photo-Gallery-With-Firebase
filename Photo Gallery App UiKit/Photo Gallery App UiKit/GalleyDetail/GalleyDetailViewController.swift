@@ -43,7 +43,6 @@ class GalleyDetailViewController: UIViewController, UIViewControllerTransitionin
             self.dismiss(animated: true)
             self.onDismiss!(true, self.galleryImageModel?.imageIndex ?? 0)
         }
-         
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {

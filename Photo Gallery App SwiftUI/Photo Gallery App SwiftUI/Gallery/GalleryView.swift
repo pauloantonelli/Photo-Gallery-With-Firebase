@@ -6,34 +6,28 @@
 //
 
 import SwiftUI
-class DataSource: Identifiable {
-    var id: String
-    var image: Image
-    var title: String
-    
-    init() {
-        self.id = UUID().uuidString
-        self.image = Image("mock-image").resizable()
-        self.title = "mock-image"
-    }
-}
+import Photo_Gallery_With_Firebase_SDK
+
 struct GalleryView: View {
-    var rowList: Array<GridItem> = []
-    var datasource: Array<DataSource> = []
+    @ObservedObject var galleryViewModel: GalleryViewModel
+    @ObservedObject var galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel
+    @State var showAlert: Bool = false
     @State private var showSheet = false
+    var rowList: Array<GridItem> = []
     
-    init() {
+    init(galleryViewModel: IGalleryViewModel, galleryDetailViewModel: IGalleryDetailViewModel) {
+        self.galleryViewModel = galleryViewModel as! GalleryView.GalleryViewModel
+        self.galleryDetailViewModel = galleryDetailViewModel as!  GalleryDetailView.GalleryDetailViewModel
         self.rowListConfigure()
-        for _ in 0...100 {
-            self.datasource.append(DataSource())
-        }
     }
     
     var body: some View {
         VStack {
             Group {
                 HStack {
-                    Button(action: {}) {
+                    Button(action: {
+                        self.backToHome()
+                    }) {
                         Text("Back to Home")
                             .font(.title3)
                             .foregroundColor(.white)
@@ -50,23 +44,43 @@ struct GalleryView: View {
                 .frame(height: 50.0)
             }
             ScrollView {
-                LazyVGrid(columns: self.rowList, spacing: 10.0) {
-                    ForEach(0...self.datasource.count, id: \.self) { item in
-                        Button(action: {
-                            print("Clique...")
-                            self.showSheet.toggle()
-                        }) {
-                            self.datasource[0].image
-                                .aspectRatio(contentMode: .fit)
+                if self.galleryViewModel.isLoading == true {
+                    ActivityIndicatorView(color: Color("ButtonBackgroundColor"))
+                        .frame(width: 50.0, height: 50.0)
+                } else {
+                    LazyVGrid(columns: self.rowList, spacing: 10.0) {
+                        ForEach(self.galleryViewModel.photoList.indices, id: \.self) { index in
+                            Button(action: {
+                                self.galleryDetailViewModel.galleryImageModel = self.galleryViewModel.photoList[index]
+                                self.showSheet.toggle()
+                            }) { self.galleryViewModel.photoList[index].image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }
+                            .sheet(isPresented: $showSheet) {
+                                GalleryDetailView(
+                                    galleryViewModel: self.galleryViewModel,
+                                    galleryDetailViewModel: self.galleryDetailViewModel
+                                )
+                            }
                         }
-                        .sheet(isPresented: $showSheet) {
-                            GalleryDetailView()
-                        }
-                    }
-                }
+                    }}
             }
             .padding(.horizontal, 10.0)
         }
+        .onAppear() {
+            self.galleryViewModel.initPhotoList()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: self.galleryViewModel.showAlertConstant)) { status in
+            self.showAlert = status.object as! Bool
+        }
+        .alert(isPresented: self.$showAlert) {
+            return self.galleryViewModel.alert
+        }
+    }
+    
+    func backToHome() -> Void {
+        print("backToHome")
     }
 }
 extension GalleryView {
@@ -79,6 +93,12 @@ extension GalleryView {
 
 struct GalleryView_Previews: PreviewProvider {
     static var previews: some View {
-        GalleryView()
+        GalleryView(galleryViewModel: GalleryView.GalleryViewModel(
+            firebaseStorageService: FirebaseStorageService(),
+            getMediaListUrlUseCase: GetMediaListUrlUseCase()),
+                    galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel(
+                deleteMediaUseCase: DeleteMediaUseCase()
+            )
+        )
     }
 }
