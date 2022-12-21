@@ -10,12 +10,24 @@ import Photo_Gallery_With_Firebase_SDK
 
 @main
 struct Photo_Gallery_App_SwiftUIApp: App {
+    @Environment(\.scenePhase) private var scenePhase
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
-            //            OnboardingView()
-            GalleryView(galleryViewModel: DependencyInjection.get(IGalleryViewModel.self)!, galleryDetailViewModel: DependencyInjection.get(IGalleryDetailViewModel.self)!)
+            OnboardingView()
+        }
+        .onChange(of: self.scenePhase) { (scenePhase) in
+            switch scenePhase {
+            case .active:
+                print("scene is now active!")
+            case .inactive:
+                print("scene is now inactive!")
+            case .background:
+                print("scene is now in the background!")
+            @unknown default:
+                print("scene in unknown state")
+            }
         }
     }
 }
