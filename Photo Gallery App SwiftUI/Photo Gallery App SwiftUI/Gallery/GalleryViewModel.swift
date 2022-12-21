@@ -9,7 +9,7 @@ import SwiftUI
 import Photo_Gallery_With_Firebase_SDK
 
 protocol IGalleryViewModel {
-    func initPhotoList() -> Void
+    func loadPhotoList() -> Void
     func getImageList() async -> Void
     func deletePhotoListItem(withPhotoId: String) -> Void
     func showLoading() -> Void
@@ -50,7 +50,7 @@ extension GalleryView {
             }
         }
         
-        func initPhotoList() -> Void {
+        func loadPhotoList() -> Void {
             Task {
                 await self.getImageList()
             }
@@ -68,7 +68,10 @@ extension GalleryView {
                         let id = url.absoluteString
                         let uiImage: UIImage = safeImage.resize(to: self.sizePattern)
                         let image: Image = Image(uiImage: uiImage).renderingMode(.original)
-                        self.photoList.append(GalleryImageModel(id: id, image: image))
+                        self.photoList.append(GalleryImageModel(id: id, image: image))                     
+                        if self.photoList.count == urlList.count {
+                            self.hideLoading()
+                        }
                     }
                 }
             } catch let error as GetMediaListUrlErrorUseCase {
@@ -99,7 +102,7 @@ extension GalleryView {
         }
         
         func alertAction() -> Void {
-            self.initPhotoList()
+            self.loadPhotoList()
         }
         
         func showAlert(title: String = "Photos can't load right now, please try again", message: String, actionTitle: String = "Try Again") -> Void {

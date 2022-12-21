@@ -69,7 +69,7 @@ struct GalleryView: View {
             .padding(.horizontal, 10.0)
         }
         .onAppear() {
-            self.galleryViewModel.initPhotoList()
+            self.galleryViewModel.loadPhotoList()
         }
         .onReceive(NotificationCenter.default.publisher(for: self.galleryViewModel.showAlertConstant)) { status in
             self.showAlert = status.object as! Bool

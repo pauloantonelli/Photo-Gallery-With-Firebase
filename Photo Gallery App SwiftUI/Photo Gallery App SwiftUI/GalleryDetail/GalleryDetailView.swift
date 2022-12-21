@@ -53,9 +53,12 @@ struct GalleryDetailView: View {
         .onChange(of: self.galleryDetailViewModel.doDismiss) { status in
             if status == false { return }
             if self.galleryDetailViewModel.needDismiss == false { return }
-            if self.galleryDetailViewModel.galleryImageModel == nil { return }
+            guard let galleryImageModel: GalleryImageModel = self.galleryDetailViewModel.galleryImageModel else {
+                self.galleryViewModel.loadPhotoList()
+                return
+            }
             self.galleryViewModel.deletePhotoListItem(
-                withPhotoId: self.galleryDetailViewModel.galleryImageModel!.id
+                withPhotoId: galleryImageModel.id
             )
             self.dismiss()
         }

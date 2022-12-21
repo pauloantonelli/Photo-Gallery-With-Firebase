@@ -15,6 +15,7 @@ protocol IGalleryDetailViewModel {
     func updateNeedDismiss(status: Bool) -> Void
     func showLoading() -> Void
     func hideLoading() -> Void
+    func alertDismiss() -> Void
     func alertAction() -> Void
     func showAlert(title: String, message: String, actionTitle: String) -> Void
     func emitAlertStatus(status: Bool) -> Void
@@ -50,6 +51,7 @@ extension GalleryDetailView {
                 return
             }
             self.updateNeedDismiss(status: true)
+            self.alertDismiss()
         }
         
         func executeDeleteMedia(imageName: String, imageExtension: String) async -> Bool {
@@ -85,8 +87,17 @@ extension GalleryDetailView {
             }
         }
         
+        func alertDismiss() -> Void {
+            DispatchQueue.main.async {
+                self.doDismiss = true
+                Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+                    self.doDismiss = false 
+                }
+            }
+        }
+        
         func alertAction() -> Void {
-            self.doDismiss.toggle()
+            self.alertDismiss()
         }
         
         func showAlert(title: String = "Image Delete", message: String, actionTitle: String = "Done") -> Void {
