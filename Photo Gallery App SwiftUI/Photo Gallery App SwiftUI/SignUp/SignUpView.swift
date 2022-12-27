@@ -9,17 +9,35 @@ import SwiftUI
 import Photo_Gallery_With_Firebase_SDK
 
 struct SignUpView: View {
+    var signInViewModel: SignInView.SignInViewModel
+    var permissionViewModel: PermissionView.PermissionViewModel
+    var galleryViewModel: GalleryView.GalleryViewModel
+    var galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel
+    var homeViewModel: HomeView.HomeViewModel
     @ObservedObject var signUpViewModel: SignUpViewModel
     @State var email: String = ""
     @State var password: String = ""
     @State var confirmPassword: String = ""
     @State var showAlert: Bool = false
+    @State private var selectionScreen: NavigationEnum?
     @FocusState var emailFieldIsFocused: Bool
     @FocusState var passwordFieldIsFocused: Bool
     @FocusState var passwordConfirmFieldIsFocused: Bool
     
-    init(signUpViewModel: ISignUpViewModel) {
+    init(
+        signUpViewModel: ISignUpViewModel,
+        signInViewModel: ISignInViewModel,
+        permissionViewModel: IPermissionViewModel,
+        homeViewModel: IHomeViewModel,
+        galleryViewModel: IGalleryViewModel,
+        galleryDetailViewModel: IGalleryDetailViewModel
+    ) {
         self.signUpViewModel = signUpViewModel as! SignUpView.SignUpViewModel
+        self.signInViewModel = signInViewModel as! SignInView.SignInViewModel
+        self.permissionViewModel = permissionViewModel as! PermissionView.PermissionViewModel
+        self.galleryViewModel = galleryViewModel as! GalleryView.GalleryViewModel
+        self.galleryDetailViewModel = galleryDetailViewModel as! GalleryDetailView.GalleryDetailViewModel
+        self.homeViewModel = homeViewModel as! HomeView.HomeViewModel
         self.emailFieldIsFocused = false
         self.passwordFieldIsFocused = false
         self.passwordConfirmFieldIsFocused = false
@@ -80,43 +98,71 @@ struct SignUpView: View {
                 .padding(.bottom, 20.0)
             }
             if self.signUpViewModel.isLoading == true {
-                ActivityIndicatorView(color: Color("ButtonBackgroundColor"))
-                    .frame(width: 50.0, height: 50.0)
+                LoadingView()
             } else {
-                Button("Sign Up", action: {
-                    Task {
+                NavigationLink(
+                    destination: PermissionView(
+                        permissionViewModel: self.permissionViewModel,
+                        homeViewModel: self.homeViewModel,
+                        galleryViewModel: self.galleryViewModel,
+                        galleryDetailViewModel: self.galleryDetailViewModel
+                    ),
+                    tag: NavigationEnum.permissionView,
+                    selection: self.$selectionScreen
+                ) {
+                    Button("Sign Up", action: {
                         let passwordEqual = self.signUpViewModel.verifyEqualPassword(
                             password: self.password,
                             repassword: self.confirmPassword
                         )
                         if passwordEqual {
                             self.resetFocusField()
-                            await self.handleSignUp(username: self.email, password: self.password)
+                            let email: Email = Email(email: self.email)
+                            let password: Password = Password(password: self.password)
+                            self.signUpViewModel.signUp(email: email, password: password)
                         }
-                    }
-                })
-                .frame(
-                    minWidth: 0,
-                    maxWidth: .infinity,
-                    maxHeight: 35.0
-                )
-                .foregroundColor(.white)
-                .background(Color("ButtonBackgroundColor"))
-                .cornerRadius(5.0)
-                .padding(.bottom, 10.0)
+                    })
+                    .frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        maxHeight: 35.0
+                    )
+                    .foregroundColor(.white)
+                    .background(Color("ButtonBackgroundColor"))
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 10.0)
+                }
             }
             Spacer()
             HStack {
                 Text("Have an account?")
                     .foregroundColor(.black.opacity(0.7))
                 Spacer()
-                Button("Sign In", action: self.goToSignInPage)
-                    .foregroundColor(Color("ButtonBackgroundColor"))
-                    .background(.white)
+                NavigationLink(
+                    destination: SignInView(
+                        signInViewModel: self.signInViewModel,
+                        signUpViewModel: self.signUpViewModel,
+                        permissionViewModel: self.permissionViewModel,
+                        homeViewModel: self.homeViewModel,
+                        galleryViewModel: self.galleryViewModel,
+                        galleryDetailViewModel: self.galleryDetailViewModel
+                    ),
+                    tag: NavigationEnum.signInView,
+                    selection: self.$selectionScreen
+                ) {
+                    Button("Sign In", action: self.goToSignInPage)
+                        .foregroundColor(Color("ButtonBackgroundColor"))
+                        .background(.white)
+                }
             }
             .padding(.bottom, 30.0)
         }
         .padding(.horizontal, 20.0)
+        .onChange(of: self.signUpViewModel.canGoToPermissionPage) { status in
+            if status == true {
+                self.goToPermissionPage()
+            }
+        }
         .onReceive(
             NotificationCenter.default.publisher(
                 for: self.signUpViewModel.showAlertConstant
@@ -128,15 +174,12 @@ struct SignUpView: View {
             }
     }
     
-    
-    func handleSignUp(username: String, password: String) async -> Void {
-        let email: Email = Email(email: self.email)
-        let password: Password = Password(password: self.password)
-        await self.signUpViewModel.signUp(email: email, password: password)
+    func goToSignInPage() -> Void {
+        self.selectionScreen = NavigationEnum.signInView
     }
     
-    func goToSignInPage() -> Void {
-        self.signUpViewModel.goToSignInPage()
+    func goToPermissionPage() -> Void {
+        self.selectionScreen = NavigationEnum.permissionView
     }
     
     func resetFocusField() -> Void {
@@ -148,6 +191,26 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(signUpViewModel: SignUpView.SignUpViewModel())
+        SignUpView(
+            signUpViewModel: SignUpView.SignUpViewModel(),
+            signInViewModel: SignInView.SignInViewModel(),
+            permissionViewModel: PermissionView.PermissionViewModel(
+                mediaPermissionService: MediaPermissionService(),
+                cameraPermissionUseCase: CameraPermissionUseCase(),
+                galleryPermissionUseCase: GalleryPermissionUseCase()
+            ),
+            homeViewModel: HomeView.HomeViewModel(
+                firebaseService: FirebaseService(),
+                openCameraService: OpenCameraService(),
+                openGalleryService: OpenGalleryService(),
+                saveMediaUseCase: SaveMediaUseCase()
+            ),
+            galleryViewModel: GalleryView.GalleryViewModel(
+                firebaseStorageService: FirebaseStorageService(),
+                getMediaListUrlUseCase: GetMediaListUrlUseCase()),
+            galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel(
+                deleteMediaUseCase: DeleteMediaUseCase()
+            )
+        )
     }
 }

@@ -28,6 +28,7 @@ extension PermissionView {
         var mediaPermissionService: IMediaPermissionService!
         var cameraPermissionUseCase: ICameraPermissionUseCase!
         var galleryPermissionUseCase: IGalleryPermissionUseCase!
+        @Published var canGoToHomePage: Bool = false
         var alert: Alert = Alert(
             title: Text(""),
             message: Text(""),
@@ -85,9 +86,11 @@ extension PermissionView {
                 return result
             } catch let error as CameraPermissionErrorUseCase {
                 print(error.message)
+                self.showAlert(message: error.message)
                 return false
             } catch {
                 print(error.localizedDescription)
+                self.showAlert(message: error.localizedDescription)
                 return false
             }
         }
@@ -98,15 +101,22 @@ extension PermissionView {
                 return result
             } catch let error as GalleryPermissionErrorUseCase {
                 print(error.message)
+                self.showAlert(message: error.message)
                 return false
             } catch {
                 print(error.localizedDescription)
+                self.showAlert(message: error.localizedDescription)
                 return false
             }
         }
         
         func goToHomePage() -> Void {
-            print("HomePage")
+            DispatchQueue.main.async {
+                self.canGoToHomePage = true
+                Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+                    self.canGoToHomePage = false
+                }
+            }
         }
         
         func alertAction() -> Void {

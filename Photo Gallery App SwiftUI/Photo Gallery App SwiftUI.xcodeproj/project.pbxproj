@@ -27,6 +27,12 @@
 		7B85E0112950E08500D6D015 /* PermissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B85E0102950E08500D6D015 /* PermissionViewModel.swift */; };
 		7B85E0132950F3CA00D6D015 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B85E0122950F3CA00D6D015 /* HomeViewModel.swift */; };
 		7BC55DF7294D01A7004CBC8B /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC55DF6294D01A7004CBC8B /* ActivityIndicatorView.swift */; };
+		7BC69CFC2954AD7600728451 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69CFB2954AD7600728451 /* LaunchScreen.swift */; };
+		7BC69CFF2954ADDD00728451 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69CFE2954ADDD00728451 /* LoadingView.swift */; };
+		7BC69D012954B57300728451 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69D002954B57300728451 /* ContentView.swift */; };
+		7BC69D032954BBE600728451 /* ViewDidLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69D022954BBE600728451 /* ViewDidLoad.swift */; };
+		7BC69D062954BD9E00728451 /* ViewDidLoadExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69D052954BD9E00728451 /* ViewDidLoadExtension.swift */; };
+		7BC69D092954DDF200728451 /* NavigationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69D082954DDF200728451 /* NavigationEnum.swift */; };
 		7BD62F94294C9B4500EF0356 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD62F93294C9B4500EF0356 /* SignInViewModel.swift */; };
 		7BD62F99294C9F0700EF0356 /* Photo_Gallery_With_Firebase_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD62F98294C9F0700EF0356 /* Photo_Gallery_With_Firebase_SDK.framework */; };
 		7BD62F9A294C9F0700EF0356 /* Photo_Gallery_With_Firebase_SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD62F98294C9F0700EF0356 /* Photo_Gallery_With_Firebase_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -90,6 +96,12 @@
 		7B85E0102950E08500D6D015 /* PermissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewModel.swift; sourceTree = "<group>"; };
 		7B85E0122950F3CA00D6D015 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7BC55DF6294D01A7004CBC8B /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		7BC69CFB2954AD7600728451 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		7BC69CFE2954ADDD00728451 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		7BC69D002954B57300728451 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7BC69D022954BBE600728451 /* ViewDidLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoad.swift; sourceTree = "<group>"; };
+		7BC69D052954BD9E00728451 /* ViewDidLoadExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadExtension.swift; sourceTree = "<group>"; };
+		7BC69D082954DDF200728451 /* NavigationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEnum.swift; sourceTree = "<group>"; };
 		7BD62F93294C9B4500EF0356 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		7BD62F98294C9F0700EF0356 /* Photo_Gallery_With_Firebase_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Photo_Gallery_With_Firebase_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDFDE1A2948ED7C0022D309 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -165,6 +177,8 @@
 				7B7723EA294B6E730053B14A /* Gallery */,
 				7B7723ED294BADA70053B14A /* GalleryDetail */,
 				7B534FD52948CF2E00DA22AC /* Photo_Gallery_App_SwiftUIApp.swift */,
+				7BC69D002954B57300728451 /* ContentView.swift */,
+				7BC69CFB2954AD7600728451 /* LaunchScreen.swift */,
 				7B534FD92948CF3000DA22AC /* Assets.xcassets */,
 				7B534FDB2948CF3000DA22AC /* Preview Content */,
 			);
@@ -259,6 +273,7 @@
 		7B7A78B229520162004B643E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7BC69D042954BD8B00728451 /* ViewDidLoadExtension */,
 				7B7A78B529521FCE004B643E /* StringExtension */,
 				7B7A78AF29520141004B643E /* ImageResizeExtension */,
 			);
@@ -277,14 +292,40 @@
 			isa = PBXGroup;
 			children = (
 				7B7A78A22951E515004B643E /* ImagePickerView */,
+				7BC69CFD2954ADCB00728451 /* LoadingView */,
 				7B7A789E2951E47B004B643E /* ActivityIndicatorView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
+		7BC69CFD2954ADCB00728451 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				7BC69CFE2954ADDD00728451 /* LoadingView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		7BC69D042954BD8B00728451 /* ViewDidLoadExtension */ = {
+			isa = PBXGroup;
+			children = (
+				7BC69D052954BD9E00728451 /* ViewDidLoadExtension.swift */,
+			);
+			path = ViewDidLoadExtension;
+			sourceTree = "<group>";
+		};
+		7BC69D072954DDDE00728451 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				7BC69D082954DDF200728451 /* NavigationEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		7BD62F95294C9C7D00EF0356 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7BC69D072954DDDE00728451 /* Enum */,
 				7B7A78B229520162004B643E /* Extension */,
 				7BC55DF5294D018B004CBC8B /* UI */,
 				7BD62F96294C9C8600EF0356 /* Util */,
@@ -295,6 +336,7 @@
 		7BD62F96294C9C8600EF0356 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7BC69D022954BBE600728451 /* ViewDidLoad.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -469,13 +511,19 @@
 				7B7A78B429521D3F004B643E /* GalleryDetailViewModel.swift in Sources */,
 				7BC55DF7294D01A7004CBC8B /* ActivityIndicatorView.swift in Sources */,
 				7B2C9FA9294A633B00ECD3B2 /* PermissionView.swift in Sources */,
+				7BC69CFF2954ADDD00728451 /* LoadingView.swift in Sources */,
+				7BC69D062954BD9E00728451 /* ViewDidLoadExtension.swift in Sources */,
 				7B7A78A42951E532004B643E /* ImagePickerView.swift in Sources */,
 				7BDFDE21294A365A0022D309 /* SignUpView.swift in Sources */,
 				7B7A78B129520159004B643E /* ImageResizeExtension.swift in Sources */,
 				7B7A78AB2951F754004B643E /* GalleryImageModel.swift in Sources */,
 				7BDFDE1E294903D20022D309 /* SignInView.swift in Sources */,
+				7BC69D092954DDF200728451 /* NavigationEnum.swift in Sources */,
 				7B7723E9294B5F9C0053B14A /* HomeView.swift in Sources */,
+				7BC69D012954B57300728451 /* ContentView.swift in Sources */,
+				7BC69D032954BBE600728451 /* ViewDidLoad.swift in Sources */,
 				7BD62F94294C9B4500EF0356 /* SignInViewModel.swift in Sources */,
+				7BC69CFC2954AD7600728451 /* LaunchScreen.swift in Sources */,
 				7B7723EF294BADC60053B14A /* GalleryDetailView.swift in Sources */,
 				7B85E0132950F3CA00D6D015 /* HomeViewModel.swift in Sources */,
 				7BDFDE1B2948ED7C0022D309 /* OnboardingView.swift in Sources */,
@@ -638,6 +686,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Photo Gallery App SwiftUI/Preview Content\"";
@@ -650,6 +700,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -671,6 +722,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Photo Gallery App SwiftUI/Preview Content\"";
@@ -683,6 +736,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

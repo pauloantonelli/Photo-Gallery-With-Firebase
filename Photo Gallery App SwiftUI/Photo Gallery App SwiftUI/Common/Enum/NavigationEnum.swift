@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+enum NavigationEnum: String {
+    case onboardingView = "onboardingView"
+    case signInView = "signInView"
+    case signUpView = "signUpView"
+    case permissionView = "permissionView"
+    case homeView = "homeView"
+    case galleryView = "galleryView"
+    case galleryDetailView = "galleryDetailView"
+}

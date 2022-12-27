@@ -9,11 +9,23 @@ import SwiftUI
 import Photo_Gallery_With_Firebase_SDK
 
 struct PermissionView: View {
+    var galleryViewModel: GalleryView.GalleryViewModel
+    var galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel
+    var homeViewModel: HomeView.HomeViewModel
     @ObservedObject var permissionViewModel: PermissionViewModel
     @State var showAlert: Bool = false
+    @State private var selectionScreen: NavigationEnum?
     
-    init(permissionViewModel: IPermissionViewModel) {
+    init(
+        permissionViewModel: IPermissionViewModel,
+        homeViewModel: IHomeViewModel,
+        galleryViewModel: IGalleryViewModel,
+        galleryDetailViewModel: IGalleryDetailViewModel
+    ) {
         self.permissionViewModel = permissionViewModel as! PermissionViewModel
+        self.homeViewModel = homeViewModel as! HomeView.HomeViewModel
+        self.galleryViewModel = galleryViewModel as! GalleryView.GalleryViewModel
+        self.galleryDetailViewModel = galleryDetailViewModel as! GalleryDetailView.GalleryDetailViewModel
     }
     
     var body: some View {
@@ -33,21 +45,31 @@ struct PermissionView: View {
                 .fontWeight(.thin)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 20.0)
-            Button(action: {
-                self.permitionState(status: true)
-            }) {
-              Text("Sure, I'd Like that")
-                    .fontWeight(.bold)
+            NavigationLink(
+                destination: HomeView(
+                    homeViewModel: self.homeViewModel,
+                    galleryViewModel: self.galleryViewModel,
+                    galleryDetailViewModel: self.galleryDetailViewModel
+                ),
+                tag: NavigationEnum.homeView,
+                selection: self.$selectionScreen
+            ) {
+                Button(action: {
+                    self.permitionState(status: true)
+                }) {
+                    Text("Sure, I'd Like that")
+                        .fontWeight(.bold)
+                }
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    maxHeight: 35.0
+                )
+                .foregroundColor(Color("PermissionButtonLabelColor"))
+                .background(Color("PermissionButtonBackgroundColor"))
+                .cornerRadius(5.0)
+                .padding(.bottom, 10.0)
             }
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                maxHeight: 35.0
-            )
-            .foregroundColor(Color("PermissionButtonLabelColor"))
-            .background(Color("PermissionButtonBackgroundColor"))
-            .cornerRadius(5.0)
-            .padding(.bottom, 10.0)
             Button(action: {
                 self.permitionState(status: false)
             }) {
@@ -65,6 +87,11 @@ struct PermissionView: View {
             .padding(.bottom, 10.0)
         }
         .padding(.horizontal, 20.0)
+        .onChange(of: self.permissionViewModel.canGoToHomePage) { status in
+            if status == true {
+                self.goToHomePage()
+            }
+        }
         .onReceive(
             NotificationCenter.default.publisher(
                 for: self.permissionViewModel.showAlertConstant
@@ -74,6 +101,10 @@ struct PermissionView: View {
             .alert(isPresented: self.$showAlert) {
                 return self.permissionViewModel.alert
             }
+    }
+    
+    func goToHomePage() -> Void {
+        self.selectionScreen = NavigationEnum.homeView
     }
     
     func permitionState(status: Bool) -> Void {
@@ -87,8 +118,24 @@ struct PermissionView: View {
 
 struct PermissionView_Previews: PreviewProvider {
     static var previews: some View {
-        PermissionView(permissionViewModel: PermissionView.PermissionViewModel(
-        mediaPermissionService: MediaPermissionService(), cameraPermissionUseCase: CameraPermissionUseCase(), galleryPermissionUseCase: GalleryPermissionUseCase()
-        ))
+        PermissionView(
+            permissionViewModel: PermissionView.PermissionViewModel(
+                mediaPermissionService: MediaPermissionService(),
+                cameraPermissionUseCase: CameraPermissionUseCase(),
+                galleryPermissionUseCase: GalleryPermissionUseCase()
+            ),
+            homeViewModel: HomeView.HomeViewModel(
+                firebaseService: FirebaseService(),
+                openCameraService: OpenCameraService(),
+                openGalleryService: OpenGalleryService(),
+                saveMediaUseCase: SaveMediaUseCase()
+            ),
+            galleryViewModel: GalleryView.GalleryViewModel(
+                firebaseStorageService: FirebaseStorageService(),
+                getMediaListUrlUseCase: GetMediaListUrlUseCase()),
+            galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel(
+                deleteMediaUseCase: DeleteMediaUseCase()
+            )
+        )
     }
 }

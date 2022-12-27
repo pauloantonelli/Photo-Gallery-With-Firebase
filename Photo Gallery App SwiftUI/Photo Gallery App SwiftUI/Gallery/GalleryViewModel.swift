@@ -59,6 +59,7 @@ extension GalleryView {
         func getImageList() async -> Void {
             do {
                 self.showLoading()
+                self.resetPhotoList()
                 let urlList: Array<URL> = try await self.getMediaListUrlUseCase.execute().get()
                 urlList.forEach { url in
                     self.firebaseStorageService.download(withUrl: url) { image in
@@ -87,6 +88,12 @@ extension GalleryView {
         
         func deletePhotoListItem(withPhotoId: String) -> Void {
             self.photoList.removeAll(where: { $0.id == withPhotoId})
+        }
+        
+        func resetPhotoList() -> Void {
+            DispatchQueue.main.async {
+                self.photoList = []
+            }
         }
         
         func showLoading() -> Void {

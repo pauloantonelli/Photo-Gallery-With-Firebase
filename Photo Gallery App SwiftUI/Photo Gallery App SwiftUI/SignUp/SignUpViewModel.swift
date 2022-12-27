@@ -10,7 +10,6 @@ import Photo_Gallery_With_Firebase_SDK
 
 protocol ISignUpViewModel {
     func signUp(email: Email, password: Password) async
-    func goToSignInPage() -> Void
     func goToPermissionPage() -> Void
     func validateEmail(email: Email) -> Bool
     func verifyEqualPassword(password: String, repassword: String) -> Bool
@@ -26,6 +25,7 @@ extension SignUpView {
         let showAlertConstant: NSNotification.Name = NSNotification.Name("SignUpAlert")
         var registerUseCase: IRegisterUseCase?
         @Published var isLoading: Bool = false
+        @Published var canGoToPermissionPage: Bool = false
         var alert: Alert = Alert(
             title: Text(""),
             message: Text(""),
@@ -36,16 +36,19 @@ extension SignUpView {
             self.registerUseCase = DependencyInjection.get(IRegisterUseCase.self)
         }
         
-        func signUp(email: Email, password: Password) async {
-            await self.executeSignUp(email: email, password: password)
-        }
-        
-        func goToSignInPage() -> Void {
-            print("goToSignInPage")
+        func signUp(email: Email, password: Password) -> Void {
+            Task {
+                await self.executeSignUp(email: email, password: password)
+            }
         }
         
         func goToPermissionPage() -> Void {
-            print("goToPermissionPage")
+            DispatchQueue.main.async {
+                self.canGoToPermissionPage = true
+                Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+                    self.canGoToPermissionPage = false
+                }
+            }
         }
         
         func validateEmail(email: Email) -> Bool {

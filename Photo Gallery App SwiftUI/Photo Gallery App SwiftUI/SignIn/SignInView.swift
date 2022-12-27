@@ -9,15 +9,33 @@ import SwiftUI
 import Photo_Gallery_With_Firebase_SDK
 
 struct SignInView: View {
+    var permissionViewModel: PermissionView.PermissionViewModel
+    var signUpViewModel: SignUpView.SignUpViewModel
+    var galleryViewModel: GalleryView.GalleryViewModel
+    var galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel
+    var homeViewModel: HomeView.HomeViewModel
     @ObservedObject var signInViewModel: SignInViewModel
     @State var email: String = ""
     @State var password: String = ""
     @State var showAlert: Bool = false
+    @State private var selectionScreen: NavigationEnum?
     @FocusState var emailFieldIsFocused: Bool
     @FocusState var passwordFieldIsFocused: Bool
     
-    init(signInViewModel: ISignInViewModel) {
+    init(
+        signInViewModel: ISignInViewModel,
+        signUpViewModel: ISignUpViewModel,
+        permissionViewModel: IPermissionViewModel,
+        homeViewModel: IHomeViewModel,
+        galleryViewModel: IGalleryViewModel,
+        galleryDetailViewModel: IGalleryDetailViewModel
+    ) {
         self.signInViewModel = signInViewModel as! SignInView.SignInViewModel
+        self.permissionViewModel = permissionViewModel as! PermissionView.PermissionViewModel
+        self.signUpViewModel = signUpViewModel as! SignUpView.SignUpViewModel
+        self.homeViewModel = homeViewModel as! HomeView.HomeViewModel
+        self.galleryViewModel = galleryViewModel as! GalleryView.GalleryViewModel
+        self.galleryDetailViewModel = galleryDetailViewModel as! GalleryDetailView.GalleryDetailViewModel
         self.emailFieldIsFocused = false
         self.passwordFieldIsFocused = false
     }
@@ -74,25 +92,35 @@ struct SignInView: View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding(.bottom, 20.0)
             if self.signInViewModel.isLoading == true {
-                ActivityIndicatorView(color: Color("ButtonBackgroundColor"))
-                    .frame(width: 50.0, height: 50.0)
+                LoadingView()
             } else {
-                Button("Sign In", action: {
-                    Task {
-                        let email: Email = Email(email: self.email)
-                        let password: Password = Password(password: self.password)
-                        await self.signInViewModel.signIn(email: email, password: password)
-                    }
-                })
-                .frame(
-                    minWidth: 0,
-                    maxWidth: .infinity,
-                    maxHeight: 35.0
-                )
-                .foregroundColor(.white)
-                .background(Color("ButtonBackgroundColor"))
-                .cornerRadius(5.0)
-                .padding(.bottom, 10.0)
+                NavigationLink(
+                    destination: PermissionView(
+                        permissionViewModel: self.permissionViewModel,
+                        homeViewModel: self.homeViewModel,
+                        galleryViewModel: self.galleryViewModel,
+                        galleryDetailViewModel: self.galleryDetailViewModel
+                    ),
+                    tag: NavigationEnum.permissionView,
+                    selection: self.$selectionScreen
+                ) {
+                    Button("Sign In", action: {
+                        Task {
+                            let email: Email = Email(email: self.email)
+                            let password: Password = Password(password: self.password)
+                            await self.signInViewModel.signIn(email: email, password: password)
+                        }
+                    })
+                    .frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        maxHeight: 35.0
+                    )
+                    .foregroundColor(.white)
+                    .background(Color("ButtonBackgroundColor"))
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 10.0)
+                }
                 Button("Forgot Password?", action: {
                     Task {
                         let email: Email = Email(email: self.email)
@@ -112,26 +140,71 @@ struct SignInView: View {
                 Text("Don't have an account?")
                     .foregroundColor(.black.opacity(0.7))
                 Spacer()
-                Button("Sign Up", action: self.signInViewModel.goToSignUpPage)
-                    .foregroundColor(Color("ButtonBackgroundColor"))
-                    .background(.white)
+                NavigationLink(
+                    destination: SignUpView(
+                        signUpViewModel: self.signUpViewModel,
+                        signInViewModel: self.signInViewModel,
+                        permissionViewModel: self.permissionViewModel,
+                        homeViewModel: self.homeViewModel,
+                        galleryViewModel: self.galleryViewModel,
+                        galleryDetailViewModel: self.galleryDetailViewModel
+                    ),
+                    tag: NavigationEnum.signUpView,
+                    selection: self.$selectionScreen
+                ) {
+                    Button("Sign Up", action: self.goToSignUpPage)
+                        .foregroundColor(Color("ButtonBackgroundColor"))
+                        .background(.white)
+                }
             }
             .padding(.bottom, 30.0)
         }
         .padding(.horizontal, 20.0)
-        .onReceive(
-            NotificationCenter.default.publisher(
-                for: self.signInViewModel.showAlertConstant)) { status in
+        .onChange(of: self.signInViewModel.canGoToPermissionPage) { status in
+            if status == true {
+                self.goToPermissionPage()
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(
+            for: self.signInViewModel.showAlertConstant)) {  status in
                 self.showAlert = status.object as! Bool
             }
             .alert(isPresented: self.$showAlert) {
                 return self.signInViewModel.alert
             }
     }
+    
+    func goToSignUpPage() -> Void {
+        self.selectionScreen = NavigationEnum.signUpView
+    }
+    
+    func goToPermissionPage() -> Void {
+        self.selectionScreen = NavigationEnum.permissionView
+    }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(signInViewModel: SignInView.SignInViewModel())
+        SignInView(
+            signInViewModel: SignInView.SignInViewModel(),
+            signUpViewModel: SignUpView.SignUpViewModel(),
+            permissionViewModel: PermissionView.PermissionViewModel(
+                mediaPermissionService: MediaPermissionService(),
+                cameraPermissionUseCase: CameraPermissionUseCase(),
+                galleryPermissionUseCase: GalleryPermissionUseCase()
+            ),
+            homeViewModel: HomeView.HomeViewModel(
+                firebaseService: FirebaseService(),
+                openCameraService: OpenCameraService(),
+                openGalleryService: OpenGalleryService(),
+                saveMediaUseCase: SaveMediaUseCase()
+            ),
+            galleryViewModel: GalleryView.GalleryViewModel(
+                firebaseStorageService: FirebaseStorageService(),
+                getMediaListUrlUseCase: GetMediaListUrlUseCase()),
+            galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel(
+                deleteMediaUseCase: DeleteMediaUseCase()
+            )
+        )
     }
 }

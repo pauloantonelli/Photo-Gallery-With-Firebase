@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct LoadingView: View {
+    @State var color: Color = Color("BackgroundColor")
+    @State var width: Double = 50.0
+    @State var height: Double = 50.0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ActivityIndicatorView(color: self.color)
+            .frame(width: self.width, height: self.height)
     }
 }
 

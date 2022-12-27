@@ -9,14 +9,19 @@ import SwiftUI
 import Photo_Gallery_With_Firebase_SDK
 
 struct HomeView: View {
+    var galleryViewModel: GalleryView.GalleryViewModel
+    var galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel
     @ObservedObject var homeViewModel: HomeViewModel
     @State var showAlert: Bool = false
     @State var showCameraPicker: Bool = false
     @State var showGalleryPicker: Bool = false
     @State var image: Image?
+    @State private var selectionScreen: NavigationEnum?
     
-    init(homeViewModel: IHomeViewModel) {
+    init(homeViewModel: IHomeViewModel, galleryViewModel: IGalleryViewModel, galleryDetailViewModel: IGalleryDetailViewModel) {
         self.homeViewModel = homeViewModel as! HomeViewModel
+        self.galleryViewModel = galleryViewModel as! GalleryView.GalleryViewModel
+        self.galleryDetailViewModel = galleryDetailViewModel as! GalleryDetailView.GalleryDetailViewModel
     }
     
     var body: some View {
@@ -35,8 +40,7 @@ struct HomeView: View {
                 .fontWeight(.thin).foregroundColor(.black.opacity(0.7))
                 .padding(.bottom, 60.0)
             if self.homeViewModel.isLoading == true {
-                ActivityIndicatorView(color: Color("ButtonBackgroundColor"))
-                    .frame(width: 50.0, height: 50.0)
+                LoadingView()
             } else {
                 HStack(
                     alignment: .center,
@@ -80,20 +84,29 @@ struct HomeView: View {
                 }
             }
             Spacer()
-            Button(action: {}) {
-                Image(systemName: "photo.on.rectangle")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.all, 20.0)
+            NavigationLink(
+                destination: GalleryView(
+                    galleryViewModel: self.galleryViewModel,
+                    galleryDetailViewModel: self.galleryDetailViewModel
+                ).navigationBarBackButtonHidden(true),
+            tag: NavigationEnum.galleryView,
+            selection: self.$selectionScreen
+            ) {
+                Button(action: {self.goToGallery()}) {
+                    Image(systemName: "photo.on.rectangle")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.all, 20.0)
+                }
+                .frame(
+                    minWidth: 0.0,
+                    maxWidth: 120.0,
+                    minHeight: 0.0,
+                    maxHeight: 70.0
+                )
+                .background(Color("LinkColor"))
+                .cornerRadius(5.0)
             }
-            .frame(
-                minWidth: 0.0,
-                maxWidth: 120.0,
-                minHeight: 0.0,
-                maxHeight: 70.0
-            )
-            .background(Color("LinkColor"))
-            .cornerRadius(5.0)
         }.onReceive(NotificationCenter.default.publisher(for: self.homeViewModel.showAlertConstant)) { status in
             self.showAlert = status.object as! Bool
         }
@@ -113,17 +126,24 @@ struct HomeView: View {
     }
     
     func goToGallery() -> Void {
-        print("goToGallery")
+        self.selectionScreen = NavigationEnum.galleryView
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(homeViewModel: HomeView.HomeViewModel(
+        HomeView(
+            homeViewModel: HomeView.HomeViewModel(
             firebaseService: FirebaseService(),
             openCameraService: OpenCameraService(),
             openGalleryService: OpenGalleryService(),
-            saveMediaUseCase: SaveMediaUseCase())
+            saveMediaUseCase: SaveMediaUseCase()),
+            galleryViewModel: GalleryView.GalleryViewModel(
+                firebaseStorageService: FirebaseStorageService(),
+                getMediaListUrlUseCase: GetMediaListUrlUseCase()),
+            galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel(
+                deleteMediaUseCase: DeleteMediaUseCase()
+            )
         )
     }
 }

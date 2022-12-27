@@ -15,7 +15,7 @@ struct Photo_Gallery_App_SwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            ContentView()
         }
         .onChange(of: self.scenePhase) { (scenePhase) in
             switch scenePhase {

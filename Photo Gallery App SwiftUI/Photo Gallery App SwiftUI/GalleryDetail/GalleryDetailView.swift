@@ -28,8 +28,7 @@ struct GalleryDetailView: View {
                 .padding(.trailing, 20.0)
             Spacer()
             if self.galleryDetailViewModel.isLoading == true {
-                ActivityIndicatorView(color: Color("ButtonBackgroundColor"))
-                    .frame(width: 50.0, height: 50.0)
+                LoadingView()
             } else {
                 Button("Delete", action: self.executeDelete)
                                 .frame(

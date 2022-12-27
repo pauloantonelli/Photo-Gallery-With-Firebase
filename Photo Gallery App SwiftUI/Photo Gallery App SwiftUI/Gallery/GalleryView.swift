@@ -9,6 +9,7 @@ import SwiftUI
 import Photo_Gallery_With_Firebase_SDK
 
 struct GalleryView: View {
+    @Environment(\.dismiss) private var dismiss
     @ObservedObject var galleryViewModel: GalleryViewModel
     @ObservedObject var galleryDetailViewModel: GalleryDetailView.GalleryDetailViewModel
     @State var showAlert: Bool = false
@@ -45,8 +46,7 @@ struct GalleryView: View {
             }
             ScrollView {
                 if self.galleryViewModel.isLoading == true {
-                    ActivityIndicatorView(color: Color("ButtonBackgroundColor"))
-                        .frame(width: 50.0, height: 50.0)
+                    LoadingView()
                 } else {
                     LazyVGrid(columns: self.rowList, spacing: 10.0) {
                         ForEach(self.galleryViewModel.photoList.indices, id: \.self) { index in
@@ -79,8 +79,9 @@ struct GalleryView: View {
         }
     }
     
-    func backToHome() -> Void {
-        print("backToHome")
+    func backToHome() -> Void {        
+        self.dismiss()
+        
     }
 }
 extension GalleryView {

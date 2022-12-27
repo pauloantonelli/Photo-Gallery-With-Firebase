@@ -11,7 +11,6 @@ import Photo_Gallery_With_Firebase_SDK
 protocol ISignInViewModel {
     func signIn(email: Email, password: Password) async -> Void
     func forgotPassword(email: Email) async -> Void
-    func goToSignUpPage() -> Void
     func goToPermissionPage() -> Void
     func validateEmail(email: Email) -> Bool
     func showLoading() -> Void
@@ -28,6 +27,7 @@ extension SignInView {
         var email: String = ""
         var password: String = ""
         @Published var isLoading: Bool = false
+        @Published var canGoToPermissionPage: Bool = false
         var alert: Alert = Alert(
             title: Text(""),
             message: Text(""),
@@ -47,12 +47,13 @@ extension SignInView {
             await self.executeForgotPassword(email: email)
         }
         
-        func goToSignUpPage() -> Void {
-           
-        }
-        
         func goToPermissionPage() -> Void {
-            
+            DispatchQueue.main.async {
+                self.canGoToPermissionPage = true
+                Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+                    self.canGoToPermissionPage = false
+                }
+            }
         }
         
         func validateEmail(email: Email) -> Bool {
@@ -72,11 +73,15 @@ extension SignInView {
         }
         
         func showLoading() -> Void {
-            self.isLoading = true
+            DispatchQueue.main.async {
+                self.isLoading = true
+            }
         }
         
         func hideLoading() -> Void {
-            self.isLoading = false
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
         }
         
         func showAlert(title: String = "Unable to login on account", message: String, actionTitle: String = "I understood") -> Void {
