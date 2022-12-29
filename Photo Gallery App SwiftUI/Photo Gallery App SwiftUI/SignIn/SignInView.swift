@@ -160,6 +160,7 @@ struct SignInView: View {
             .padding(.bottom, 30.0)
         }
         .padding(.horizontal, 20.0)
+        .navigationBarBackButtonHidden(true)
         .onChange(of: self.signInViewModel.canGoToPermissionPage) { status in
             if status == true {
                 self.goToPermissionPage()

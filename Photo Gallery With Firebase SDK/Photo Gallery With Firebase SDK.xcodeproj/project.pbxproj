@@ -108,7 +108,6 @@
 		7BB02DEB291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB02DEA291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift */; };
 		7BC068CC292BEFAF00975349 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068CB292BEFAF00975349 /* AlertService.swift */; };
 		7BC068CF292C1F2E00975349 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068CE292C1F2E00975349 /* AppConstant.swift */; };
-		7BC068D5292D263900975349 /* KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068D4292D263900975349 /* KeyboardDismiss.swift */; };
 		7BC068DD292E8BF000975349 /* IFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068DC292E8BF000975349 /* IFirebaseService.swift */; };
 		7BC068DF292E90BA00975349 /* IForgotPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068DE292E90BA00975349 /* IForgotPasswordUseCase.swift */; };
 		7BC068E1292E910400975349 /* ForgotPasswordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC068E0292E910400975349 /* ForgotPasswordError.swift */; };
@@ -245,7 +244,6 @@
 		7BB02DEA291D5A2E00DD0A59 /* GetMediaListUrlServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMediaListUrlServiceTest.swift; sourceTree = "<group>"; };
 		7BC068CB292BEFAF00975349 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		7BC068CE292C1F2E00975349 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
-		7BC068D4292D263900975349 /* KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismiss.swift; sourceTree = "<group>"; };
 		7BC068DC292E8BF000975349 /* IFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFirebaseService.swift; sourceTree = "<group>"; };
 		7BC068DE292E90BA00975349 /* IForgotPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IForgotPasswordUseCase.swift; sourceTree = "<group>"; };
 		7BC068E0292E910400975349 /* ForgotPasswordError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordError.swift; sourceTree = "<group>"; };
@@ -596,20 +594,20 @@
 			path = Datasource;
 			sourceTree = "<group>";
 		};
-		7B70938D2910695C004C1156 /* Camera */ = {
+		7B70938D2910695C004C1156 /* CameraPermission */ = {
 			isa = PBXGroup;
 			children = (
 				7B70938F29106AAC004C1156 /* CameraPermissionUseCase.swift */,
 			);
-			path = Camera;
+			path = CameraPermission;
 			sourceTree = "<group>";
 		};
-		7B70938E29106964004C1156 /* Gallery */ = {
+		7B70938E29106964004C1156 /* GalleryPermission */ = {
 			isa = PBXGroup;
 			children = (
 				7B7093A229118926004C1156 /* GalleryPermissionUseCase.swift */,
 			);
-			path = Gallery;
+			path = GalleryPermission;
 			sourceTree = "<group>";
 		};
 		7B70939129106AE5004C1156 /* Camera */ = {
@@ -880,8 +878,8 @@
 				7B1FC372291C029200FF02F3 /* GetMediaUrl */,
 				7BB02DBB291D31AC00DD0A59 /* DeleteMedia */,
 				7B1FC354291B149000FF02F3 /* SaveMedia */,
-				7B70938E29106964004C1156 /* Gallery */,
-				7B70938D2910695C004C1156 /* Camera */,
+				7B70938E29106964004C1156 /* GalleryPermission */,
+				7B70938D2910695C004C1156 /* CameraPermission */,
 				7B01A505290B0C33002E502A /* Autentication */,
 			);
 			path = UseCase;
@@ -890,7 +888,6 @@
 		7B9529A12908BE41006F203F /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				7BC068D3292D262400975349 /* Util */,
 				7BC068CD292C1F0900975349 /* Constant */,
 				7BAE04D429171ECB004AA68A /* Service */,
 				7BC1CA40290C6A7F00A178DA /* DependencyInjection */,
@@ -1136,14 +1133,6 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
-		7BC068D3292D262400975349 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				7BC068D4292D263900975349 /* KeyboardDismiss.swift */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
 		7BC068DB292E8BDD00975349 /* FirebaseService */ = {
 			isa = PBXGroup;
 			children = (
@@ -1368,7 +1357,6 @@
 				7B7093B529118BF3004C1156 /* ICameraPermissionService.swift in Sources */,
 				7B01A4FA290B0ACF002E502A /* RegisterError.swift in Sources */,
 				7BB02DD9291D4AF600DD0A59 /* IGetMediaListUrlDrive.swift in Sources */,
-				7BC068D5292D263900975349 /* KeyboardDismiss.swift in Sources */,
 				7B7093B729118CD6004C1156 /* GalleryPermissionService.swift in Sources */,
 				7BFA886F291AA2FB0023D13D /* IFirebaseStorageService.swift in Sources */,
 				7BAE04DE2917227F004AA68A /* IMediaPermissionService.swift in Sources */,

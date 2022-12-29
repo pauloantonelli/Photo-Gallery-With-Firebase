@@ -122,6 +122,7 @@ struct OnboardingView: View {
             )
             .background(Color.gray)
             .padding(.all, 20.0)
+            .navigationBarBackButtonHidden(true)
         }
     }
     
