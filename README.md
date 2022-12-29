@@ -102,5 +102,3 @@ If you had any feedback, please let me know on pauloantonelli@zoominitcode.dev
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://zoominitcode.dev/)
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pauloantonelli/)
-
-![logo](https://user-images.githubusercontent.com/30703894/210007500-da797234-9264-494c-9fec-4c7ee8c823ef.png)
